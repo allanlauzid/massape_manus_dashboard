@@ -40,7 +40,17 @@
     var el = document.getElementById(id);
     if (!el) return null;
     if (/^H[1-6]$/.test(el.tagName)) return el;
-    return el.querySelector('h2');
+    return el.querySelector('h2, h3, h4');
+  }
+
+  /* Abre os detalhes que contêm um elemento */
+  function openAncestors(el) {
+    var changed = false;
+    for (var d = el && el.closest('details'); d; d = d.parentElement && d.parentElement.closest('details')) {
+      if (!d.open) { d.open = true; changed = true; }
+    }
+    if (el && el.tagName === 'DETAILS' && !el.open) { el.open = true; changed = true; }
+    return changed;
   }
   function arrive(id) {
     if (reduce.matches) return;
@@ -55,11 +65,40 @@
     if (!a) return;
     var id = decodeURIComponent(a.getAttribute('href').slice(1));
     if (!id || id === 'conteudo') return;
-    var toc = a.closest('details');
+    var toc = a.closest('details.toc');
     if (toc) toc.removeAttribute('open');
+    var target = document.getElementById(id);
+    if (target && openAncestors(target)) {
+      e.preventDefault();
+      history.pushState(null, '', '#' + id);
+      requestAnimationFrame(function () { target.scrollIntoView({ behavior: reduce.matches ? 'auto' : 'smooth' }); });
+    }
     setTimeout(function () { arrive(id); }, reduce.matches ? 0 : 350);
   });
-  if (location.hash) setTimeout(function () { arrive(decodeURIComponent(location.hash.slice(1))); }, 300);
+  if (location.hash) {
+    var initial = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (initial && openAncestors(initial)) requestAnimationFrame(function () { initial.scrollIntoView(); });
+    setTimeout(function () { arrive(decodeURIComponent(location.hash.slice(1))); }, 300);
+  }
+
+  /* ---------- Abrir / fechar todos os detalhes ---------- */
+  var collapsibles = function () { return document.querySelectorAll('main details.more, main details.doc-sec'); };
+  document.querySelectorAll('[data-details]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('data-details') === 'open';
+      collapsibles().forEach(function (d) { d.open = open; });
+    });
+  });
+  var printState = null;
+  window.addEventListener('beforeprint', function () {
+    printState = [];
+    collapsibles().forEach(function (d) { printState.push(d.open); d.open = true; });
+  });
+  window.addEventListener('afterprint', function () {
+    if (!printState) return;
+    collapsibles().forEach(function (d, i) { d.open = printState[i]; });
+    printState = null;
+  });
 
   /* ---------- Seção atual na barra ---------- */
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('[data-spy] a[href^="#"]'));
