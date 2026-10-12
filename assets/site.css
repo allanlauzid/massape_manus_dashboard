@@ -123,7 +123,7 @@ a{color:var(--cocoa);text-decoration-color:var(--caramel);text-decoration-thickn
 .toc-panel a[aria-current="true"]{background:var(--surface-2);font-weight:700;color:var(--cocoa)}
 
 /* ---------- Conteúdo ---------- */
-main{padding:clamp(1.6rem,4vw,2.6rem) 0 3.5rem}
+main{padding:0}
 section{scroll-margin-top:calc(var(--bar-h) + 1rem);margin:0 0 clamp(2.4rem,6vw,3.6rem)}
 section > p,.intro > p,.prose{max-width:var(--measure)}
 h2,[id]{scroll-margin-top:calc(var(--bar-h) + 1rem)}
@@ -303,6 +303,55 @@ tbody tr:last-child td{border-bottom:0}
 .sources li{margin:.5em 0;scroll-margin-top:calc(var(--bar-h) + 1rem)}
 .sources li:target{background:var(--gold-soft);border-radius:4px}
 
+/* ---------- Capítulos ---------- */
+.tone-cacau{--band:oklch(0.33 0.06 38);--body:oklch(0.968 0.012 45);--accent:oklch(0.45 0.09 40);--chip:oklch(0.86 0.06 45)}
+.tone-caramelo{--band:oklch(0.42 0.09 62);--body:oklch(0.972 0.02 75);--accent:oklch(0.5 0.11 62);--chip:oklch(0.87 0.09 75)}
+.tone-folha{--band:oklch(0.37 0.06 155);--body:oklch(0.97 0.015 155);--accent:oklch(0.45 0.08 155);--chip:oklch(0.87 0.07 155)}
+.tone-ardosia{--band:oklch(0.36 0.05 250);--body:oklch(0.97 0.012 250);--accent:oklch(0.45 0.07 250);--chip:oklch(0.86 0.05 250)}
+.tone-claude{--band:oklch(0.36 0.08 255);--body:oklch(0.97 0.014 255);--accent:oklch(0.45 0.1 255);--chip:oklch(0.86 0.06 255)}
+
+.intro-block{margin:0;padding:clamp(1.8rem,4.5vw,2.8rem) 0 clamp(2rem,5vw,3rem)}
+.chapter{margin:0;scroll-margin-top:var(--bar-h);background:var(--body)}
+.tone-claude.chapter:nth-of-type(even){--body:oklch(0.985 0.006 255)}
+.chapter-band{background:var(--band);color:#fff;padding:clamp(1.6rem,4vw,2.4rem) 0 clamp(1.4rem,3.5vw,2rem)}
+.chapter-band .wrap{display:flex;align-items:flex-start;gap:clamp(.9rem,3vw,1.6rem)}
+.chapter-num{flex:none;font-family:var(--font-display);font-weight:600;font-size:clamp(2.6rem,1.6rem + 4vw,4.2rem);line-height:.9;color:oklch(1 0 0 / .4)}
+.chapter-titles{min-width:0}
+.chapter-kicker{margin:0 0 .15rem;font-size:.85rem;font-weight:700;color:oklch(1 0 0 / .75)}
+.chapter .chapter-band h2{color:#fff;margin:0;font-size:clamp(1.7rem,1.2rem + 1.8vw,2.5rem)}
+.chapter-intro{margin:.35rem 0 0;color:oklch(1 0 0 / .85);max-width:var(--measure)}
+.chapter-body{padding:clamp(1.4rem,3.5vw,2.2rem) 0 clamp(2.4rem,6vw,3.6rem)}
+.chapter-body > .wrap > :first-child{margin-top:0}
+
+/* Áreas como cartões */
+.chapter .area{background:var(--bg);border-top:0;border-radius:16px;padding:clamp(1.1rem,3vw,1.6rem);margin:0 0 1.1rem;box-shadow:0 1px 3px oklch(0.25 0.03 45 / .1)}
+.chapter .block-intro + .area{margin-top:0}
+.chapter .area > h3{font-size:clamp(1.2rem,1.05rem + .5vw,1.45rem);color:var(--accent);margin-bottom:.25rem}
+.chapter .area-a{padding-bottom:1rem;border-bottom:1px solid var(--line);margin-bottom:1rem}
+.chapter .area-a:last-child{border-bottom:0;padding-bottom:0;margin-bottom:0}
+.chapter .area > h3 .tag{font-size:.7rem}
+
+/* Cor só onde há ação */
+.area-cols > .col.fact,.area-cols > .col.analysis,.area-cols > .col.reco{background:var(--surface)}
+.area-cols > .col.pending{background:var(--pending-bg)}
+
+/* Mapa de capítulos */
+.chapter-map{margin-top:2.2rem}
+.map-title{font-size:1.15rem;margin:0 0 .8rem;color:var(--muted);font-family:var(--font-body);font-weight:700;letter-spacing:0}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:.75rem}
+.tile{display:flex;gap:.8rem;align-items:flex-start;padding:1rem 1.1rem;border-radius:14px;background:var(--body);color:var(--ink);text-decoration:none;box-shadow:inset 0 0 0 1px oklch(0.25 0.03 45 / .06);transition:transform 160ms var(--ease-out),background-color 150ms var(--ease-out)}
+.tile:active{transform:scale(0.98)}
+@media (hover:hover) and (pointer:fine){.tile:hover{transform:translateY(-2px);color:var(--ink)}}
+.tile-num{flex:none;display:grid;place-items:center;width:2.3rem;height:2.3rem;border-radius:10px;background:var(--band);color:#fff;font-family:var(--font-display);font-weight:600;font-size:1.2rem}
+.tile-text{display:flex;flex-direction:column;gap:.15rem;min-width:0}
+.tile-text strong{font-family:var(--font-display);font-size:1.12rem;color:var(--band);line-height:1.2}
+.tile-text span{font-size:.92rem;color:var(--muted);line-height:1.4}
+.tile-text small{font-size:.8rem;font-weight:700;color:var(--accent);margin-top:.15rem}
+.chapter-map .details-tools{margin:1.2rem 0 0}
+
+/* Capítulo atual na barra */
+.chips a[aria-current="true"][class*="tone-"]{background:var(--chip);color:var(--cocoa-deep)}
+
 /* ---------- Rodapé ---------- */
 footer{background:var(--cocoa-deep);color:oklch(0.94 0.012 70);padding:clamp(2.5rem,6vw,4rem) 0 3.5rem}
 footer p{max-width:var(--measure)}
@@ -313,7 +362,7 @@ footer a{color:var(--gold)}
 /* ---------- Páginas de documento ---------- */
 .hero.doc .hero-kicker a{color:var(--gold)}
 .hero.doc h1{font-size:clamp(1.75rem,1.1rem + 2.2vw,2.8rem);max-width:24ch}
-.doc-content{max-width:100%}
+.doc-content{max-width:100%;padding:clamp(1.6rem,4vw,2.6rem) 0 3.5rem}
 .doc-content > :where(p,ul,ol,blockquote,h2,h3,h4,hr,.doc-fulltitle){max-width:var(--measure)}
 .doc-fulltitle{font-family:var(--font-display);font-size:1.25rem;line-height:1.4;color:var(--muted);margin:0 0 2rem}
 .doc-content h2{margin-top:2.6em;padding-top:.2em}
