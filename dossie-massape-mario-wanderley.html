@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Dossiê documental — Massapê e Mário Wanderley — Massapê</title><style>
+  :root{
+    --ink:#1f1b18; --muted:#5c514a; --paper:#fffdf8; --cream:#f5ead9;
+    --cocoa:#4c261b; --cocoa-2:#6d3928; --gold:#d59b37; --green:#285c4b;
+    --blue:#154c69; --line:#d9c9b5; --danger:#8c2f39; --shadow:0 5px 18px rgba(54,33,20,.12);
+    --base:19px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:var(--base);line-height:1.65}
+  a{color:#075b85;text-decoration-thickness:2px;text-underline-offset:3px}
+  a:focus,button:focus{outline:4px solid #f2b632;outline-offset:3px}
+  .skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:10px;z-index:10}.skip:focus{left:8px}
+  header{background:linear-gradient(135deg,var(--cocoa),#2b1813);color:#fff;padding:38px 20px 34px;border-bottom:8px solid var(--gold)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#f4c968;font-size:.9em}
+  h1{font-size:clamp(2.25rem,5vw,4.2rem);line-height:1.05;margin:12px 0 18px;max-width:950px}
+  h2{font-size:clamp(1.75rem,3vw,2.55rem);line-height:1.15;color:var(--cocoa);margin:0 0 18px}
+  h3{font-size:1.45rem;line-height:1.2;color:var(--cocoa-2);margin:28px 0 10px}
+  h4{font-size:1.12rem;margin:18px 0 5px;color:var(--green)}
+  .lead{font-size:1.18em;max-width:900px}
+  .meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .pill{display:inline-block;border:2px solid rgba(255,255,255,.55);border-radius:999px;padding:5px 13px;font-weight:700}
+  .tools{background:#2e1a14;color:#fff;padding:12px 0;position:sticky;top:0;z-index:5;border-bottom:1px solid #68462f}
+  .tools .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .tools a{color:#fff}
+  button{border:2px solid #fff;background:var(--gold);color:#21150e;border-radius:8px;padding:8px 12px;font-weight:700;font-size:1rem;cursor:pointer}
+  nav{background:var(--cream);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;gap:9px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+  nav a{font-weight:700;padding:7px 10px;border-radius:6px;color:var(--cocoa)}
+  nav a:hover{background:#fff}
+  main{padding:32px 0 60px}
+  section{scroll-margin-top:75px;margin:0 0 44px}
+  .intro{background:#fff8e9;border-left:8px solid var(--gold);padding:22px 24px;border-radius:8px;box-shadow:var(--shadow);margin-bottom:25px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px;box-shadow:var(--shadow)}
+  .card p:last-child{margin-bottom:0}
+  .card strong{color:var(--cocoa)}
+  .fact{border-left:7px solid var(--green);background:#edf7f1;padding:15px 18px;border-radius:7px;margin:15px 0}
+  .analysis{border-left:7px solid var(--blue);background:#eef6fb;padding:15px 18px;border-radius:7px;margin:15px 0}
+  .pending{border-left:7px solid var(--danger);background:#fff0f1;padding:15px 18px;border-radius:7px;margin:15px 0}
+  .label{font-size:.84em;font-weight:800;letter-spacing:.03em;text-transform:uppercase;display:block;margin-bottom:3px}
+  .flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin:20px 0}
+  .flow .step{flex:1 1 145px;background:var(--cocoa);color:#fff;padding:16px;border-radius:9px;text-align:center;font-weight:700;display:flex;align-items:center;justify-content:center;min-height:78px}
+  .arrow{align-self:center;font-size:2rem;color:var(--gold);font-weight:900}
+  table{width:100%;border-collapse:collapse;background:#fff;font-size:1em;margin:15px 0;min-width:680px}
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow)}
+  th,td{border:1px solid var(--line);padding:13px;text-align:left;vertical-align:top}
+  th{background:var(--cocoa);color:#fff}
+  tr:nth-child(even){background:#fff8ef}
+  ul,ol{padding-left:1.35em}
+  li{margin:7px 0}
+  .big-number{font-size:2.4rem;color:var(--cocoa);font-weight:800;display:block;line-height:1}
+  .quote{font-size:1.25em;font-weight:700;color:var(--cocoa);border-left:5px solid var(--gold);padding:12px 18px;margin:20px 0;background:#fff8e9}
+  details{background:#fff;border:1px solid var(--line);border-radius:8px;margin:10px 0;box-shadow:var(--shadow)}
+  summary{cursor:pointer;font-weight:800;font-size:1.08em;padding:16px}
+  details > div{padding:0 18px 16px}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.legend span{padding:6px 10px;border-radius:6px;font-weight:700}.l-fact{background:#edf7f1;color:#164936}.l-analysis{background:#eef6fb;color:#154c69}.l-pending{background:#fff0f1;color:#8c2f39}
+  .source-list li{margin-bottom:8px}
+  footer{background:var(--cocoa);color:#fff;padding:30px 0 45px} footer a{color:#f9d27b}
+  .small{font-size:.92em;color:var(--muted)}
+  @media (max-width:700px){body{font-size:18px}.wrap{padding-left:18px;padding-right:18px}.tools{position:static}.arrow{display:none}.flow .step{flex-basis:100%}table{font-size:.98em}}
+  @media print{.tools,nav{display:none}body{font-size:14pt}header{color:#000;background:#fff;border:1px solid #000}.card,.intro{box-shadow:none}}
+
+  .doc-header{background:linear-gradient(135deg,var(--cocoa),#2b1813);color:#fff;padding:28px 0;border-bottom:8px solid var(--gold)}
+  .doc-header h1{font-size:clamp(2rem,4vw,3.4rem);margin-bottom:8px}
+  .doc-main{padding:32px 0 65px}
+  .doc-content{background:#fff;border:1px solid var(--line);border-radius:10px;padding:clamp(22px,4vw,52px);box-shadow:var(--shadow)}
+  .doc-content h1{color:var(--cocoa);font-size:clamp(2rem,4vw,3.2rem);line-height:1.12}
+  .doc-content h2{border-bottom:3px solid var(--gold);padding-bottom:8px;margin-top:38px}
+  .doc-content h3{margin-top:28px}
+  .doc-content img{max-width:100%;height:auto}
+  .doc-content blockquote{border-left:7px solid var(--gold);background:#fff8e9;padding:14px 20px;margin:20px 0;color:var(--cocoa);font-weight:700}
+  .doc-content code{background:#f2eadf;padding:2px 5px;border-radius:4px}
+  .doc-content pre{overflow:auto;background:#2b211c;color:#fff;padding:16px;border-radius:7px}
+  .doc-content table{min-width:680px}
+  .back{display:inline-block;margin-top:10px;color:#fff;font-weight:700}
+</style></head>
+<body><a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
+<header class="doc-header"><div class="wrap"><div class="eyebrow">Documentação estratégica da Massapê</div><h1>Dossiê documental — Massapê e Mário Wanderley</h1><a class="back" href="index.html">← Voltar ao painel principal</a></div></header>
+<nav aria-label="Navegação principal"><div class="wrap"><a href="index.html">Painel principal</a><a href="#conteudo">Ir para o conteúdo</a></div></nav>
+<main id="conteudo" class="doc-main"><div class="wrap"><article class="doc-content"><h1 id="dossie-documental-final-massape-chocolateria-massape-chocolates-e-mario-wanderley">Dossiê documental final — Massapê Chocolateria / Massapê Chocolates e Mário Wanderley</h1>
+<p><strong>Data-base das fontes:</strong> consultas e publicações verificadas nos relatórios de setembro de 2026.<br />
+<strong>Natureza:</strong> dossiê editorial documental para subsidiar o novo site, conteúdo institucional e solicitação de materiais à empresa.<br />
+<strong>Critério editorial:</strong> toda afirmação factual é acompanhada de fonte próxima. As categorias usadas são <strong>confirmado</strong>, <strong>secundário</strong>, <strong>necessita validação</strong> e <strong>não confirmado</strong>. Ausência de evidência não é tratada como prova de inexistência.</p>
+<blockquote>
+<p><strong>Nota de escopo.</strong> Este documento não é registro empresarial, laudo técnico de produto, auditoria jurídica de marca, prova de titularidade de imagens nem inventário de estoque. A expressão “atual” significa apenas que a informação apareceu em canal público recente ou foi indicada pela marca no recorte pesquisado.</p>
+</blockquote>
+<h2 id="1-resumo-executivo">1. Resumo executivo</h2>
+<p>A Massapê se apresenta publicamente como <strong>“Massapê Chocolateria | Bean-to-bar”</strong>, com a bio <strong>“Chocolate artesanal de Pernambuco, da amêndoa à barra. Criado e produzido por @mwchocolate”</strong> e canal de pedidos por WhatsApp. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a> A própria comunicação sustenta quatro eixos: produção artesanal, bean-to-bar/“da amêndoa à barra”, associação com Pernambuco e experiência sensorial. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">1</a></p>
+<p>Mário Wanderley é o profissional associado à marca pelo perfil oficial. A documentação pública o descreve como confeiteiro, chocolateiro, barista e chocolate maker; uma página institucional do Senac informa que ele criou a Massapê Chocolateria em 2021. <a href="http://www.pe.senac.br/confeitaria/index.html" title="Feira de Confeitaria — perfil institucional de Mário Wanderley e Massapê Chocolateria">4</a> A trajetória anterior documentada inclui cerca de 20 anos de atuação declarada como fisioterapeuta em UTIs, aprendizagem na cozinha do buffet da mãe, a marca pessoal Mário Wanderley Doce e Chocolate, atuação como chef pâtissier e sócio do Mon Cher Café et Pâtisserie, participação no reality <em>Que Seja Doce</em> (GNT) e atividades de ensino, degustação e workshops. <a href="http://www.pe.senac.br/alunos-de-gastronomia-da-faculdade-senac-fazem-degustacao-sensorial-do-chocolate-rosa/" title="Alunos de Gastronomia fazem degustação sensorial do chocolate rosa — Senac Pernambuco">3</a><a href="https://faculdadesenacpe.edu.br/faculdade-senac-pe-realiza-segunda-edicao-do-gastro-meeting" title="Faculdade Senac PE realiza segunda edição do Gastrô Meeting — oficina bean-to-bar">9</a></p>
+<p>A linha de produtos mais recente localizada em fonte da própria marca é a apresentada na FENEARTE 2026: 100%, 85%, 70%, 60%, Pé de Moleque 55%, 38% vegano, 32% e Chocolate Branco. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">15</a> Em publicação posterior, a marca informou que Canjiquinha e Pé de Moleque permaneceriam fixados no cardápio durante o ano todo. <a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Canjiquinha e Pé de Moleque fixados no cardápio — Massapê">17</a> Esses dados não substituem catálogo técnico: pesos, preços, ingredientes, alergênicos, validade, estoque e disponibilidade fora dos eventos precisam ser confirmados.</p>
+<p>A origem do cacau na Fazenda Cruz de Malta, em Água Preta/PE, e detalhes como seleção acima de 20 °Brix aparecem em relatos secundários de 2021. <a href="http://www.carlomockli.com/2021/08/cacau-fino-da-fazenda-cruz-de-malta.html" title="Cacau fino da Fazenda Cruz de Malta, Água Preta-PE — Carlo Möckli/Doce Ciência">5</a> Há divergência entre fontes quanto à área e ao volume da fazenda. A documentação institucional do Senac confirma atividades pedagógicas sobre colheita, fermentação, secagem, torra, moagem e produção de chocolate quente, mas isso não autoriza descrever um procedimento operacional comercial da Massapê. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">8</a></p>
+<p>O acervo público é rico em referências de barras, embalagem, frutos de cacau, fazenda, feiras, quiosque, aulas, entrevistas e parceiros. Porém, nenhum item foi localizado com licença aberta, Creative Commons ou domínio público. A presença online, inclusive a publicação pela própria marca, não equivale automaticamente a cessão para um novo site ou publicidade. <a href="https://www.instagram.com/massapechocolates/" title="Acervo público de referência visual da Massapê — direitos não presumidos">34</a></p>
+<h3 id="sintese-de-publicacao-segura">Síntese de publicação segura</h3>
+<ul>
+<li><strong>Pode ser afirmado documentalmente:</strong> a marca usa os termos “chocolate artesanal de Pernambuco”, “bean-to-bar”, “da amêndoa à barra” e “criado e produzido por @mwchocolate”. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></li>
+<li><strong>Pode ser narrado com atribuição:</strong> o Senac informa criação da Massapê em 2021; Mário tem trajetória pública em fisioterapia, confeitaria, chocolate, ensino e eventos. <a href="http://www.pe.senac.br/confeitaria/index.html" title="Feira de Confeitaria — perfil institucional de Mário Wanderley e Massapê Chocolateria">3</a></li>
+<li><strong>Deve ser tratado como histórico/secundário:</strong> 45%, 70% e 100% degustados em 2021; Fazenda Cruz de Malta como origem de lotes daquela fase; notas sensoriais e critério de Brix. <a href="http://www.carlomockli.com/2021/08/cacau-fino-da-fazenda-cruz-de-malta.html" title="Cacau fino da Fazenda Cruz de Malta, Água Preta-PE — Carlo Möckli/Doce Ciência">5</a></li>
+<li><strong>Deve receber validação antes de ir ao site:</strong> nome jurídico, fundador/proprietário, catálogo completo, preços, ficha técnica, origem atual por lote, processo fabril, endereço, pontos de venda, prêmios, claim “primeiro” e todas as autorizações de imagem e direitos.</li>
+</ul>
+<h2 id="2-nota-sobre-limitacoes-de-acesso-a-instagram-e-threads">2. Nota sobre limitações de acesso a Instagram e Threads</h2>
+<p>O perfil oficial <strong>@massapechocolates</strong> estava público na consulta e permitiu verificar bio, nome exibido, destaques, posts e Reels acessíveis. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a> O perfil <strong>@mwchocolate</strong> mostrava o nome “Mario Wanderley”, mas estava privado; feed, destaques, posts antigos, links e descrição interna não puderam ser verificados. <a href="https://www.instagram.com/mwchocolate/" title="Perfil de Mário Wanderley — Instagram, privado na consulta">2</a> O Threads vinculado ao perfil da marca exigiu login e não permitiu confirmar publicações ou atividade. <a href="https://www.threads.com/@massapechocolates" title="Threads vinculado ao perfil da Massapê — acesso aberto incompleto">24</a></p>
+<p>Datas, seguidores, URLs CDN de imagens e conteúdo de destaques podem mudar, ser removidos ou exigir login. Os títulos de destaques — por exemplo, “momentos TV”, “globo comunidade”, “FENEARTE 2026”, “Parceiros” e “ciência e choco” — comprovam a existência dos rótulos observados, mas não identificam sozinhos programa, data, participante, arquivo original ou licença. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></p>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> A lista completa de contas oficiais, administradores e histórico de todos os canais sociais.</p>
+<h2 id="3-identidade-da-marca">3. Identidade da marca</h2>
+<h3 id="31-nome-contas-e-posicionamento-observavel">3.1 Nome, contas e posicionamento observável</h3>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Evidência documental</th>
+<th>Leitura editorial segura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nome exibido</td>
+<td>“Massapê Chocolateria | Bean-to-bar” no Instagram oficial. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></td>
+<td>Usar “Massapê Chocolateria” como nome público; apresentar “Massapê Chocolates” como variante de uso, não como razão social.</td>
+</tr>
+<tr>
+<td>Usuário principal</td>
+<td><code>@massapechocolates</code>. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></td>
+<td>Canal primário encontrado para marca e pedidos.</td>
+</tr>
+<tr>
+<td>Pessoa associada</td>
+<td>Bio indica “Criado e produzido por @mwchocolate”. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></td>
+<td>Associar a criação/produção autoral de Mário sem convertê-lo automaticamente em proprietário jurídico.</td>
+</tr>
+<tr>
+<td>Posicionamento</td>
+<td>“Chocolate artesanal de Pernambuco, da amêndoa à barra”. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></td>
+<td>Formulação institucional verificável e próxima da comunicação original.</td>
+</tr>
+<tr>
+<td>Canal de pedidos</td>
+<td>Link de WhatsApp no perfil; o relatório identificou o endereço <code>wa.me/8196966156</code>. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></td>
+<td>Publicar apenas após reconfirmar número, horário, catálogo, prazo e política de atendimento.</td>
+</tr>
+<tr>
+<td>Região</td>
+<td>Pernambuco é explicitamente citado na bio e na embalagem observada. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">1</a></td>
+<td>É seguro dizer que a marca se apresenta como pernambucana. Não inferir cidade de produção.</td>
+</tr>
+<tr>
+<td>Nome empresarial/legal</td>
+<td>Não apareceu nas fontes abertas consultadas.</td>
+<td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-territorios-de-comunicacao">3.2 Territórios de comunicação</h3>
+<p><strong>Artesanal.</strong> O termo aparece na bio e em comunicações associadas à marca. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">1</a><br />
+<strong>Bean-to-bar / da amêndoa à barra.</strong> É o eixo técnico mais consistente da comunicação pública, sem que isso prove que a empresa execute internamente cada etapa em todos os lotes. <a href="http://www.pe.senac.br/confeitaria/index.html" title="Feira de Confeitaria — perfil institucional de Mário Wanderley e Massapê Chocolateria">1</a><br />
+<strong>Pernambucanidade.</strong> A bio, a embalagem histórica e publicações de 2021 associam o produto a Pernambuco; a extensão “100% pernambucano” precisa ser delimitada por produto, lote e período. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">1</a><br />
+<strong>Sensorialidade.</strong> A marca e parceiros usam linguagem de degustação e sabores intensos/frutados; as notas de 2021 são avaliação de Carlo Möckli, não laudo ou promessa universal. <a href="https://www.instagram.com/p/DWUtcBdETMh/" title="Mercado Capitão e Massapê Chocolateria — evento e claim promocional">5</a><br />
+<strong>Proximidade regional.</strong> A voz pública combina termos técnicos com “família Massapê”, feiras, cafés, férias, “SEXTOU”, “lista massa” e convite direto à degustação. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></p>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Missão, visão, valores, público prioritário, proposta de valor, manifesto, slogan permanente e manual de tom de voz.</p>
+<h3 id="33-identidade-visual-observavel">3.3 Identidade visual observável</h3>
+<p>A embalagem reproduzida em matéria de 2021 apresenta o nome <strong>MASSAPÊ</strong> em tipografia serifada de alto contraste, desenho de folhas e frutos de cacau, motivo de arcos concêntricos e indicação de <strong>70%</strong>. Também aparece o texto curvo <strong>“chocolate feito à mão | 100% pernambucano”</strong>. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a> O fundo é geométrico e multicolorido, com tons aproximados de azul-petróleo, azul-marinho, verde-oliva, marrom, laranja, vermelho e creme. Essas cores são observação visual aproximada, não especificação técnica.</p>
+<p>A percepção de um consumidor de que a embalagem lembra um folheto de cordel registra recepção pública, mas não prova que “cordel” seja conceito oficial da marca. <a href="https://www.instagram.com/reel/DEOCOiSuD5a/" title="Quiosque RioMar e família de chocolates — Massapê">48</a></p>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Manual de identidade, códigos HEX/RGB/CMYK/Pantone, tipografias, versões do logo, autoria do rótulo, significado dos arcos/símbolo e confirmação de quais embalagens estão vigentes.</p>
+<h3 id="34-nome-massape-fato-linguistico-e-hipotese-de-marca">3.4 Nome “Massapê”: fato linguístico e hipótese de marca</h3>
+<p>Michaelis define <strong>massapé/massapê</strong> como terra argilosa, geralmente preta, fértil e adequada à cultura da cana; Dicio registra terra fértil, terreno lamacento e a etimologia “massa + pé”. <a href="https://www.dicio.com.br/massape/" title="Verbete massapé — Dicio">25</a> Essa é a definição linguística documentada.</p>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> A explicação autoral para a escolha do nome. A associação editorial entre solo, fertilidade, Nordeste, Pernambuco e origem do cacau deve ser apresentada apenas como hipótese até que Mário ou a empresa a confirmem.</p>
+<h3 id="35-alegacoes-que-exigem-cautela">3.5 Alegações que exigem cautela</h3>
+<p>A frase <strong>“A Massapê Chocolateria é o primeiro chocolate artesanal de Pernambuco feito do cacau à barra”</strong> apareceu em publicação de parceiro em março de 2026. <a href="https://www.instagram.com/p/DWUtcBdETMh/" title="Mercado Capitão e Massapê Chocolateria — evento e claim promocional">30</a> Ela deve ser tratada como alegação promocional do parceiro, não como fato histórico comprovado. O termo “primeiro” exige documentação comparativa e aprovação jurídica/comercial.</p>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Base documental para as expressões “primeiro chocolate artesanal de Pernambuco”, “primeiro bean-to-bar de Pernambuco”, “100% pernambucano” como claim universal, “sem conservantes”, “sem aromatizantes” ou qualquer alegação de qualidade, sustentabilidade, saúde ou exclusividade.</p>
+<h2 id="4-quem-e-mario-wanderley">4. Quem é Mário Wanderley</h2>
+<p>O nome profissional publicamente localizado é <strong>Mário Wanderley</strong>, também grafado “Mario Wanderley”. Não foi localizada confirmação aberta de nome civil completo. <a href="https://www.facebook.com/mario.wanderley.3/" title="Perfil pessoal de Mário Wanderley — formação e experiências autorreferidas">20</a></p>
+<p>Uma página pessoal pública do Facebook informa estudo de Fisioterapia em Terapia Intensiva na Faculdade Redentor e experiências no Hospital Esperança e no Hospital Agamenon Magalhães; são dados autorreferidos, não diploma ou registro profissional independente. <a href="https://www.facebook.com/mario.wanderley.3/" title="Perfil pessoal de Mário Wanderley — formação e experiências autorreferidas">20</a> Em entrevista de 2018 ao <em>Diário de Pernambuco</em>, Mário declarou ter trabalhado cerca de 20 anos como fisioterapeuta em UTIs antes de se dedicar às sobremesas. A mesma matéria atribui a origem na cozinha ao buffet de festas e casamentos mantido por sua mãe. <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Chef pernambucano vai participar de reality show de confeitaria — Diário de Pernambuco, 2018">3</a></p>
+<p>A transição para a confeitaria inclui cursos de técnicas de chocolate e bombons, a marca pessoal <strong>Mário Wanderley Doce e Chocolate</strong>, atuação documentada no Mon Cher Café et Pâtisserie e participação no reality <em>Que Seja Doce</em>, do GNT, em 2018. <a href="https://www.verbocomer.com.br/index.php/2017/07/13/mon-cher-cafe-et-patisserie-tem-lancamento-oficial/" title="Mon Cher Café et Pâtisserie tem lançamento oficial — Verbo Comer">3</a><a href="https://revistamalagueta.com.br/2017/06/09/belgica-franca-e-brasil-unidos-no-dia-dos-namorados-do-mon-cher/" title="Bélgica, França e Brasil unidos no Dia dos Namorados do Mon Cher — Revista Malagueta">22</a> A Revista Malagueta e o Verbo Comer o apresentam como chef pâtissier e sócio do Mon Cher em 2017. <a href="https://revistamalagueta.com.br/2017/06/09/belgica-franca-e-brasil-unidos-no-dia-dos-namorados-do-mon-cher/" title="Bélgica, França e Brasil unidos no Dia dos Namorados do Mon Cher — Revista Malagueta">21</a></p>
+<p>Carlo Möckli publicou, em 2015, registros de cursos em Recife e reproduziu comentário de Mário chamando-o de “mestre”; em 2021, Möckli o chamou de aluno e especialista em chocolate. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">23</a> Isso documenta uma relação formativa, mas não lista completa de cursos, carga horária ou certificados.</p>
+<p>O Senac o descreve como <strong>confeiteiro, chocolateiro, barista e chocolate maker</strong> e informa a criação da Massapê Chocolateria em 2021. <a href="http://www.pe.senac.br/confeitaria/index.html" title="Feira de Confeitaria — perfil institucional de Mário Wanderley e Massapê Chocolateria">4</a> A Faculdade Senac também registra Mário em palestra, visita técnica, workshop e oficina bean-to-bar. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">7</a><a href="https://faculdadesenacpe.edu.br/faculdade-senac-pe-realiza-segunda-edicao-do-gastro-meeting" title="Faculdade Senac PE realiza segunda edição do Gastrô Meeting — oficina bean-to-bar">9</a></p>
+<h3 id="formulacao-institucional-documental-sugerida">Formulação institucional documental sugerida</h3>
+<blockquote>
+<p>Mário Wanderley é o profissional associado à Massapê Chocolateria, marca que se apresenta como produtora de chocolate artesanal pernambucano, da amêndoa à barra. Sua trajetória pública reúne fisioterapia em terapia intensiva, confeitaria, chocolate, barismo, degustações, ensino e participação em eventos. O Senac informa que ele criou a Massapê Chocolateria em 2021. <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Chef pernambucano vai participar de reality show de confeitaria — Diário de Pernambuco, 2018">1</a><a href="http://www.pe.senac.br/confeitaria/index.html" title="Feira de Confeitaria — perfil institucional de Mário Wanderley e Massapê Chocolateria">4</a></p>
+</blockquote>
+<p>A formulação evita afirmar nome completo, cargo societário, prêmio, certificação, graduação em Gastronomia ou título de fundador legal sem documentação.</p>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Nome civil completo, data/local de nascimento, títulos profissionais preferidos, diplomas, certificações, lista integral de cursos, prêmios, resultado no <em>Que Seja Doce</em> e status atual de docência no Senac.</p>
+<h2 id="5-historia-documental-da-marca-e-da-trajetoria">5. História documental da marca e da trajetória</h2>
+<p>A história pública anterior à Massapê começa com a cozinha familiar e a mudança profissional narrada por Mário em 2018. A marca pessoal Mário Wanderley Doce e Chocolate aparece em perfil e página pública; o intervalo de 2012 a 2018 no perfil é autorrelato e se sobrepõe às datas hospitalares, portanto não fecha uma cronologia empresarial definitiva. <a href="https://www.facebook.com/mario.wanderley.3/" title="Perfil pessoal de Mário Wanderley — formação e experiências autorreferidas">20</a></p>
+<p>Em 2017, Mário aparece ligado ao Mon Cher Café et Pâtisserie, em Recife, em matérias que o apresentam como chef pâtissier e sócio. <a href="https://revistamalagueta.com.br/2017/06/09/belgica-franca-e-brasil-unidos-no-dia-dos-namorados-do-mon-cher/" title="Bélgica, França e Brasil unidos no Dia dos Namorados do Mon Cher — Revista Malagueta">21</a> Em 2018, o <em>Diário de Pernambuco</em> registrou sua participação no <em>Que Seja Doce</em>, associando sua trajetória autoral ao Mon Cher e à antiga marca pessoal. <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Chef pernambucano vai participar de reality show de confeitaria — Diário de Pernambuco, 2018">3</a></p>
+<p>Em 2019, Mário participou de palestra e degustação no Senac, além de oficinas de harmonização de café, chocolate e cerveja. <a href="https://www.diariodepernambuco.com.br/noticia/gastro/2019/01/evento-de-hamonizacao-de-cafe-com-chocolate-acontece-no-dia-26.html" title="Oficina de harmonização de café com chocolate acontece no dia 26 — Diário de Pernambuco">7</a><a href="https://www.sympla.com.br/evento/ekaeut-experience---harmonizacao-chocolates-belgas-mario-wanderley-mon-cher/602947" title="Ekäut Experience — Harmonização de chocolates belgas com Mário Wanderley">14</a> Em 2021, a documentação pública reúne visita técnica a fazenda de cacau, degustação de produtos Massapê, publicação da marca com Carlo Möckli e o perfil institucional do Senac que informa a criação da Massapê naquele ano. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">4</a><a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">8</a></p>
+<p>A partir de 2022, há registros de entrevista na Rádio Folha, kits sazonais, participação em eventos, workshops, quiosque RioMar, Gastrô Meetings, FENEARTE, Mercado Capitão, colaboração com Roasteria e catálogo de percentuais apresentado em 2026. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">12</a><a href="https://www.instagram.com/p/CpF9RStOu59/" title="Workshop com Mário Wanderley e Massapê na Faculdade Senac — Cristianne Barros">17</a><a href="https://www.sympla.com.br/evento/degustacao-de-chas-e-chocolates-especiais/2579402" title="Degustação de Chás e Chocolates Especiais — Kaffe/O Chá da Casa">29</a></p>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Dia/mês de fundação, local do primeiro ateliê, transição formal da marca pessoal para Massapê, razão social, CNPJ, titularidade de marca e narrativa histórica aprovada.</p>
+<h2 id="6-linha-do-tempo">6. Linha do tempo</h2>
+<table>
+<thead>
+<tr>
+<th>Ano/fase</th>
+<th>Marco documentado</th>
+<th>Grau e fonte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1989</td>
+<td>Perfil pessoal informa estudos em colégios do Recife.</td>
+<td>Secundário/autorreferido. <a href="https://www.facebook.com/mario.wanderley.3/" title="Perfil pessoal de Mário Wanderley — formação e experiências autorreferidas">20</a></td>
+</tr>
+<tr>
+<td>2000–2014</td>
+<td>Perfil pessoal informa atuação em hospitais; a entrevista de 2018 resume cerca de 20 anos em UTIs.</td>
+<td>Secundário/autorreferido; cronologia sobreposta. <a href="https://www.facebook.com/mario.wanderley.3/" title="Perfil pessoal de Mário Wanderley — formação e experiências autorreferidas">3</a></td>
+</tr>
+<tr>
+<td>Antes de 2018</td>
+<td>Trabalho na cozinha do buffet da mãe e mudança para sobremesas.</td>
+<td>Confirmado como declaração em entrevista. <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Chef pernambucano vai participar de reality show de confeitaria — Diário de Pernambuco, 2018">3</a></td>
+</tr>
+<tr>
+<td>2012–2018</td>
+<td>Perfil pessoal registra Mário Wanderley Doce e Chocolate como sociedade proprietária.</td>
+<td>Secundário/autorreferido; não é registro societário. <a href="https://www.facebook.com/mario.wanderley.3/" title="Perfil pessoal de Mário Wanderley — formação e experiências autorreferidas">20</a></td>
+</tr>
+<tr>
+<td>Jun. 2015</td>
+<td>Cursos em Recife com Carlo Möckli documentados em publicação do professor.</td>
+<td>Secundário; curso/certificado não especificados. <a href="http://www.carlomockli.com/2015/06/inesqueciveis-momentos-nos-cursos-em.html" title="Inesquecíveis momentos nos cursos em Recife — Carlo Möckli">23</a></td>
+</tr>
+<tr>
+<td>Jun.–jul. 2017</td>
+<td>Mário aparece como chef pâtissier e sócio do Mon Cher Café et Pâtisserie.</td>
+<td>Imprensa gastronômica local. <a href="https://revistamalagueta.com.br/2017/06/09/belgica-franca-e-brasil-unidos-no-dia-dos-namorados-do-mon-cher/" title="Bélgica, França e Brasil unidos no Dia dos Namorados do Mon Cher — Revista Malagueta">21</a></td>
+</tr>
+<tr>
+<td>2–6 abr. 2018</td>
+<td>Participação anunciada no <em>Que Seja Doce</em>, quarta temporada do GNT; matéria informa primeira vez na TV.</td>
+<td>Confirmada participação; resultado não informado. <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Chef pernambucano vai participar de reality show de confeitaria — Diário de Pernambuco, 2018">3</a></td>
+</tr>
+<tr>
+<td>2018–2019</td>
+<td>Oficinas de harmonização de café/chocolate e cerveja/chocolate no Mon Cher e Ekäut.</td>
+<td>Eventos históricos confirmados. <a href="https://www.sympla.com.br/evento/ekaeut-experience---harmonizacao-chocolates-belgas-mario-wanderley-mon-cher/602947" title="Ekäut Experience — Harmonização de chocolates belgas com Mário Wanderley">13</a></td>
+</tr>
+<tr>
+<td>15 mar. 2019</td>
+<td>Palestra e degustação sensorial no Senac, com chocolates Barry Callebaut/Ruby.</td>
+<td>Confirmado; atividade não era catálogo Massapê. <a href="http://www.pe.senac.br/alunos-de-gastronomia-da-faculdade-senac-fazem-degustacao-sensorial-do-chocolate-rosa/" title="Alunos de Gastronomia fazem degustação sensorial do chocolate rosa — Senac Pernambuco">7</a></td>
+</tr>
+<tr>
+<td>28 jan. 2021</td>
+<td>Visita técnica ao Engenho Conceição de Cima, com Mário como professor/chocolatier.</td>
+<td>Confirmado pelo Senac; local e fazenda não devem ser confundidos. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">8</a></td>
+</tr>
+<tr>
+<td>2021</td>
+<td>Perfil da Feira de Confeitaria Senac informa criação da Massapê Chocolateria.</td>
+<td>Confirmado como informação institucional; não é prova registral. <a href="http://www.pe.senac.br/confeitaria/index.html" title="Feira de Confeitaria — perfil institucional de Mário Wanderley e Massapê Chocolateria">4</a></td>
+</tr>
+<tr>
+<td>5–6 ago. 2021</td>
+<td>Degustação de 45%, 70% e 100% de massa de cacau no Café do Brejo, relatada por Carlo Möckli.</td>
+<td>Histórico/secundário. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a></td>
+</tr>
+<tr>
+<td>12 ago. 2021</td>
+<td>Massapê publica encontro com Möckli e linguagem “Bean-to-bar 100% Pernambucano”.</td>
+<td>Declaração da marca. <a href="https://www.instagram.com/p/CSevAtNri8e/" title="Publicação da Massapê sobre degustação com Carlo Möckli — 12 ago. 2021">27</a></td>
+</tr>
+<tr>
+<td>20 ago. 2021</td>
+<td>Möckli publica visita e relação com Fazenda Cruz de Malta, seleção e Brix.</td>
+<td>Secundário; origem e parâmetros atuais não confirmados. <a href="http://www.carlomockli.com/2021/08/cacau-fino-da-fazenda-cruz-de-malta.html" title="Cacau fino da Fazenda Cruz de Malta, Água Preta-PE — Carlo Möckli/Doce Ciência">6</a></td>
+</tr>
+<tr>
+<td>5 ago. 2021 / 11 ago. 2022</td>
+<td>Áudios/matéria da Folha apresentam Mário em café e chocolate; as páginas têm datas diferentes.</td>
+<td>Confirmado por cada página; relação entre gravações não resolvida. <a href="https://www.folhape.com.br/radio-folha/cafe-e-chocolate-saiba-as-principais-semelhancas-e-diferencas/236737/" title="Café e chocolate: saiba as principais semelhanças e diferenças — Folha/Rádio Folha">11</a></td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Kit de Natal, página histórica no Facebook e aparições/entrevista em mídia.</td>
+<td>Histórico. <a href="https://www.facebook.com/p/M%C3%A1rio-Wanderley-Doce-e-Chocolate-100063475846029/" title="Mário Wanderley Doce e Chocolate — Facebook">19</a><a href="https://www.folhape.com.br/radio-folha/cafe-e-chocolate-saiba-as-principais-semelhancas-e-diferencas/236737/" title="Café e chocolate: saiba as principais semelhanças e diferenças — Folha/Rádio Folha">12</a></td>
+</tr>
+<tr>
+<td>25 fev. 2023</td>
+<td>Workshop com Mário, turmas e Massapê na Faculdade Senac.</td>
+<td>Fonte de participante; confirmado como registro de workshop. <a href="https://www.instagram.com/p/CpF9RStOu59/" title="Workshop com Mário Wanderley e Massapê na Faculdade Senac — Cristianne Barros">28</a></td>
+</tr>
+<tr>
+<td>20 fev. 2024</td>
+<td>Oficina “Desvendando os Segredos do Chocolate bean-to-bar”, com Mário (Massapê) e Cristiane Barros.</td>
+<td>Confirmado pela Faculdade Senac. <a href="https://faculdadesenacpe.edu.br/faculdade-senac-pe-realiza-segunda-edicao-do-gastro-meeting" title="Faculdade Senac PE realiza segunda edição do Gastrô Meeting — oficina bean-to-bar">9</a></td>
+</tr>
+<tr>
+<td>2024</td>
+<td>Pontos de venda listados; caixa de Páscoa, quiosque RioMar, 3º Gastrô Meeting e degustação de chás/chocolates.</td>
+<td>Histórico, conforme evento. <a href="https://www.instagram.com/massapechocolates/p/DaxZ6ufDtQz/" title="Barra Canjiquinha — composição publicada pela Massapê">10</a><a href="https://www.sympla.com.br/evento/degustacao-de-chas-e-chocolates-especiais/2579402" title="Degustação de Chás e Chocolates Especiais — Kaffe/O Chá da Casa">17</a></td>
+</tr>
+<tr>
+<td>2024–2025</td>
+<td>Entrevista da FENEARTE 2024 publicada em Reel e colaboração Massapê–Roasteria/RioMar.</td>
+<td>Confirmado como publicação/ação; direitos e vigência dependem de validação. <a href="https://www.instagram.com/reel/DFF1Tp2usJI/" title="Colaboração Massapê–Roasteria e encerramento de temporada no RioMar">31</a></td>
+</tr>
+<tr>
+<td>2026</td>
+<td>Catálogo de oito itens na FENEARTE; Canjiquinha e Pé de Moleque declarados fixos no cardápio.</td>
+<td>Confirmado como comunicação da marca no recorte pesquisado. <a href="https://www.instagram.com/massapechocolates/p/DaxZ6ufDtQz/" title="Barra Canjiquinha — composição publicada pela Massapê">15</a><a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Canjiquinha e Pé de Moleque fixados no cardápio — Massapê">17</a></td>
+</tr>
+<tr>
+<td>Fase atual consultada</td>
+<td>Perfil da marca público; perfil pessoal privado; pedidos indicados por WhatsApp/Instagram.</td>
+<td>Confirmado na data da consulta; dados podem mudar. <a href="https://www.instagram.com/mwchocolate/" title="Perfil de Mário Wanderley — Instagram, privado na consulta">1</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-produtos-atuais-no-recorte-e-historicos">7. Produtos — atuais no recorte e históricos</h2>
+<h3 id="71-linha-apresentada-pela-marca-na-fenearte-2026">7.1 Linha apresentada pela marca na FENEARTE 2026</h3>
+<table>
+<thead>
+<tr>
+<th>Produto/linha</th>
+<th>Informação pública</th>
+<th>Status editorial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intenso 100%</td>
+<td>Tablete/chocolate intenso de 100%; publicação o associa ao “sabor raiz do cacau”. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">15</a></td>
+<td>Atual no catálogo da feira; fora da feira, <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Intenso 85%</td>
+<td>Chocolate intenso de 85%. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">15</a></td>
+<td>Apresentado na feira; disponibilidade atual fora do evento: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Chocolate 70%</td>
+<td>Percentual listado na feira; em 2021 foi degustado como intenso. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">5</a></td>
+<td>Histórico e reapresentado em 2026; ficha atual: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Chocolate 60%</td>
+<td>Percentual listado na feira. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">15</a></td>
+<td>Ficha, categoria e disponibilidade: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Pé de Moleque Pernambucano 55%</td>
+<td>Cravo, canela, erva-doce, castanha de caju, demerara/rapadura; a marca declara vegano, sem leite, sem glúten e sem aditivos químicos ou conservantes e vincula a receita à avó Maria Albertina. <a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Canjiquinha e Pé de Moleque fixados no cardápio — Massapê">17</a></td>
+<td>Lançado em 2025; marca informou permanência no cardápio em 2026. Confirmar ficha e status atual.</td>
+</tr>
+<tr>
+<td>Canjiquinha</td>
+<td>Barra/sabor regional; a marca publicou composição em 2026 e disse que ficaria fixado no cardápio. <a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Canjiquinha e Pé de Moleque fixados no cardápio — Massapê">16</a></td>
+<td>Contínuo segundo a marca no período pesquisado; validar nome oficial e ficha.</td>
+</tr>
+<tr>
+<td>Chocolate 38% vegano</td>
+<td>Percentual e atributo “vegano” aparecem no catálogo da feira. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">15</a></td>
+<td>Ficha, ingredientes e disponibilidade: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Chocolate 32%</td>
+<td>Percentual listado; a fonte não nomeia categoria nem ingredientes. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">15</a></td>
+<td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Não chamar de ao leite nem de vegano sem rótulo.</td>
+</tr>
+<tr>
+<td>Chocolate Branco</td>
+<td>Incluído na família Massapê e no catálogo da feira. <a href="https://www.instagram.com/reel/DEOCOiSuD5a/" title="Quiosque RioMar e família de chocolates — Massapê">15</a></td>
+<td>Continuidade pós-feira: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="72-itens-e-linhas-historicas">7.2 Itens e linhas históricas</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Evidência</th>
+<th>Tratamento editorial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ao leite 45%</td>
+<td>Degustação de 2021 relatada por Carlo Möckli. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a></td>
+<td>Produto histórico; ingredientes, peso e venda atual: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Intenso 70%</td>
+<td>Degustação de 2021 e catálogo de 2026. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">5</a></td>
+<td>As notas de chá preto, terra, tabaco suave, torrado, caramelo, café e castanhas são avaliação do autor. Não transformar em promessa técnica.</td>
+</tr>
+<tr>
+<td>Massa de cacau/tablete 100%</td>
+<td>Degustação de 2021; descritores de acidez, fruta, limão, ameixa, avelã, amêndoa, madeira, canela e cravo. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a></td>
+<td>Material histórico e sensorial de terceiro; status atual: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Caixa especial de Páscoa</td>
+<td>Caixa com cinco sensoriais, anunciada em março de 2024, com pedidos por WhatsApp. <a href="https://www.instagram.com/reel/C4yDBY6O2AJ/" title="Caixa especial de Páscoa com cinco sensoriais — Massapê">18</a></td>
+<td>Sazonal/histórica; edição atual: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Kit de Natal</td>
+<td>Kit com barras, pedido por direct/WhatsApp, pagamento antecipado e entrega/retirada. <a href="https://www.instagram.com/p/Cl1L86oAoGt/" title="Kit de Natal com barras — Massapê">19</a></td>
+<td>Sazonal/histórico de 2022.</td>
+</tr>
+<tr>
+<td>Ovos, kits e outros itens</td>
+<td>Comentários e indexações sugeriram produtos/preços, mas não há ficha acessível suficiente.</td>
+<td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Não transformar em catálogo permanente:</strong> a existência de uma foto ou comentário não prova estoque, preço, receita, validade ou continuidade. A comunicação pública sustenta categorias de barras/tabletes por percentual, edições regionais, caixas de degustação, kits sazonais e presença em feiras. <a href="https://www.instagram.com/reel/C4yDBY6O2AJ/" title="Caixa especial de Páscoa com cinco sensoriais — Massapê">15</a></p>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Existência atual de bombons, trufas, ovos, fondue, nibs, pistache, cafés, presentes, kits corporativos, consultoria ou qualquer produto não listado acima.</p>
+<h2 id="8-processo-e-origem-do-cacau">8. Processo e origem do cacau</h2>
+<h3 id="81-o-que-a-marca-afirma-e-o-que-o-relatorio-consegue-sustentar">8.1 O que a marca afirma e o que o relatório consegue sustentar</h3>
+<p>É seguro reproduzir que a marca se apresenta como <strong>bean-to-bar</strong> e <strong>“da amêndoa à barra”</strong>. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a> O Senac descreve Mário como alguém com experiência em todo o processamento da cadeia, em contexto de perfil institucional e formação. <a href="http://www.pe.senac.br/confeitaria/index.html" title="Feira de Confeitaria — perfil institucional de Mário Wanderley e Massapê Chocolateria">4</a> Isso não prova que todos os lotes atuais sejam produzidos com a mesma sequência, equipamento ou origem.</p>
+<p>O vínculo com a <strong>Fazenda Cruz de Malta</strong>, em Água Preta, Mata Sul de Pernambuco, aparece em textos de Carlo Möckli de agosto de 2021, que associam a fazenda aos chocolates degustados e descrevem Mário selecionando frutos e solicitando cacau fino. <a href="http://www.carlomockli.com/2021/08/cacau-fino-da-fazenda-cruz-de-malta.html" title="Cacau fino da Fazenda Cruz de Malta, Água Preta-PE — Carlo Möckli/Doce Ciência">5</a> O Senac registra outra atividade, no Engenho Conceição de Cima, em Escada, e reproduz associação à Cruz de Malta. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">8</a> As duas referências devem permanecer separadas.</p>
+<p>Há divergência: Möckli menciona 20 hectares e 26 toneladas/ano; o texto do Senac reproduz 10 hectares de cacaueiros e 20 toneladas/ano. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">6</a></p>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Fazenda ou produtor que fornece cada lote atual, variedade/genética, exclusividade, contrato, volume, rastreabilidade, localização corrigida, hectares e produção anual.</p>
+<h3 id="82-etapas-documentadas-sem-extrapolacao">8.2 Etapas documentadas sem extrapolação</h3>
+<table>
+<thead>
+<tr>
+<th>Etapa</th>
+<th>Evidência</th>
+<th>Status para o site</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seleção/origem</td>
+<td>Cacau brasileiro na comunicação; origem Cruz de Malta e seleção acima de 20 °Brix em relato de 2021. <a href="http://www.carlomockli.com/2021/08/cacau-fino-da-fazenda-cruz-de-malta.html" title="Cacau fino da Fazenda Cruz de Malta, Água Preta-PE — Carlo Möckli/Doce Ciência">1</a></td>
+<td>Linguagem geral confirmada; fornecedor e Brix atuais: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Colheita</td>
+<td>Abordada em visita técnica e relato de fazenda. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">6</a></td>
+<td>Conteúdo pedagógico/histórico; procedimento comercial: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Fermentação</td>
+<td>Abordada pelo Senac; relato secundário menciona lote fermentado para Mário. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">6</a></td>
+<td>Parâmetros, duração e controle: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Secagem</td>
+<td>Registrada em palestra/visita. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">7</a></td>
+<td>Método atual da Massapê: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Torra</td>
+<td>Registrada em visita; Möckli relaciona torra a resultado sensorial. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">5</a></td>
+<td>Curva, equipamento, tempo e temperatura: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Quebra/descascamento/trituração</td>
+<td>Descritos por relato de atividade didática. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">8</a></td>
+<td>Fluxo padrão comercial: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Moagem</td>
+<td>Tema de palestra de Mário. <a href="http://www.pe.senac.br/alunos-de-gastronomia-da-faculdade-senac-fazem-degustacao-sensorial-do-chocolate-rosa/" title="Alunos de Gastronomia fazem degustação sensorial do chocolate rosa — Senac Pernambuco">7</a></td>
+<td>Execução atual pela empresa: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Refino</td>
+<td>Não localizado procedimento público específico.</td>
+<td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Conchagem</td>
+<td>Citada por Möckli na avaliação do 70%, não como POP. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a></td>
+<td>Duração, equipamento e presença em todos os lotes: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Temperagem</td>
+<td>Não localizada fonte específica da Massapê.</td>
+<td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Moldagem</td>
+<td>Barras aparecem em fotografias, mas método não é descrito.</td>
+<td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Formulação</td>
+<td>Pé de Moleque e Canjiquinha têm dados publicados; a alegação de três ingredientes é histórica e incompleta. <a href="https://www.instagram.com/massapechocolates/p/DaxZ6ufDtQz/" title="Barra Canjiquinha — composição publicada pela Massapê">5</a><a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Canjiquinha e Pé de Moleque fixados no cardápio — Massapê">17</a></td>
+<td>Ingredientes, proporções e alergênicos de cada SKU: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Armazenamento/validade</td>
+<td>Armazenamento foi tema de palestra geral. <a href="http://www.pe.senac.br/alunos-de-gastronomia-da-faculdade-senac-fazem-degustacao-sensorial-do-chocolate-rosa/" title="Alunos de Gastronomia fazem degustação sensorial do chocolate rosa — Senac Pernambuco">7</a></td>
+<td>Procedimento de produto: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Embalagem</td>
+<td>Embalagem histórica observada em 2021; design atual não documentado. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a></td>
+<td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Não usar <strong>tree-to-bar</strong>: não foi localizada fonte que documente posse de fazenda, plantio pela Massapê ou controle da cadeia desde a árvore. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">1</a></p>
+<h2 id="9-servicos-encomendas-e-experiencias">9. Serviços, encomendas e experiências</h2>
+<h3 id="pedidos-e-pontos-de-venda">Pedidos e pontos de venda</h3>
+<ul>
+<li>A bio encaminha pedidos para WhatsApp; publicações também registram atendimento por direct/Instagram. <a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Canjiquinha e Pé de Moleque fixados no cardápio — Massapê">1</a></li>
+<li>Em 2022, kit de Natal era vendido por direct/WhatsApp, com pagamento antecipado, entrega paga pelo cliente ou retirada. <a href="https://www.instagram.com/p/Cl1L86oAoGt/" title="Kit de Natal com barras — Massapê">19</a></li>
+<li>Em 2024, caixa de Páscoa com cinco sensoriais tinha unidades remanescentes e pedido por WhatsApp. <a href="https://www.instagram.com/reel/C4yDBY6O2AJ/" title="Caixa especial de Páscoa com cinco sensoriais — Massapê">18</a></li>
+<li>A marca publicou lista histórica de cafés, lojas e restaurantes em janeiro de 2024. <a href="https://www.instagram.com/reel/C2kTlURu6pE/" title="Pontos de venda anunciados pela Massapê — 26 jan. 2024">33</a> A lista inclui Café do Brejo, Casa Dias, Casa Mendez, Celeste Café, Crabolando, Jazzlato, Kaffe, Paço 23, Solo Brewing, Suburbano Café, Reteteu Comida Honesta e The Black Angus.</li>
+<li>A marca anunciou quiosque temporário no RioMar até janeiro de 2025 e estande na FENEARTE 2026. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">48</a></li>
+<li>Mercado Capitão/Casa Capitão registrou ações públicas em março e maio de 2026; são eventos, não endereço permanente. <a href="https://www.instagram.com/p/DWUtcBdETMh/" title="Mercado Capitão e Massapê Chocolateria — evento e claim promocional">30</a></li>
+</ul>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Endereço atual, horários, estoque, prazo, frete, retirada, pedido mínimo, meios de pagamento, pontos de venda vigentes, domínio oficial e política comercial.</p>
+<h3 id="experiencias-documentadas">Experiências documentadas</h3>
+<table>
+<thead>
+<tr>
+<th>Experiência</th>
+<th>Data/contexto</th>
+<th>O que pode ser dito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Palestra e degustação sensorial</td>
+<td>Senac, mar. 2019. <a href="http://www.pe.senac.br/alunos-de-gastronomia-da-faculdade-senac-fazem-degustacao-sensorial-do-chocolate-rosa/" title="Alunos de Gastronomia fazem degustação sensorial do chocolate rosa — Senac Pernambuco">7</a></td>
+<td>Mário falou de cacau/chocolate e conduziu degustação de Barry Callebaut, incluindo Ruby; não era degustação da linha Massapê.</td>
+</tr>
+<tr>
+<td>Visita técnica ao cacau</td>
+<td>Senac, jan. 2021. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">8</a></td>
+<td>Atividade pedagógica com colheita, fermentação, secagem, torra e chocolate quente.</td>
+</tr>
+<tr>
+<td>Degustação Massapê + café</td>
+<td>Café do Brejo, ago. 2021. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a></td>
+<td>Encontro com Möckli e degustação de 45%, 70% e 100%; histórico.</td>
+</tr>
+<tr>
+<td>Workshop educacional</td>
+<td>Faculdade Senac, fev. 2023. <a href="https://www.instagram.com/p/CpF9RStOu59/" title="Workshop com Mário Wanderley e Massapê na Faculdade Senac — Cristianne Barros">28</a></td>
+<td>Registro de workshop com Mário e Massapê para turmas; curso próprio regular não decorre desse registro.</td>
+</tr>
+<tr>
+<td>Oficina bean-to-bar</td>
+<td>Faculdade Senac, fev. 2024. <a href="https://faculdadesenacpe.edu.br/faculdade-senac-pe-realiza-segunda-edicao-do-gastro-meeting" title="Faculdade Senac PE realiza segunda edição do Gastrô Meeting — oficina bean-to-bar">9</a></td>
+<td>Mário e Cristiane Barros aparecem como facilitadores.</td>
+</tr>
+<tr>
+<td>Degustação de chás e chocolates</td>
+<td>Kaffe/O Chá da Casa, ago. 2024. <a href="https://www.sympla.com.br/evento/degustacao-de-chas-e-chocolates-especiais/2579402" title="Degustação de Chás e Chocolates Especiais — Kaffe/O Chá da Casa">29</a></td>
+<td>Evento encerrado de harmonização/degustação.</td>
+</tr>
+<tr>
+<td>Feiras e experiências</td>
+<td>FENEARTE, RioMar, Mercado Capitão, eventos parceiros. <a href="https://www.instagram.com/reel/DEOCOiSuD5a/" title="Quiosque RioMar e família de chocolates — Massapê">15</a><a href="https://www.instagram.com/p/DWUtcBdETMh/" title="Mercado Capitão e Massapê Chocolateria — evento e claim promocional">30</a></td>
+<td>Presença e ativação nas datas documentadas; vigência futura depende de agenda da empresa.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Curso próprio regular, consultoria, treinamento corporativo, visitas ao ateliê, degustações recorrentes, eventos privados ou calendário de experiências atuais.</p>
+<h2 id="10-eventos-e-participacoes">10. Eventos e participações</h2>
+<ol>
+<li><strong>Que Seja Doce (GNT), 2018.</strong> Participação anunciada no reality, com Jaciara Marques; a fonte não informa resultado, colocação ou prêmio. <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Chef pernambucano vai participar de reality show de confeitaria — Diário de Pernambuco, 2018">3</a></li>
+<li><strong>Senac, 2019.</strong> Palestra e degustação sensorial com Mário, então associado ao Mon Cher. <a href="http://www.pe.senac.br/alunos-de-gastronomia-da-faculdade-senac-fazem-degustacao-sensorial-do-chocolate-rosa/" title="Alunos de Gastronomia fazem degustação sensorial do chocolate rosa — Senac Pernambuco">7</a></li>
+<li><strong>Oficinas de café/chocolate e cerveja/chocolate, 2019.</strong> Registros de oficina no Mon Cher, Ekäut Experience e oficina com trufas. <a href="https://www.sympla.com.br/evento/ekaeut-experience---harmonizacao-chocolates-belgas-mario-wanderley-mon-cher/602947" title="Ekäut Experience — Harmonização de chocolates belgas com Mário Wanderley">13</a></li>
+<li><strong>Visita técnica ao Engenho Conceição de Cima, 2021.</strong> Mário como professor/chocolatier acompanhando pós-graduandos. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">8</a></li>
+<li><strong>Degustação com Carlo Möckli, agosto de 2021.</strong> Massapê publicou o encontro; o blog de Möckli publicou avaliação. <a href="https://www.instagram.com/p/CSevAtNri8e/" title="Publicação da Massapê sobre degustação com Carlo Möckli — 12 ago. 2021">5</a></li>
+<li><strong>Workshop no Senac, fevereiro de 2023.</strong> Registro de Cristianne Barros sobre Mário, turmas e Massapê. <a href="https://www.instagram.com/p/CpF9RStOu59/" title="Workshop com Mário Wanderley e Massapê na Faculdade Senac — Cristianne Barros">28</a></li>
+<li><strong>2º Gastrô Meeting, 20/02/2024.</strong> Oficina “Desvendando os Segredos do Chocolate bean-to-bar”, com Mário e Cristiane Barros. <a href="https://faculdadesenacpe.edu.br/faculdade-senac-pe-realiza-segunda-edicao-do-gastro-meeting" title="Faculdade Senac PE realiza segunda edição do Gastrô Meeting — oficina bean-to-bar">9</a></li>
+<li><strong>3º Gastrô Meeting, 24–31/07/2024.</strong> Folha e Senac confirmam Mário entre os profissionais; não atribuir a ele todas as oficinas da programação. <a href="https://www.instagram.com/p/C9xm__zOMDs/" title="3º Gastrô Meeting — Faculdade Senac Pernambuco">10</a></li>
+<li><strong>FENEARTE 2024.</strong> Reel da marca registra trecho de entrevista com Mandacaru Cultural/Dinho; a identidade de quem aparece falando não foi confirmada pela página aberta. <a href="https://www.instagram.com/reel/DFLRVlKuDy-/" title="Trecho de entrevista na FENEARTE 2024 — Massapê/Mandacaru Cultural">31</a></li>
+<li><strong>FENEARTE 2026.</strong> Publicações da marca registram estande Rua 01, nº 50, catálogo de percentuais, produção em evento e parceria com Roasteria. <a href="https://www.instagram.com/massapechocolates/p/DaxZ6ufDtQz/" title="Barra Canjiquinha — composição publicada pela Massapê">15</a><a href="https://www.instagram.com/reel/DFF1Tp2usJI/" title="Colaboração Massapê–Roasteria e encerramento de temporada no RioMar">32</a></li>
+<li><strong>2ª Feira de Confeitaria Senac, 2026.</strong> Divulgação de mesa redonda “Chocolate de verdade ou ‘sabor chocolate’?” com Mário e Chef Thaty Correia. <a href="https://www.instagram.com/reel/Db9cpJcMzWT/" title="Mesa redonda da 2ª Feira de Confeitaria Senac com Mário Wanderley">36</a></li>
+</ol>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Outras aparições de TV, especialmente “Globo Comunidade”/NE1, datas e episódios; prêmios, concursos, medalhas e títulos; participação de Mário como condutor específico de cada oficina do 3º Gastrô Meeting.</p>
+<h2 id="11-imprensa-entrevistas-e-videos">11. Imprensa, entrevistas e vídeos</h2>
+<h3 id="imprensa-e-radio">Imprensa e rádio</h3>
+<ul>
+<li><em>Diário de Pernambuco</em>, 02/04/2018: trajetória, <em>Que Seja Doce</em>, fisioterapia, cozinha familiar, marca pessoal e Mon Cher. <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Chef pernambucano vai participar de reality show de confeitaria — Diário de Pernambuco, 2018">3</a></li>
+<li>Senac, 19/03/2019: palestra “da história do cacau à prática sensorial”, Mário como chocolatier/sócio da MonCher. <a href="http://www.pe.senac.br/alunos-de-gastronomia-da-faculdade-senac-fazem-degustacao-sensorial-do-chocolate-rosa/" title="Alunos de Gastronomia fazem degustação sensorial do chocolate rosa — Senac Pernambuco">7</a></li>
+<li>Senac, 28/01/2021: visita técnica ao cacau em Escada, com Mário como professor/chocolatier. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">8</a></li>
+<li>Folha/SoundCloud, 05/08/2021: “Conexão Café — Café e Chocolate com o chocolatier Mário Wanderley”. <a href="https://soundcloud.com/folhape/050821-conexao-cafe-cafe-e-chocolate-com-o-chocolatier-mario-wanderley" title="Conexão Café — Café e Chocolate com o chocolatier Mário Wanderley — Folha de Pernambuco">11</a></li>
+<li>Folha/Rádio Folha, 11/08/2022: “Café e chocolate: saiba as principais semelhanças e diferenças”, com Mário, Jota Batista e Alan Cavalcanti. <a href="https://www.folhape.com.br/radio-folha/cafe-e-chocolate-saiba-as-principais-semelhancas-e-diferencas/236737/" title="Café e chocolate: saiba as principais semelhanças e diferenças — Folha/Rádio Folha">12</a></li>
+<li>Folha/Rádio Folha, jul. 2024: 3º Gastrô Meeting e presença de Mário pela Massapê. <a href="https://www.folhape.com.br/radio-folha/gastro-meeting-realizado-gratuitamente/349941/" title="Gastrô Meeting realizado gratuitamente pela Faculdade Senac — Folha/Rádio Folha">10</a></li>
+<li><em>Doce Ciência</em>, 06/08/2021: degustação e avaliação de terceiro; material editorial histórico, não certificação. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a></li>
+</ul>
+<h3 id="inventario-audiovisual">Inventário audiovisual</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Plataforma/URL</th>
+<th>Informação verificável</th>
+<th>Uso editorial recomendado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conexão Café 2021</td>
+<td><a href="https://soundcloud.com/folhape/050821-conexao-cafe-cafe-e-chocolate-com-o-chocolatier-mario-wanderley">SoundCloud/Folha</a> <a href="https://soundcloud.com/folhape/050821-conexao-cafe-cafe-e-chocolate-com-o-chocolatier-mario-wanderley" title="Conexão Café — Café e Chocolate com o chocolatier Mário Wanderley — Folha de Pernambuco">11</a></td>
+<td>Áudio com Mário; duração não exibida.</td>
+<td>Preferir player/embed oficial; não baixar sem autorização.</td>
+</tr>
+<tr>
+<td>Café e chocolate 2022</td>
+<td><a href="https://www.folhape.com.br/radio-folha/cafe-e-chocolate-saiba-as-principais-semelhancas-e-diferencas/236737/">Folha</a> <a href="https://www.folhape.com.br/radio-folha/cafe-e-chocolate-saiba-as-principais-semelhancas-e-diferencas/236737/" title="Café e chocolate: saiba as principais semelhanças e diferenças — Folha/Rádio Folha">12</a></td>
+<td>Matéria sobre café, chocolate e harmonização; duração não informada.</td>
+<td>Linkar ou incorporar player oficial, se permitido.</td>
+</tr>
+<tr>
+<td>Canal Mario Wanderley</td>
+<td><a href="https://www.youtube.com/@mariowanderley">YouTube</a> <a href="https://www.youtube.com/@mariowanderley" title="Canal Mario Wanderley — YouTube">37</a></td>
+<td>Dois Shorts públicos datados de 18/01/2023; títulos, duração e participantes não foram identificados na consulta.</td>
+<td>Solicitar descrição e autorização antes de contextualizar.</td>
+</tr>
+<tr>
+<td>Short 1</td>
+<td><a href="https://www.youtube.com/shorts/BGNFMPx0-60">YouTube</a> <a href="https://www.youtube.com/shorts/BGNFMPx0-60" title="Short Mario Wanderley — 18 jan. 2023">38</a></td>
+<td>Existência pública e data observada; conteúdo não confirmado.</td>
+<td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Short 2</td>
+<td><a href="https://www.youtube.com/shorts/nW-3cj6ndp0">YouTube</a> <a href="https://www.youtube.com/shorts/nW-3cj6ndp0" title="Short Mario Wanderley — 18 jan. 2023">39</a></td>
+<td>Existência pública e data observada; conteúdo não confirmado.</td>
+<td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Entrevista FENEARTE 2024</td>
+<td><a href="https://www.instagram.com/reel/DFLRVlKuDy-/">Instagram Reel</a> <a href="https://www.instagram.com/reel/DFLRVlKuDy-/" title="Trecho de entrevista na FENEARTE 2024 — Massapê/Mandacaru Cultural">31</a></td>
+<td>Reel da marca sobre entrevista com Mandacaru Cultural/Dinho; duração e identidade de quem fala não exibidas.</td>
+<td>Link/embed oficial, sem copiar vídeo/trilha.</td>
+</tr>
+<tr>
+<td>Massapê/Roasteria</td>
+<td><a href="https://www.instagram.com/reel/DFF1Tp2usJI/">Instagram Reel</a> <a href="https://www.instagram.com/reel/DFF1Tp2usJI/" title="Colaboração Massapê–Roasteria e encerramento de temporada no RioMar">32</a></td>
+<td>Colaboração comercial e continuidade de venda relatadas pela marca; vigência atual não indicada.</td>
+<td>Linkar após confirmar permanência e parceria.</td>
+</tr>
+<tr>
+<td>Destaques “momentos TV”/“globo comunidade”</td>
+<td><a href="https://www.instagram.com/massapechocolates/">Instagram da marca</a> <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></td>
+<td>Rótulos públicos; programas e datas não confirmados.</td>
+<td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Entrevista atribuída ao NE1/Globo, data completa, link oficial, repórter, arquivo e autorização de reprodução.</p>
+<h2 id="12-parcerias-e-relacoes-documentadas">12. Parcerias e relações documentadas</h2>
+<table>
+<thead>
+<tr>
+<th>Parceiro/instituição</th>
+<th>Relação documentada</th>
+<th>Limite da afirmação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Faculdade/Senac Pernambuco</td>
+<td>Palestra, visita técnica, workshop e oficinas com Mário/Massapê. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">7</a><a href="https://www.instagram.com/p/CpF9RStOu59/" title="Workshop com Mário Wanderley e Massapê na Faculdade Senac — Cristianne Barros">9</a></td>
+<td>Relação educacional documentada; status de Mário como docente efetivo: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Carlo Möckli / Doce Ciência</td>
+<td>Cursos, degustação e avaliação histórica de produtos. <a href="http://www.carlomockli.com/2015/06/inesqueciveis-momentos-nos-cursos-em.html" title="Inesquecíveis momentos nos cursos em Recife — Carlo Möckli">5</a><a href="https://www.instagram.com/p/CSevAtNri8e/" title="Publicação da Massapê sobre degustação com Carlo Möckli — 12 ago. 2021">27</a></td>
+<td>Relação formativa/editorial; não chamar de certificação ou parceria comercial atual.</td>
+</tr>
+<tr>
+<td>Café do Brejo</td>
+<td>Local da degustação de 2021. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a></td>
+<td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Termo “parceiro comercial”.</td>
+</tr>
+<tr>
+<td>Mon Cher</td>
+<td>Empreendimento ligado a Mário em 2017–2019. <a href="https://www.verbocomer.com.br/index.php/2017/07/13/mon-cher-cafe-et-patisserie-tem-lancamento-oficial/" title="Mon Cher Café et Pâtisserie tem lançamento oficial — Verbo Comer">13</a><a href="https://revistamalagueta.com.br/2017/06/09/belgica-franca-e-brasil-unidos-no-dia-dos-namorados-do-mon-cher/" title="Bélgica, França e Brasil unidos no Dia dos Namorados do Mon Cher — Revista Malagueta">22</a></td>
+<td>Status atual e continuidade: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Ekäut / Callebaut</td>
+<td>Harmonizações históricas de Mário/Mon Cher com cervejas e chocolates belgas. <a href="https://www.sympla.com.br/evento/ekaeut-experience---harmonizacao-chocolates-belgas-mario-wanderley-mon-cher/602947" title="Ekäut Experience — Harmonização de chocolates belgas com Mário Wanderley">13</a></td>
+<td>Evento de 2019; não é parceria atual da Massapê.</td>
+</tr>
+<tr>
+<td>Roasteria Cafés</td>
+<td>Colaboração e estande na FENEARTE 2026; venda em ponto da Roasteria relatada em 2025. <a href="https://www.instagram.com/reel/DFF1Tp2usJI/" title="Colaboração Massapê–Roasteria e encerramento de temporada no RioMar">15</a></td>
+<td>Colaboração comercial documentada; vigência, exclusividade e contrato: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>O Chá da Casa / Kaffe</td>
+<td>Degustação de chás e chocolates em 2024. <a href="https://www.sympla.com.br/evento/degustacao-de-chas-e-chocolates-especiais/2579402" title="Degustação de Chás e Chocolates Especiais — Kaffe/O Chá da Casa">29</a></td>
+<td>Evento encerrado; continuidade: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Mandacaru Cultural</td>
+<td>Entrevista na FENEARTE 2024. <a href="https://www.instagram.com/reel/DFLRVlKuDy-/" title="Trecho de entrevista na FENEARTE 2024 — Massapê/Mandacaru Cultural">31</a></td>
+<td>Conteúdo editorial/eventual; cessão de vídeo e imagem: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>Mercado Capitão/CRABOLANDO</td>
+<td>Ativações e eventos públicos em 2024–2026. <a href="https://www.instagram.com/reel/DBd4Z-VuSBI/" title="Evento UÔGE/Mercado Capitão/CRABOLANDO — Massapê">30</a></td>
+<td>Ação/evento; loja permanente: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-redes-sociais-e-presenca-digital">13. Redes sociais e presença digital</h2>
+<table>
+<thead>
+<tr>
+<th>Canal</th>
+<th>Estado observado</th>
+<th>Uso no site</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instagram <code>@massapechocolates</code></td>
+<td>Público; bio, pedidos, destaques, posts e Reels acessíveis no recorte. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></td>
+<td>Canal oficial principal, sujeito a mudanças e regras de incorporação.</td>
+</tr>
+<tr>
+<td>Instagram <code>@mwchocolate</code></td>
+<td>Privado; nome “Mario Wanderley” visível. <a href="https://www.instagram.com/mwchocolate/" title="Perfil de Mário Wanderley — Instagram, privado na consulta">2</a></td>
+<td>Não tratar como acervo ou currículo verificável.</td>
+</tr>
+<tr>
+<td>Threads <code>@massapechocolates</code></td>
+<td>Linkado pela bio; acesso aberto exigiu login. <a href="https://www.threads.com/@massapechocolates" title="Threads vinculado ao perfil da Massapê — acesso aberto incompleto">24</a></td>
+<td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Conteúdo, frequência e status atual.</td>
+</tr>
+<tr>
+<td>Facebook “Mário Wanderley Doce e Chocolate”</td>
+<td>Página pública, histórica, com descrição de confeitaria/chocolateria. <a href="https://www.facebook.com/p/M%C3%A1rio-Wanderley-Doce-e-Chocolate-100063475846029/" title="Mário Wanderley Doce e Chocolate — Facebook">49</a></td>
+<td>Presença ligada à marca pessoal; não confirmada como página atual da Massapê.</td>
+</tr>
+<tr>
+<td>YouTube/Folha</td>
+<td>Vídeo externo com Mário como chocolate maker da Massapê. <a href="https://revistamalagueta.com.br/2017/06/09/belgica-franca-e-brasil-unidos-no-dia-dos-namorados-do-mon-cher/" title="Bélgica, França e Brasil unidos no Dia dos Namorados do Mon Cher — Revista Malagueta">22</a></td>
+<td>Fonte de imprensa; não é canal próprio.</td>
+</tr>
+<tr>
+<td>YouTube “Mario Wanderley”</td>
+<td>Canal com dois Shorts de 18/01/2023. <a href="https://www.youtube.com/@mariowanderley" title="Canal Mario Wanderley — YouTube">37</a></td>
+<td>Propriedade, relação atual com Massapê e conteúdo: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>LinkedIn/TikTok/Pinterest</td>
+<td>Não foi localizado perfil oficial confirmado nos relatórios.</td>
+<td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Lista oficial de handles.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="14-frases-verificaveis-e-frases-que-nao-devem-ser-publicadas-sem-validacao">14. Frases verificáveis e frases que não devem ser publicadas sem validação</h2>
+<h3 id="frases-verificaveis-com-atribuicao-documental">Frases verificáveis com atribuição documental</h3>
+<ul>
+<li><strong>“Chocolate artesanal de Pernambuco, da amêndoa à barra.”</strong> — bio do Instagram oficial. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></li>
+<li><strong>“Criado e produzido por @mwchocolate.”</strong> — bio do Instagram oficial. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></li>
+<li><strong>“chocolate feito à mão | 100% pernambucano”</strong> — texto observado na embalagem reproduzida em 2021. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a></li>
+<li><strong>“Massapê Chocolateria | Bean-to-bar.”</strong> — nome exibido no perfil da marca. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></li>
+<li><strong>“Eu discordo. O doce precisa ser na medida certa.”</strong> — fala atribuída a Mário em matéria do <em>Diário de Pernambuco</em>. <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Chef pernambucano vai participar de reality show de confeitaria — Diário de Pernambuco, 2018">3</a></li>
+<li><strong>“O Ruby é o quarto sabor de chocolate que existe no mundo...”</strong> — fala atribuída a Mário em texto do Senac; não usar como definição técnica independente. <a href="http://www.pe.senac.br/alunos-de-gastronomia-da-faculdade-senac-fazem-degustacao-sensorial-do-chocolate-rosa/" title="Alunos de Gastronomia fazem degustação sensorial do chocolate rosa — Senac Pernambuco">7</a></li>
+<li><strong>“A Massapê Chocolateria é o primeiro chocolate artesanal de Pernambuco feito do cacau à barra.”</strong> — frase de publicação de parceiro, apenas como alegação promocional a validar, não como fato. <a href="https://www.instagram.com/p/DWUtcBdETMh/" title="Mercado Capitão e Massapê Chocolateria — evento e claim promocional">30</a></li>
+</ul>
+<h3 id="claims-bloqueados-ate-documentacao">Claims bloqueados até documentação</h3>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Slogan oficial único, frase registrada, “primeiro”, “premiado”, “melhor”, “100% pernambucano” em sentido universal, “sem conservantes”, “sem aromatizantes”, “natural”, “sustentável”, “tree-to-bar”, “da fazenda própria”, “feito integralmente no ateliê” ou equivalente.</p>
+<h2 id="15-catalogo-visual-documental">15. Catálogo visual documental</h2>
+<p><strong>Nota de direitos:</strong> os itens abaixo são referências de páginas públicas. Nenhuma imagem foi baixada, licenciada ou incorporada por esta pesquisa. A URL da página não é autorização de uso; URLs CDN do Instagram podem expirar. O uso proposto é apenas editorial e depende de autorização escrita e créditos.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Página de referência</th>
+<th>Conteúdo visual verificável</th>
+<th>Uso potencial no site</th>
+<th>Direitos/status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td><a href="https://www.instagram.com/massapechocolates/">Perfil Massapê</a> <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></td>
+<td>Foto de perfil, grade pública, bio e destaques.</td>
+<td>Referência de identidade e tom; solicitar logo/arquivos originais.</td>
+<td>Fornecido pela marca; licença: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>P2</td>
+<td><a href="https://www.instagram.com/reel/DFLRVlKuDy-/">FENEARTE 2024/Mandacaru</a> <a href="https://www.instagram.com/reel/DFLRVlKuDy-/" title="Trecho de entrevista na FENEARTE 2024 — Massapê/Mandacaru Cultural">31</a></td>
+<td>Reel de entrevista/feira.</td>
+<td>Link ou embed oficial, após checagem de participantes.</td>
+<td>Marca + terceiro + retratados; autorização específica necessária.</td>
+</tr>
+<tr>
+<td>P3</td>
+<td><a href="https://www.instagram.com/reel/DBd4Z-VuSBI/">UÔGE/Mercado Capitão</a> <a href="https://www.instagram.com/reel/DBd4Z-VuSBI/" title="Evento UÔGE/Mercado Capitão/CRABOLANDO — Massapê">40</a></td>
+<td>Evento, ativação e espaço de divulgação.</td>
+<td>Referência de presença em evento.</td>
+<td>Marca, evento, terceiros e imagem; autorização necessária.</td>
+</tr>
+<tr>
+<td>P4</td>
+<td><a href="https://www.instagram.com/reel/DEOCOiSuD5a/">Quiosque RioMar</a> <a href="https://www.instagram.com/reel/DEOCOiSuD5a/" title="Quiosque RioMar e família de chocolates — Massapê">48</a></td>
+<td>“Família” de chocolates, quiosque, embalagem e comentário sobre 85%.</td>
+<td>História de ponto temporário/embalagem.</td>
+<td>Foto/vídeo e terceiros; autorização necessária.</td>
+</tr>
+<tr>
+<td>P5</td>
+<td><a href="https://www.instagram.com/reel/C4yDBY6O2AJ/">Caixa de Páscoa</a> <a href="https://www.instagram.com/reel/C4yDBY6O2AJ/" title="Caixa especial de Páscoa com cinco sensoriais — Massapê">18</a></td>
+<td>Caixa com cinco experiências sensoriais.</td>
+<td>Produto sazonal histórico.</td>
+<td>Marca e eventuais retratados; autorização necessária.</td>
+</tr>
+<tr>
+<td>P6</td>
+<td><a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/">Linha FENEARTE 2026</a> <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">15</a></td>
+<td>Barras/linha 100%, 85%, 70%, 60%, 55%, 38%, 32% e branco.</td>
+<td>Referência visual de catálogo de feira.</td>
+<td>Marca; não presume disponibilidade atual nem licença.</td>
+</tr>
+<tr>
+<td>P7</td>
+<td><a href="https://www.instagram.com/massapechocolates/p/DaxZ6ufDtQz/">Canjiquinha</a> <a href="https://www.instagram.com/massapechocolates/p/DaxZ6ufDtQz/" title="Barra Canjiquinha — composição publicada pela Massapê">16</a></td>
+<td>Barra e composição publicada pela marca.</td>
+<td>Ficha editorial de sabor regional, após confirmar ingredientes.</td>
+<td>Marca; autorização escrita recomendada.</td>
+</tr>
+<tr>
+<td>P8</td>
+<td><a href="https://www.instagram.com/massapechocolates/reel/Dayc6LzvyGP/">Bastidores FENEARTE</a> <a href="https://www.instagram.com/massapechocolates/reel/Dayc6LzvyGP/" title="Bastidores e processo na FENEARTE 2026 — Massapê">41</a></td>
+<td>Máquina, produção e estande; linguagem “da amêndoa à barra”.</td>
+<td>Bastidores/processo, se empresa confirmar o que aparece.</td>
+<td>Trabalhadores, visitantes, feira e trilha; autorização necessária.</td>
+</tr>
+<tr>
+<td>P9</td>
+<td><a href="https://www.instagram.com/massapechocolates/reel/DanOeVluk8e/">Chamada FENEARTE</a> <a href="https://www.instagram.com/massapechocolates/reel/DanOeVluk8e/" title="Chamada para a FENEARTE 2026 — Massapê">42</a></td>
+<td>Chamada de estande, Canjica/Canjiquinha, Pé de Moleque e café.</td>
+<td>Agenda histórica de feira.</td>
+<td>Vídeo e música; autorização/licença necessária.</td>
+</tr>
+<tr>
+<td>P10</td>
+<td><a href="https://www.instagram.com/massapechocolates/p/DaiGXJkDsRT/">Abertura FENEARTE</a> <a href="https://www.instagram.com/massapechocolates/p/DaiGXJkDsRT/" title="Abertura da FENEARTE 2026 — Massapê">43</a></td>
+<td>Peça de abertura, horários e estande 50.</td>
+<td>Arquivo de evento histórico.</td>
+<td>Marca/evento; autorização necessária.</td>
+</tr>
+<tr>
+<td>P11</td>
+<td><a href="https://www.instagram.com/massapechocolates/p/Dak6_FFOPSF/">Estande e Roasteria</a> <a href="https://www.instagram.com/massapechocolates/p/Dak6_FFOPSF/" title="Estande e parceria com Roasteria na FENEARTE 2026 — Massapê">44</a></td>
+<td>Estande e perfis Massapê/Roasteria marcados.</td>
+<td>Case de parceria/evento.</td>
+<td>Marcas de terceiros e evento; cessões necessárias.</td>
+</tr>
+<tr>
+<td>P12</td>
+<td><a href="https://www.instagram.com/massapechocolates/reel/DbBeaf0OoFg/">Encerramento FENEARTE</a> <a href="https://www.instagram.com/massapechocolates/reel/DbBeaf0OoFg/" title="Encerramento da FENEARTE 2026 e parceria com Roasteria — Massapê">45</a></td>
+<td>Público, estande, parceria e sabores mencionados em comentários.</td>
+<td>Prova social/evento, sem usar comentários como depoimento.</td>
+<td>Rostos e parceiros; autorização necessária.</td>
+</tr>
+<tr>
+<td>P13</td>
+<td><a href="https://www.instagram.com/massapechocolates/p/DdmE6UqjtQN/">Nova etapa/estrutura</a> <a href="https://www.instagram.com/massapechocolates/p/DdmE6UqjtQN/" title="Nova etapa/estrutura — Massapê">46</a></td>
+<td>Post sugere espaço maior, sem explicar endereço ou inauguração.</td>
+<td>Só após aprovação de narrativa.</td>
+<td>Significado: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
+</tr>
+<tr>
+<td>S1</td>
+<td><a href="https://www.folhape.com.br/radio-folha/cafe-e-chocolate-saiba-as-principais-semelhancas-e-diferencas/236737/">Folha — Café e chocolate</a> <a href="https://www.folhape.com.br/radio-folha/cafe-e-chocolate-saiba-as-principais-semelhancas-e-diferencas/236737/" title="Café e chocolate: saiba as principais semelhanças e diferenças — Folha/Rádio Folha">12</a></td>
+<td>Imagem de café/chocolate creditada “Divulgação”; não é retrato de Mário.</td>
+<td>Referência editorial, não foto de campanha.</td>
+<td>Terceiros; não usar sem licença.</td>
+</tr>
+<tr>
+<td>S2</td>
+<td><a href="https://www.folhape.com.br/radio-folha/gastro-meeting-realizado-gratuitamente/349941/">Folha — Gastrô Meeting</a> <a href="https://www.folhape.com.br/radio-folha/gastro-meeting-realizado-gratuitamente/349941/" title="Gastrô Meeting realizado gratuitamente pela Faculdade Senac — Folha/Rádio Folha">10</a></td>
+<td>Imagens de evento; uma é creditada a Robson Lustosa.</td>
+<td>Referência de aula/laboratório.</td>
+<td>Veículo/fotógrafo/retratados; autorização necessária.</td>
+</tr>
+<tr>
+<td>S3</td>
+<td><a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/">Senac — fazenda</a> <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">8</a></td>
+<td>Fazenda, alunos, cacau e visita técnica.</td>
+<td>Processo, território e educação.</td>
+<td>Senac/fotógrafo/alunos/produtores; licença não confirmada.</td>
+</tr>
+<tr>
+<td>S4</td>
+<td><a href="https://faculdadesenacpe.edu.br/faculdade-senac-pe-realiza-segunda-edicao-do-gastro-meeting">Faculdade Senac — Gastrô Meeting</a> <a href="https://faculdadesenacpe.edu.br/faculdade-senac-pe-realiza-segunda-edicao-do-gastro-meeting" title="Faculdade Senac PE realiza segunda edição do Gastrô Meeting — oficina bean-to-bar">9</a></td>
+<td>Oficina/laboratório; presença de Mário no evento, sem prova de que aparece na foto.</td>
+<td>Formação e workshop.</td>
+<td>Institucional; autorização necessária.</td>
+</tr>
+<tr>
+<td>S5</td>
+<td><a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html">Doce Ciência — Massapê</a> <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a></td>
+<td>Barras, embalagem e linha histórica 45/70/100.</td>
+<td>Referência visual histórica.</td>
+<td>Autor/fotógrafos/marca; licença não confirmada.</td>
+</tr>
+<tr>
+<td>S6</td>
+<td><a href="http://www.carlomockli.com/2021/08/cacau-fino-da-fazenda-cruz-de-malta.html">Doce Ciência — Cruz de Malta</a> <a href="http://www.carlomockli.com/2021/08/cacau-fino-da-fazenda-cruz-de-malta.html" title="Cacau fino da Fazenda Cruz de Malta, Água Preta-PE — Carlo Möckli/Doce Ciência">6</a></td>
+<td>Fazenda, pessoas, fruto, barra e paisagem.</td>
+<td>Origem e visita de campo, apenas após identificar retratados.</td>
+<td>Autor/produtor/família/retratados; autorização necessária.</td>
+</tr>
+<tr>
+<td>S7</td>
+<td><a href="https://www.facebook.com/100063475846029/videos/conhecendo-a-fazenda-cruz-de-malta-que-produz-20-toneladas-de-cacau-por-ano/849996158768671/">Facebook — vídeo Fazenda Cruz de Malta</a> <a href="https://www.facebook.com/100063475846029/videos/conhecendo-a-fazenda-cruz-de-malta-que-produz-20-toneladas-de-cacau-por-ano/849996158768671/" title="Conhecendo a Fazenda Cruz de Malta — vídeo no Facebook">47</a></td>
+<td>Vídeo público sobre a fazenda e volume anual.</td>
+<td>Roteiro/referência, não extração de frames.</td>
+<td>Titular não liberou licença; não copiar.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="16-direitos-autorais-imagem-marcas-e-incorporacao">16. Direitos autorais, imagem, marcas e incorporação</h2>
+<ol>
+<li><strong>Imagem pública não é domínio público.</strong> Fotos, vídeos, logo, rótulos, ilustrações, textos, entrevistas e capturas continuam sujeitos a direitos autorais, direitos de imagem, marcas e termos das plataformas. <a href="https://www.instagram.com/massapechocolates/" title="Acervo público de referência visual da Massapê — direitos não presumidos">34</a></li>
+<li><strong>Posts oficiais da Massapê.</strong> O fato de o conteúdo ter sido publicado pela marca indica relação pública com o material, mas não esclarece cessão para novo site, anúncios, edição, recorte, impressão ou uso por terceiros. Solicitar autorização escrita, arquivo original, crédito, território, prazo e possibilidade de edição.</li>
+<li><strong>Fotógrafos e videomakers.</strong> Identificar e autorizar Filipe Ramos Fotografia, Robson Lustosa, Mandacaru Cultural/Dinho, Carlo Möckli, fotógrafos do Senac/Folha, produtores de eventos e demais titulares identificáveis. <a href="https://www.instagram.com/reel/DFLRVlKuDy-/" title="Trecho de entrevista na FENEARTE 2024 — Massapê/Mandacaru Cultural">10</a><a href="https://www.instagram.com/massapechocolates/" title="Acervo público de referência visual da Massapê — direitos não presumidos">34</a></li>
+<li><strong>Pessoas retratadas.</strong> Solicitar autorizações de Mário, equipe, alunos, produtores, familiares, visitantes, clientes e participantes de feiras. Não atribuir visualmente um rosto a Mário, produtor ou parceiro sem confirmação.</li>
+<li><strong>Trilhas de Reels.</strong> A autorização de uso de uma música dentro do Instagram não significa que o arquivo possa ser baixado, hospedado no site ou empregado em anúncio. Solicitar versão sem trilha ou licença específica.</li>
+<li><strong>Conteúdo jornalístico.</strong> Preferir link, citação curta com atribuição ou player/embed oficial. Não copiar integralmente matéria, foto, áudio ou vídeo de Diário de Pernambuco, Folha, Senac, Sympla, GNT/Globo ou Doce Ciência. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">3</a><a href="https://www.folhape.com.br/radio-folha/gastro-meeting-realizado-gratuitamente/349941/" title="Gastrô Meeting realizado gratuitamente pela Faculdade Senac — Folha/Rádio Folha">7</a><a href="https://www.folhape.com.br/radio-folha/cafe-e-chocolate-saiba-as-principais-semelhancas-e-diferencas/236737/" title="Café e chocolate: saiba as principais semelhanças e diferenças — Folha/Rádio Folha">12</a></li>
+<li><strong>Comentários.</strong> Comentários de usuários são evidência de recepção pública, não depoimentos autorizados. Não usar nome, foto ou frase de comentarista como testemunho sem consentimento.</li>
+<li><strong>Embalagem e logo.</strong> Solicitar vetor, embalagens atuais, autoria do design e autorização. A imagem de 2021 pode ser histórica e não representar a identidade vigente. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a></li>
+<li><strong>Registro de marca.</strong> Não foi confirmada busca/registro no INPI no material consultado. Antes de criar merchandising ou identidade derivada, solicitar dados à empresa e fazer verificação jurídica própria.</li>
+<li><strong>Incorporação de plataformas.</strong> Embeds podem depender de perfil público, configuração do autor, remoção do post e regras do Instagram/YouTube/SoundCloud. Testar o player e manter link de origem.</li>
+</ol>
+<h2 id="17-classificacao-editorial-confirmado-secundario-validacao-e-nao-confirmado">17. Classificação editorial: confirmado, secundário, validação e não confirmado</h2>
+<h3 id="confirmado-por-canal-primario-ou-institucional">Confirmado por canal primário ou institucional</h3>
+<ul>
+<li>Bio, nome exibido, handle público da Massapê, associação a <code>@mwchocolate</code> e canal de WhatsApp. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a></li>
+<li>Perfil privado de <code>@mwchocolate</code>, conforme consulta. <a href="https://www.instagram.com/mwchocolate/" title="Perfil de Mário Wanderley — Instagram, privado na consulta">2</a></li>
+<li>Participação de Mário no <em>Que Seja Doce</em>, conforme matéria jornalística. <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Chef pernambucano vai participar de reality show de confeitaria — Diário de Pernambuco, 2018">3</a></li>
+<li>Perfil institucional do Senac que informa Mário e criação da Massapê em 2021. <a href="http://www.pe.senac.br/confeitaria/index.html" title="Feira de Confeitaria — perfil institucional de Mário Wanderley e Massapê Chocolateria">4</a></li>
+<li>Eventos documentados pelo Senac, Faculdade Senac, Folha, Sympla e páginas oficiais de evento. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">7</a><a href="https://www.folhape.com.br/radio-folha/gastro-meeting-realizado-gratuitamente/349941/" title="Gastrô Meeting realizado gratuitamente pela Faculdade Senac — Folha/Rádio Folha">9</a><a href="https://www.sympla.com.br/evento/ekaeut-experience---harmonizacao-chocolates-belgas-mario-wanderley-mon-cher/602947" title="Ekäut Experience — Harmonização de chocolates belgas com Mário Wanderley">13</a></li>
+<li>Catálogo de oito itens apresentado pela marca na FENEARTE 2026 e informação de continuidade de Canjiquinha/Pé de Moleque no período relatado. <a href="https://www.instagram.com/massapechocolates/p/DaxZ6ufDtQz/" title="Barra Canjiquinha — composição publicada pela Massapê">15</a><a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Canjiquinha e Pé de Moleque fixados no cardápio — Massapê">17</a></li>
+<li>Publicações próprias de Páscoa, quiosque, FENEARTE, bastidores e parceiros, como existência de posts e contexto. <a href="https://www.instagram.com/reel/C4yDBY6O2AJ/" title="Caixa especial de Páscoa com cinco sensoriais — Massapê">15</a><a href="https://www.instagram.com/reel/DFLRVlKuDy-/" title="Trecho de entrevista na FENEARTE 2024 — Massapê/Mandacaru Cultural">48</a><a href="https://www.instagram.com/reel/DFF1Tp2usJI/" title="Colaboração Massapê–Roasteria e encerramento de temporada no RioMar">32</a></li>
+</ul>
+<h3 id="secundario-historico-ou-autorreferido">Secundário, histórico ou autorreferido</h3>
+<ul>
+<li>Formação e experiências hospitalares do perfil pessoal. <a href="https://www.facebook.com/mario.wanderley.3/" title="Perfil pessoal de Mário Wanderley — formação e experiências autorreferidas">20</a></li>
+<li>Cursos com Carlo Möckli, sem certificado ou carga horária. <a href="http://www.carlomockli.com/2015/06/inesqueciveis-momentos-nos-cursos-em.html" title="Inesquecíveis momentos nos cursos em Recife — Carlo Möckli">23</a></li>
+<li>Degustação, notas sensoriais, três ingredientes e origem Cruz de Malta nos textos de Möckli. <a href="http://www.carlomockli.com/2021/08/cacau-fino-da-fazenda-cruz-de-malta.html" title="Cacau fino da Fazenda Cruz de Malta, Água Preta-PE — Carlo Möckli/Doce Ciência">5</a></li>
+<li>Dados históricos de Mon Cher e Doce Negrinho em imprensa gastronômica. <a href="https://revistamalagueta.com.br/2017/06/09/belgica-franca-e-brasil-unidos-no-dia-dos-namorados-do-mon-cher/" title="Bélgica, França e Brasil unidos no Dia dos Namorados do Mon Cher — Revista Malagueta">21</a></li>
+<li>Lista antiga de pontos de venda, eventos encerrados, quiosque e kits sazonais. <a href="https://www.instagram.com/p/Cl1L86oAoGt/" title="Kit de Natal com barras — Massapê">48</a><a href="https://www.instagram.com/reel/C2kTlURu6pE/" title="Pontos de venda anunciados pela Massapê — 26 jan. 2024">33</a></li>
+<li>Alegação “primeiro” publicada por parceiro. <a href="https://www.instagram.com/p/DWUtcBdETMh/" title="Mercado Capitão e Massapê Chocolateria — evento e claim promocional">30</a></li>
+</ul>
+<h3 id="necessita-validacao-empresarial-antes-de-publicacao">Necessita validação empresarial antes de publicação</h3>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Identidade jurídica, cargos, ano/dia de fundação, catálogo vigente, pesos, ingredientes, preços, alergênicos, validade, origem por lote, processo interno, pontos de venda atuais, experiências comerciais, parcerias vigentes, prêmios, claims comparativos, identidade visual, arquivos originais e licenças.</p>
+<h3 id="nao-confirmado-na-pesquisa">Não confirmado na pesquisa</h3>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Certificações, registro de marca, tree-to-bar, canal oficial em todas as plataformas, resultado no reality, lista completa de aparições de TV, conteúdo dos Shorts, entrevista NE1/Globo, endereço permanente, produção atual exclusiva na Fazenda Cruz de Malta e existência de produtos não documentados.</p>
+<h2 id="18-banco-de-conteudo-para-cada-pagina-do-site">18. Banco de conteúdo para cada página do site</h2>
+<h3 id="pagina-inicial-home">Página inicial / Home</h3>
+<p><strong>Conteúdo seguro:</strong> nome Massapê Chocolateria; frase “Chocolate artesanal de Pernambuco, da amêndoa à barra”; associação com Mário; CTA para pedidos por WhatsApp depois de reconfirmar o canal. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a><br />
+<strong>Prova visual:</strong> solicitar foto de barra/embalagem em alta resolução e logo vetorial; usar Reel apenas via embed autorizado.<br />
+<strong>Não publicar:</strong> “primeiro”, “premiado”, catálogo completo, preço ou endereço atual sem validação.</p>
+<h3 id="nossa-historia">Nossa história</h3>
+<p><strong>Conteúdo seguro:</strong> trajetória de Mário na fisioterapia, cozinha familiar, confeitaria, Mon Cher, <em>Que Seja Doce</em>, ensino e criação da Massapê informada pelo Senac em 2021. <a href="http://www.pe.senac.br/confeitaria/index.html" title="Feira de Confeitaria — perfil institucional de Mário Wanderley e Massapê Chocolateria">3</a><br />
+<strong>Formato:</strong> cronologia curta com grau de suporte e links para Diário/Senac.<br />
+<strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Nome completo, cargos societários, datas exatas e narrativa de fundação aprovada.</p>
+<h3 id="mario-wanderley">Mário Wanderley</h3>
+<p><strong>Conteúdo seguro:</strong> biografia profissional documental — confeiteiro, chocolateiro, barista e chocolate maker conforme Senac; experiência pública em eventos e ensino. <a href="http://www.pe.senac.br/alunos-de-gastronomia-da-faculdade-senac-fazem-degustacao-sensorial-do-chocolate-rosa/" title="Alunos de Gastronomia fazem degustação sensorial do chocolate rosa — Senac Pernambuco">4</a><a href="https://faculdadesenacpe.edu.br/faculdade-senac-pe-realiza-segunda-edicao-do-gastro-meeting" title="Faculdade Senac PE realiza segunda edição do Gastrô Meeting — oficina bean-to-bar">9</a><br />
+<strong>Provas:</strong> entrevista de 2018, perfil Senac, Folha e eventos.<br />
+<strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Diploma, certificações, prêmios, foto oficial liberada e título profissional preferido.</p>
+<h3 id="bean-to-bar-processo">Bean-to-bar / Processo</h3>
+<p><strong>Conteúdo seguro:</strong> explicar o conceito no nível geral “da amêndoa à barra”; diferenciar cadeia do cacau abordada em atividades pedagógicas do processo comercial da Massapê. <a href="http://www.pe.senac.br/alunos-de-gastronomia-da-faculdade-senac-fazem-degustacao-sensorial-do-chocolate-rosa/" title="Alunos de Gastronomia fazem degustação sensorial do chocolate rosa — Senac Pernambuco">1</a><a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">8</a><br />
+<strong>Visual:</strong> fotos próprias do ateliê, produtor e etapas, com autorização.<br />
+<strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Curvas de torra, fermentação, secagem, refino, conchagem, temperagem, moldagem, equipamentos e terceirizações.</p>
+<h3 id="produtos-cardapio">Produtos / Cardápio</h3>
+<p><strong>Conteúdo seguro:</strong> bloco de “linha apresentada na FENEARTE 2026”, claramente datado, com 100%, 85%, 70%, 60%, Pé de Moleque 55%, 38% vegano, 32% e branco. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">15</a> Canjiquinha e Pé de Moleque podem ser sinalizados como itens que a marca declarou fixar no cardápio em 2026. <a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Canjiquinha e Pé de Moleque fixados no cardápio — Massapê">17</a><br />
+<strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Nome comercial atual, ingredientes, alergênicos, peso, conservação, validade, preço, estoque e fotos de cada SKU.</p>
+<h3 id="sabores-regionais">Sabores regionais</h3>
+<p><strong>Conteúdo seguro:</strong> Pé de Moleque e Canjiquinha como narrativas públicas de sabor regional; Canjiquinha com composição publicada no post de 2026. <a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Canjiquinha e Pé de Moleque fixados no cardápio — Massapê">16</a><br />
+<strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Se “Canjica” e “Canjiquinha” são o mesmo produto, receita vigente e declaração nutricional.</p>
+<h3 id="degustacoes-e-experiencias">Degustações e experiências</h3>
+<p><strong>Conteúdo seguro:</strong> histórico de degustação Massapê–Möckli, Senac, Kaffe/O Chá da Casa e eventos de harmonização. <a href="http://www.pe.senac.br/alunos-de-gastronomia-da-faculdade-senac-fazem-degustacao-sensorial-do-chocolate-rosa/" title="Alunos de Gastronomia fazem degustação sensorial do chocolate rosa — Senac Pernambuco">5</a><a href="https://www.diariodepernambuco.com.br/noticia/gastro/2019/01/evento-de-hamonizacao-de-cafe-com-chocolate-acontece-no-dia-26.html" title="Oficina de harmonização de café com chocolate acontece no dia 26 — Diário de Pernambuco">8</a><a href="https://www.sympla.com.br/evento/degustacao-de-chas-e-chocolates-especiais/2579402" title="Degustação de Chás e Chocolates Especiais — Kaffe/O Chá da Casa">29</a><br />
+<strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Agenda atual, preços, duração, público, contratação para eventos privados e workshops regulares.</p>
+<h3 id="eventos-e-agenda">Eventos e agenda</h3>
+<p><strong>Conteúdo seguro:</strong> arquivo datado de FENEARTE, Gastrô Meeting, RioMar, Mercado Capitão e demais participações. <a href="https://www.folhape.com.br/radio-folha/gastro-meeting-realizado-gratuitamente/349941/" title="Gastrô Meeting realizado gratuitamente pela Faculdade Senac — Folha/Rádio Folha">9</a><a href="https://www.instagram.com/reel/DEOCOiSuD5a/" title="Quiosque RioMar e família de chocolates — Massapê">15</a><a href="https://www.instagram.com/p/DWUtcBdETMh/" title="Mercado Capitão e Massapê Chocolateria — evento e claim promocional">30</a><br />
+<strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Agenda futura, estandes, endereços, parceiros e horários.</p>
+<h3 id="imprensa-na-midia">Imprensa / Na mídia</h3>
+<p><strong>Conteúdo seguro:</strong> lista de matérias, rádio, SoundCloud e entrevista de FENEARTE, com links e crédito. <a href="https://www.folhape.com.br/radio-folha/gastro-meeting-realizado-gratuitamente/349941/" title="Gastrô Meeting realizado gratuitamente pela Faculdade Senac — Folha/Rádio Folha">3</a><a href="https://www.folhape.com.br/radio-folha/cafe-e-chocolate-saiba-as-principais-semelhancas-e-diferencas/236737/" title="Café e chocolate: saiba as principais semelhanças e diferenças — Folha/Rádio Folha">11</a><a href="https://www.instagram.com/reel/DFLRVlKuDy-/" title="Trecho de entrevista na FENEARTE 2024 — Massapê/Mandacaru Cultural">31</a><br />
+<strong>Uso:</strong> links ou embeds oficiais, citações curtas.<br />
+<strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Autorizações para reproduzir trechos, fotos, logos e vídeos de veículos/GNT/Globo.</p>
+<h3 id="parceiros">Parceiros</h3>
+<p><strong>Conteúdo seguro:</strong> relações históricas documentadas com Senac, Roasteria, Ekäut/Callebaut, O Chá da Casa/Kaffe, Mercado Capitão e Mandacaru. <a href="https://www.diariodepernambuco.com.br/noticia/gastro/2019/01/evento-de-hamonizacao-de-cafe-com-chocolate-acontece-no-dia-26.html" title="Oficina de harmonização de café com chocolate acontece no dia 26 — Diário de Pernambuco">9</a><a href="https://www.instagram.com/reel/DFLRVlKuDy-/" title="Trecho de entrevista na FENEARTE 2024 — Massapê/Mandacaru Cultural">29</a><a href="https://www.instagram.com/reel/DFF1Tp2usJI/" title="Colaboração Massapê–Roasteria e encerramento de temporada no RioMar">32</a><br />
+<strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Vigência, exclusividade, contrato, logos liberados e texto aprovado de cada parceria.</p>
+<h3 id="galeria">Galeria</h3>
+<p><strong>Conteúdo seguro:</strong> apenas imagens entregues pela empresa com autorização escrita e créditos. O inventário visual deste dossiê pode orientar a solicitação. <a href="https://www.instagram.com/massapechocolates/" title="Acervo público de referência visual da Massapê — direitos não presumidos">34</a><br />
+<strong>Não usar automaticamente:</strong> fotos de Doce Ciência, Senac, Folha, Facebook, Instagram, eventos e fazenda.</p>
+<h3 id="contato-pedidos">Contato / Pedidos</h3>
+<p><strong>Conteúdo seguro:</strong> botão para WhatsApp e Instagram oficial, depois de reconfirmar o número. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">1</a><br />
+<strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Horário, prazo, entrega, retirada, pagamento, endereço, política de troca e atendimento para atacado.</p>
+<h3 id="press">Press</h3>
+<p>A página <strong>Press / Na mídia</strong> deve funcionar como arquivo editorial, não como prova de endosso. Sugestão de blocos: <em>Diário de Pernambuco</em> (2018), Senac (2019 e 2021), Folha/Rádio Folha (2021–2024), <em>Doce Ciência</em> (2021), FENEARTE/Mandacaru Cultural (2024) e Gastrô Meeting (2024), sempre com data, veículo, assunto, resumo próprio, link e crédito. <a href="http://www.pe.senac.br/alunos-de-gastronomia-da-faculdade-senac-fazem-degustacao-sensorial-do-chocolate-rosa/" title="Alunos de Gastronomia fazem degustação sensorial do chocolate rosa — Senac Pernambuco">3</a><a href="https://www.folhape.com.br/radio-folha/gastro-meeting-realizado-gratuitamente/349941/" title="Gastrô Meeting realizado gratuitamente pela Faculdade Senac — Folha/Rádio Folha">8</a><a href="https://www.folhape.com.br/radio-folha/cafe-e-chocolate-saiba-as-principais-semelhancas-e-diferencas/236737/" title="Café e chocolate: saiba as principais semelhanças e diferenças — Folha/Rádio Folha">11</a><a href="https://www.instagram.com/reel/DFLRVlKuDy-/" title="Trecho de entrevista na FENEARTE 2024 — Massapê/Mandacaru Cultural">31</a></p>
+<p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Lista completa de matérias, entrevistas, aparições de TV, autorizações de uso de logos, fotos, vídeos, áudios e trechos.</p>
+<h2 id="19-narrativa-institucional-somente-documental">19. Narrativa institucional somente documental</h2>
+<blockquote>
+<p>A Massapê Chocolateria se apresenta como uma marca de chocolate artesanal de Pernambuco, com proposta bean-to-bar e produção “da amêndoa à barra”. O perfil oficial informa que os chocolates são criados e produzidos por Mário Wanderley. Em seu perfil institucional, o Senac descreve Mário como confeiteiro, chocolateiro, barista e chocolate maker e informa que ele criou a Massapê Chocolateria em 2021. A trajetória pública do profissional também inclui fisioterapia em terapia intensiva, confeitaria, o Mon Cher Café et Pâtisserie, participação no reality <em>Que Seja Doce</em>, palestras, degustações, visitas técnicas e workshops. <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Chef pernambucano vai participar de reality show de confeitaria — Diário de Pernambuco, 2018">1</a><a href="http://www.pe.senac.br/alunos-de-gastronomia-da-faculdade-senac-fazem-degustacao-sensorial-do-chocolate-rosa/" title="Alunos de Gastronomia fazem degustação sensorial do chocolate rosa — Senac Pernambuco">4</a><a href="https://faculdadesenacpe.edu.br/faculdade-senac-pe-realiza-segunda-edicao-do-gastro-meeting" title="Faculdade Senac PE realiza segunda edição do Gastrô Meeting — oficina bean-to-bar">8</a></p>
+<p>A linha documentada pela própria marca na FENEARTE 2026 reuniu percentuais de 100%, 85%, 70%, 60%, 55%, 38% vegano e 32%, além de Chocolate Branco; Canjiquinha e Pé de Moleque foram posteriormente descritos pela marca como itens fixados no cardápio naquele período. <a href="https://www.instagram.com/massapechocolates/p/DaxZ6ufDtQz/" title="Barra Canjiquinha — composição publicada pela Massapê">15</a><a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Canjiquinha e Pé de Moleque fixados no cardápio — Massapê">17</a> A documentação histórica também registra degustação de 45%, 70% e 100% de massa de cacau em 2021, em avaliação de terceiro. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a></p>
+<p>A marca mantém presença pública principalmente no Instagram e recebe pedidos por WhatsApp. Eventos, pontos de venda e parcerias foram documentados em diferentes momentos, incluindo Senac, FENEARTE, RioMar, Mercado Capitão, Roasteria e atividades de degustação. <a href="https://faculdadesenacpe.edu.br/faculdade-senac-pe-realiza-segunda-edicao-do-gastro-meeting" title="Faculdade Senac PE realiza segunda edição do Gastrô Meeting — oficina bean-to-bar">1</a><a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">10</a><a href="https://www.instagram.com/reel/DEOCOiSuD5a/" title="Quiosque RioMar e família de chocolates — Massapê">18</a><a href="https://www.instagram.com/reel/DFF1Tp2usJI/" title="Colaboração Massapê–Roasteria e encerramento de temporada no RioMar">30</a></p>
+</blockquote>
+<p>Esse texto evita converter hipótese, alegação promocional, dado de fonte secundária, disponibilidade histórica ou ausência de documento em fato institucional. Antes da publicação, a empresa deve aprovar nomes, cargos, data de fundação, catálogo, claims e imagens.</p>
+<h2 id="20-lista-objetiva-do-que-solicitar-a-empresa">20. Lista objetiva do que solicitar à empresa</h2>
+<h3 id="identidade-juridica-e-narrativa">Identidade jurídica e narrativa</h3>
+<ol>
+<li>Razão social, CNPJ, nome fantasia, titularidade da marca e confirmação de que “Massapê Chocolates” e “Massapê Chocolateria” são a mesma operação.</li>
+<li>Nome completo e grafia preferida de Mário; cargo a usar: fundador, proprietário, chocolate maker, chocolatier, confeiteiro ou outro.</li>
+<li>Ano, mês, local e narrativa oficial de fundação; relação entre Mário Wanderley Doce e Chocolate e Massapê.</li>
+<li>Explicação autoral do nome “Massapê”, caso a empresa queira associá-lo a solo, fertilidade, Nordeste, Pernambuco, cana ou cacau.</li>
+<li>Missão, visão, valores, público, diferenciais, proposta de valor, manifesto, slogan e manual de tom de voz.</li>
+</ol>
+<h3 id="claims-e-curriculo">Claims e currículo</h3>
+<ol>
+<li>Aprovação ou documentação para “primeiro chocolate artesanal/bean-to-bar de Pernambuco”, “100% pernambucano”, “da amêndoa à barra” e demais alegações comparativas.</li>
+<li>Currículo autorizado de Mário: formação, diplomas, certificações, cursos, professores, datas, cargos, prêmios e resultado no <em>Que Seja Doce</em>.</li>
+<li>Lista completa e autorizada de aparições em TV, rádio, podcasts, YouTube, feiras, festivais, congressos, workshops e palestras, com links oficiais.</li>
+<li>Status atual de docência no Senac: professor, convidado, facilitador, instrutor ou participação pontual.</li>
+</ol>
+<h3 id="catalogo-e-operacao-comercial">Catálogo e operação comercial</h3>
+<ol>
+<li>Catálogo vigente com nome exato de cada produto, categoria, percentual, descrição, peso líquido, dimensões, foto, embalagem, lote, validade, conservação e preço.</li>
+<li>Ficha de ingredientes, proporções, alergênicos, leite, glúten, açúcar, aditivos, conservantes, aromatizantes e alegações veganas por SKU.</li>
+<li>Confirmação se Canjiquinha e Canjica são o mesmo produto; nome oficial do Pé de Moleque e status de cada item da FENEARTE 2026.</li>
+<li>Relação de itens sazonais, descontinuados e lançamentos; confirmação de bombons, trufas, ovos, fondue, nibs, cafés, kits corporativos e presentes.</li>
+<li>Preços e composição dos kits/valores que apareceram apenas em indexações; não publicar sem confirmação.</li>
+<li>WhatsApp oficial, endereço, horários, pedido mínimo, prazo, formas de pagamento, entrega, retirada, troca e pontos de venda vigentes.</li>
+<li>Confirmação de quiosque RioMar, Mercado Capitão, Roasteria, Café do Brejo e demais relações comerciais atuais.</li>
+</ol>
+<h3 id="cacau-origem-e-processo">Cacau, origem e processo</h3>
+<ol>
+<li>Fazenda/produtor de cada lote atual, município, variedade/genética, volume, contrato, exclusividade e rastreabilidade.</li>
+<li>Confirmação se a Fazenda Cruz de Malta continua fornecendo; autorização de menção e resolução da divergência 10 ha/20 t versus 20 ha/26 t.</li>
+<li>Critérios de seleção, incluindo uso ou não de Brix acima de 20 °; colheita, fermentação, secagem, armazenamento e controles.</li>
+<li>Torra: equipamento, curva, faixas de temperatura e objetivos por origem; quebra, descascamento, moagem, refino, conchagem, temperagem e moldagem.</li>
+<li>Indicação de etapas executadas pela Massapê e etapas terceirizadas; validade, conservação, embalagem e controle de alergênicos.</li>
+<li>Certificações, sustentabilidade, relacionamento/remuneração de produtores e eventual rastreabilidade publicada.</li>
+</ol>
+<h3 id="identidade-e-acervo-visual">Identidade e acervo visual</h3>
+<ol>
+<li>Logo em vetor (AI/SVG/EPS), versões horizontal/vertical/monocromática, paleta HEX/RGB/CMYK/Pantone, tipografias e regras de aplicação.</li>
+<li>Arquivos originais em alta resolução de barras, embalagens, produtos, Mário, equipe, ateliê, equipamentos, cacau, fazenda, quiosque, estandes e eventos.</li>
+<li>Créditos de fotógrafos, designers, videomakers e datas; identificação de todas as pessoas retratadas.</li>
+<li>Cessão escrita para site, redes, publicidade paga, edição/corte, hospedagem própria, território, prazo, créditos e eventual uso por agência/desenvolvedor.</li>
+<li>Autorizações de imagem de Mário, equipe, alunos, produtores, familiares, visitantes, clientes e entrevistados.</li>
+<li>Autorizações separadas de Fazenda Cruz de Malta/família/produtores, Senac, Folha, FENEARTE, RioMar, Roasteria, Mandacaru Cultural, Mercado Capitão/CRABOLANDO e demais parceiros.</li>
+<li>Licenças das trilhas dos Reels ou arquivos sem música protegida; autorização para incorporar vídeos/áudios de Instagram, YouTube e SoundCloud.</li>
+<li>Lista de canais oficiais e administradores: Instagram, Threads, Facebook, YouTube, LinkedIn, TikTok e Pinterest; situação da página “Mário Wanderley Doce e Chocolate”.</li>
+</ol>
+<h3 id="mensagem-curta-sugerida">Mensagem curta sugerida</h3>
+<blockquote>
+<p>Olá, Mário/Massapê. Estamos finalizando o dossiê e o novo site. Podem enviar o catálogo vigente com fichas, preços, pesos, ingredientes, alergênicos, validade e disponibilidade; a narrativa aprovada da marca e de Mário; origem e processo do cacau; identidade visual em vetor; arquivos originais de fotos e vídeos; créditos; identificação dos retratados; e autorizações escritas para uso no site, redes, publicidade paga e edição? Também precisamos confirmar canais oficiais, parceiros vigentes, agenda de experiências, claims permitidos e quais materiais podem ser incorporados por link ou player.</p>
+</blockquote>
+<h2 id="21-referencias">21. Referências</h2></article></div></main>
+<footer><div class="wrap"><p>Documentação de apoio estratégico. Verifique informações comerciais, direitos e claims antes da publicação oficial.</p><p><a href="index.html">Voltar ao painel principal</a></p></div></footer></body></html>

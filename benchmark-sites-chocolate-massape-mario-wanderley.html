@@ -1,0 +1,1158 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Benchmark estratégico de sites de chocolate — Massapê</title><style>
+  :root{
+    --ink:#1f1b18; --muted:#5c514a; --paper:#fffdf8; --cream:#f5ead9;
+    --cocoa:#4c261b; --cocoa-2:#6d3928; --gold:#d59b37; --green:#285c4b;
+    --blue:#154c69; --line:#d9c9b5; --danger:#8c2f39; --shadow:0 5px 18px rgba(54,33,20,.12);
+    --base:19px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:var(--base);line-height:1.65}
+  a{color:#075b85;text-decoration-thickness:2px;text-underline-offset:3px}
+  a:focus,button:focus{outline:4px solid #f2b632;outline-offset:3px}
+  .skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:10px;z-index:10}.skip:focus{left:8px}
+  header{background:linear-gradient(135deg,var(--cocoa),#2b1813);color:#fff;padding:38px 20px 34px;border-bottom:8px solid var(--gold)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#f4c968;font-size:.9em}
+  h1{font-size:clamp(2.25rem,5vw,4.2rem);line-height:1.05;margin:12px 0 18px;max-width:950px}
+  h2{font-size:clamp(1.75rem,3vw,2.55rem);line-height:1.15;color:var(--cocoa);margin:0 0 18px}
+  h3{font-size:1.45rem;line-height:1.2;color:var(--cocoa-2);margin:28px 0 10px}
+  h4{font-size:1.12rem;margin:18px 0 5px;color:var(--green)}
+  .lead{font-size:1.18em;max-width:900px}
+  .meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .pill{display:inline-block;border:2px solid rgba(255,255,255,.55);border-radius:999px;padding:5px 13px;font-weight:700}
+  .tools{background:#2e1a14;color:#fff;padding:12px 0;position:sticky;top:0;z-index:5;border-bottom:1px solid #68462f}
+  .tools .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .tools a{color:#fff}
+  button{border:2px solid #fff;background:var(--gold);color:#21150e;border-radius:8px;padding:8px 12px;font-weight:700;font-size:1rem;cursor:pointer}
+  nav{background:var(--cream);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;gap:9px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+  nav a{font-weight:700;padding:7px 10px;border-radius:6px;color:var(--cocoa)}
+  nav a:hover{background:#fff}
+  main{padding:32px 0 60px}
+  section{scroll-margin-top:75px;margin:0 0 44px}
+  .intro{background:#fff8e9;border-left:8px solid var(--gold);padding:22px 24px;border-radius:8px;box-shadow:var(--shadow);margin-bottom:25px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px;box-shadow:var(--shadow)}
+  .card p:last-child{margin-bottom:0}
+  .card strong{color:var(--cocoa)}
+  .fact{border-left:7px solid var(--green);background:#edf7f1;padding:15px 18px;border-radius:7px;margin:15px 0}
+  .analysis{border-left:7px solid var(--blue);background:#eef6fb;padding:15px 18px;border-radius:7px;margin:15px 0}
+  .pending{border-left:7px solid var(--danger);background:#fff0f1;padding:15px 18px;border-radius:7px;margin:15px 0}
+  .label{font-size:.84em;font-weight:800;letter-spacing:.03em;text-transform:uppercase;display:block;margin-bottom:3px}
+  .flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin:20px 0}
+  .flow .step{flex:1 1 145px;background:var(--cocoa);color:#fff;padding:16px;border-radius:9px;text-align:center;font-weight:700;display:flex;align-items:center;justify-content:center;min-height:78px}
+  .arrow{align-self:center;font-size:2rem;color:var(--gold);font-weight:900}
+  table{width:100%;border-collapse:collapse;background:#fff;font-size:1em;margin:15px 0;min-width:680px}
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow)}
+  th,td{border:1px solid var(--line);padding:13px;text-align:left;vertical-align:top}
+  th{background:var(--cocoa);color:#fff}
+  tr:nth-child(even){background:#fff8ef}
+  ul,ol{padding-left:1.35em}
+  li{margin:7px 0}
+  .big-number{font-size:2.4rem;color:var(--cocoa);font-weight:800;display:block;line-height:1}
+  .quote{font-size:1.25em;font-weight:700;color:var(--cocoa);border-left:5px solid var(--gold);padding:12px 18px;margin:20px 0;background:#fff8e9}
+  details{background:#fff;border:1px solid var(--line);border-radius:8px;margin:10px 0;box-shadow:var(--shadow)}
+  summary{cursor:pointer;font-weight:800;font-size:1.08em;padding:16px}
+  details > div{padding:0 18px 16px}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.legend span{padding:6px 10px;border-radius:6px;font-weight:700}.l-fact{background:#edf7f1;color:#164936}.l-analysis{background:#eef6fb;color:#154c69}.l-pending{background:#fff0f1;color:#8c2f39}
+  .source-list li{margin-bottom:8px}
+  footer{background:var(--cocoa);color:#fff;padding:30px 0 45px} footer a{color:#f9d27b}
+  .small{font-size:.92em;color:var(--muted)}
+  @media (max-width:700px){body{font-size:18px}.wrap{padding-left:18px;padding-right:18px}.tools{position:static}.arrow{display:none}.flow .step{flex-basis:100%}table{font-size:.98em}}
+  @media print{.tools,nav{display:none}body{font-size:14pt}header{color:#000;background:#fff;border:1px solid #000}.card,.intro{box-shadow:none}}
+
+  .doc-header{background:linear-gradient(135deg,var(--cocoa),#2b1813);color:#fff;padding:28px 0;border-bottom:8px solid var(--gold)}
+  .doc-header h1{font-size:clamp(2rem,4vw,3.4rem);margin-bottom:8px}
+  .doc-main{padding:32px 0 65px}
+  .doc-content{background:#fff;border:1px solid var(--line);border-radius:10px;padding:clamp(22px,4vw,52px);box-shadow:var(--shadow)}
+  .doc-content h1{color:var(--cocoa);font-size:clamp(2rem,4vw,3.2rem);line-height:1.12}
+  .doc-content h2{border-bottom:3px solid var(--gold);padding-bottom:8px;margin-top:38px}
+  .doc-content h3{margin-top:28px}
+  .doc-content img{max-width:100%;height:auto}
+  .doc-content blockquote{border-left:7px solid var(--gold);background:#fff8e9;padding:14px 20px;margin:20px 0;color:var(--cocoa);font-weight:700}
+  .doc-content code{background:#f2eadf;padding:2px 5px;border-radius:4px}
+  .doc-content pre{overflow:auto;background:#2b211c;color:#fff;padding:16px;border-radius:7px}
+  .doc-content table{min-width:680px}
+  .back{display:inline-block;margin-top:10px;color:#fff;font-weight:700}
+</style></head>
+<body><a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
+<header class="doc-header"><div class="wrap"><div class="eyebrow">Documentação estratégica da Massapê</div><h1>Benchmark estratégico de sites de chocolate</h1><a class="back" href="index.html">← Voltar ao painel principal</a></div></header>
+<nav aria-label="Navegação principal"><div class="wrap"><a href="index.html">Painel principal</a><a href="#conteudo">Ir para o conteúdo</a></div></nav>
+<main id="conteudo" class="doc-main"><div class="wrap"><article class="doc-content"><h1 id="benchmark-de-sites-de-chocolate-para-a-massape">Benchmark de sites de chocolate para a Massapê</h1>
+<h2 id="relatorio-final-mercado-referencias-padroes-e-implicacoes-de-produto">Relatório final — mercado, referências, padrões e implicações de produto</h2>
+<p><strong>Data-base documental:</strong> relatórios detalhados e dossiê fornecidos para esta tarefa, consultados em setembro de 2026.<br />
+<strong>Escopo:</strong> 26 marcas na lista ampla descoberta; 12 delas analisadas em profundidade nos relatórios individuais.<br />
+<strong>Idioma:</strong> português brasileiro.<br />
+<strong>Regra editorial:</strong> observações de interface, conteúdo e oferta são separadas de interpretações estratégicas. Alegações de origem, impacto, sustentabilidade, premiação e processo permanecem atribuídas às próprias marcas; não foram tratadas como auditoria independente.</p>
+<blockquote>
+<p><strong>Nota de leitura:</strong> preços, estoque, campanhas, quantidade de seguidores, disponibilidade, mensagens de frete e componentes dinâmicos são fotografias da consulta. Quando uma informação da Massapê não está documentada como vigente, usa-se: <strong>NÃO CONFIRMADO — necessita validação.</strong></p>
+</blockquote>
+<hr />
+<h2 id="1-resumo-do-mercado-observado">1. Resumo do mercado observado</h2>
+<p>O conjunto analisado mostra um mercado dividido em quatro camadas que podem coexistir na mesma marca:</p>
+<ol>
+<li><strong>Chocolate brasileiro de origem e bean-to-bar.</strong> Dengo, Nugali, Luisa Abram, AMMA, Baianí, Mission, Mestiço, Java e Chocolat du Jour conectam cacau, fabricação e identidade brasileira em intensidades diferentes <a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">1</a><a href="https://ammachocolate.com.br/" title="AMMA Chocolate — site oficial">3</a><a href="https://missionchocolate.com/" title="Mission Chocolate — site informado">5</a><a href="https://www.javachocolates.com.br/" title="Java Chocolates — site institucional">7</a><a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">9</a>.</li>
+<li><strong>Origem internacional, terroir e cadeia.</strong> Original Beans, Marou, Beyond Good e Chocolat Madagascar usam região, variedade, produtor e fabricação na origem ou cadeia curta como parte do produto, não apenas como texto institucional <a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">10</a><a href="https://beyondgood.com/" title="Beyond Good — site oficial">25</a>.</li>
+<li><strong>Craft, educação e experiência física.</strong> Dandelion, Dick Taylor, Fruition, Raaka, Ritual, Qantu, Zotter, SOMA e Pump Street combinam loja, café, fábrica, tour, aula, ateliê, restaurante ou conteúdo educativo com o comércio <a href="https://dicktaylorchocolate.com/" title="Dick Taylor Craft Chocolate — site oficial">13</a><a href="https://www.raakachocolate.com/" title="Raaka — site oficial">15</a><a href="https://qantuchocolate.com/" title="Qantu Chocolate — site oficial">17</a><a href="https://www.somachocolate.com/" title="SOMA chocolatemaker — site oficial">19</a><a href="https://pumpstreetchocolate.com/" title="Pump Street Chocolate — site oficial">23</a>.</li>
+<li><strong>Luxo, raridade e ritual.</strong> To’ak, Amedei e Domori trabalham origem, cultivares, edições, linguagem de coleção e degustação; a To’ak explicita ainda envelhecimento, arte e escada de preço <a href="https://amedei.it/en" title="Amedei — site oficial">11</a><a href="https://domori.com/en/" title="Domori — site oficial">21</a>.</li>
+</ol>
+<p><strong>Observação.</strong> A categoria “bean-to-bar” é usada de modo amplo. Algumas marcas descrevem controle a partir da amêndoa; outras também apresentam relação com fazenda, cultivo ou fabricação na origem. Os relatórios detalhados evitaram converter automaticamente compra direta em “tree-to-bar”: a nomenclatura deve seguir o que cada marca declara <a href="https://luisaabram.com/" title="Luisa Abram Chocolates — site canônico observado">2</a><a href="https://www.mesticochocolates.com.br/" title="Mestiço Chocolates — site oficial">5</a><a href="https://originalbeans.com/" title="Original Beans — site oficial">9</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">11</a>.</p>
+<p><strong>Interpretação.</strong> O valor premium não é sustentado por um único atributo. Ele aparece como combinação de origem identificável, processo inteligível, assinatura sensorial, pessoas, embalagem, serviço e uma ocasião de consumo. Para a Massapê, o espaço mais defensável não é competir por superlativo, mas tornar verificável e desejável a equação <strong>Pernambuco + autoria de Mário Wanderley + chocolate da amêndoa à barra + repertório sensorial regional</strong>, respeitando as lacunas do dossiê <a href="http://www.pe.senac.br/confeitaria/index.html" title="Senac Pernambuco — perfil de Mário Wanderley e Massapê Chocolateria">58</a><a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Diário de Pernambuco — trajetória de Mário e participação no Que Seja Doce">60</a>.</p>
+<hr />
+<h2 id="2-lista-ampla-26-marcas-de-referencia">2. Lista ampla: 26 marcas de referência</h2>
+<p>A tabela abaixo é uma <strong>cartografia de referências</strong>, não uma classificação. As categorias e diferenciais reproduzem em paráfrase a lista ampla e os sites indicados; a profundidade de verificação não foi igual para todas as marcas.</p>
+<table>
+<thead>
+<tr>
+<th>Marca</th>
+<th>País</th>
+<th>Categoria</th>
+<th>URL</th>
+<th>Proposta</th>
+<th>Diferencial observado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dengo</td>
+<td>Brasil</td>
+<td>Chocolate premium, cacau de origem, presentes e experiências</td>
+<td><a href="https://www.dengo.com.br/" title="Dengo Chocolates — site oficial">1</a></td>
+<td>Chocolate brasileiro e presentes com compra online, personalização e lojas/experiências.</td>
+<td>Une cacau brasileiro/Cabruca, produtores, processo, gifting e Fábrica de Dengo <a href="https://www.dengo.com.br/fabrica-de-dengo" title="Dengo — Fábrica de Dengo">27</a><a href="https://dengo.com/pt/pages/producers" title="Dengo — produtores">29</a>.</td>
+</tr>
+<tr>
+<td>Nugali Chocolates</td>
+<td>Brasil</td>
+<td>Bean-to-bar, origem, turismo de fábrica</td>
+<td><a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">2</a></td>
+<td>Chocolate brasileiro com controle da amêndoa ao tablete, portfólio amplo e Tour em Pomerode.</td>
+<td>Pioneirismo alegado, Serra do Conduru, processo didático, premiações e visita à fábrica <a href="https://www.nugali.com.br/pages/tour-nugali" title="Nugali — Tour Nugali">30</a>.</td>
+</tr>
+<tr>
+<td>Luisa Abram Chocolates</td>
+<td>Brasil</td>
+<td>Bean-to-bar, cacau selvagem amazônico</td>
+<td><a href="https://luisaabram.com/" title="Luisa Abram Chocolates — site canônico observado">3</a></td>
+<td>Barras e kits de cacau amazônico coletado por comunidades, com origens nomeadas por rios.</td>
+<td>Converte floresta, rios, comunidades, ciência e processo em sistema de coleção <a href="https://luisaabram.com/blogs/news/diferentes-rios-diferentes-sabores" title="Luisa Abram — diferentes rios, diferentes sabores">32</a><a href="https://luisaabram.com/products/barra-de-chocolate-luisa-abram-rio-purus-70-cacau" title="Luisa Abram — Rio Purus 70%">34</a>.</td>
+</tr>
+<tr>
+<td>AMMA Chocolate</td>
+<td>Brasil</td>
+<td>Orgânico, bean-to-bar/tree-to-bar, confeitaria</td>
+<td><a href="https://ammachocolate.com.br/" title="AMMA Chocolate — site oficial">4</a></td>
+<td>Chocolate e ingredientes para confeitaria ligados a cacau, floresta, agrofloresta e diferentes usos.</td>
+<td>Integra orgânico/biodinâmico alegados, linhas por intensidade, filtros, receitas, cashback e prescritores <a href="https://ammachocolate.com.br/collections/todos-os-produtos" title="AMMA — todos os produtos">35</a>.</td>
+</tr>
+<tr>
+<td>Baianí</td>
+<td>Brasil</td>
+<td>Bean-to-bar/tree-to-bar, origem e café</td>
+<td><a href="https://baiani.com.br/" title="Baianí Chocolates — site oficial">5</a></td>
+<td>Chocolate de cacaus brasileiros, sabores regionais, produtos derivados e loja/café.</td>
+<td>Herança familiar, Vale Potumuju, duas torras para a mesma barra e mapa de origens <a href="https://baiani.com.br/treetobar" title="Baianí — Tree to Bar">37</a><a href="https://baiani.com.br/comofazemos" title="Baianí — como fazemos">39</a>.</td>
+</tr>
+<tr>
+<td>Mission Chocolate</td>
+<td>Brasil</td>
+<td>Chocolateria autoral e bean-to-bar</td>
+<td><a href="https://missionchocolate.com/" title="Mission Chocolate — site informado">6</a></td>
+<td>Barras de sabores brasileiros, presentes, café-loja, livros e aulas.</td>
+<td>Autoria de Arcelia Gallardo e transformação de ingredientes/memórias brasileiras em coleção <a href="https://missionchocolaterecipes.com/" title="Mission Chocolate Recipes — receitas e processo">40</a>.</td>
+</tr>
+<tr>
+<td>Mestiço Chocolates</td>
+<td>Brasil</td>
+<td>Tree-to-bar/bean-to-bar, origem</td>
+<td><a href="https://www.mesticochocolates.com.br/" title="Mestiço Chocolates — site oficial">7</a></td>
+<td>Chocolate com cacau de produção própria, variedade, drageados e pastas.</td>
+<td>Assinatura “da floresta à barra”, terceira geração alegada, manteiga própria e repertório regional <a href="https://www.mesticochocolates.com.br/produtos/" title="Mestiço — catálogo de produtos">45</a>.</td>
+</tr>
+<tr>
+<td>Java Chocolates</td>
+<td>Brasil</td>
+<td>Origem, bean-to-bar, inclusão alimentar</td>
+<td><a href="https://www.javachocolates.com.br/" title="Java Chocolates — site institucional">8</a></td>
+<td>Chocolate brasileiro para consumo, presentes, food service e atacado.</td>
+<td>Combina terroir, fabricação e promessa de opções sem lactose, glúten e soja segundo cada SKU <a href="https://www.javachocolates.com.br/blog/como-o-cacau-vira-chocolate/" title="Java — como o cacau vira chocolate">42</a><a href="https://www.javachocolates.com.br/perguntas-frequentes/" title="Java — perguntas frequentes">44</a>.</td>
+</tr>
+<tr>
+<td>Chocolat du Jour</td>
+<td>Brasil</td>
+<td>Chocolate premium, bean-to-bar/tree-to-bar</td>
+<td><a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">9</a></td>
+<td>Chocolate fino artesanal, trufas, bombons, barras e presentes.</td>
+<td>História familiar, Fazenda Santa Luzia, pequenos lotes, frescor, personalização e serviço de entrega <a href="https://blog.chocolatdujour.com.br/chocolat-du-jour-uma-historia-recheada-de-amores-e-chocolates/" title="Chocolat du Jour — história da família">46</a>.</td>
+</tr>
+<tr>
+<td>Original Beans</td>
+<td>Países Baixos</td>
+<td>Origem, impacto climático, couvertures B2B</td>
+<td><a href="https://originalbeans.com/" title="Original Beans — site oficial">10</a></td>
+<td>Chocolate de variedades e origens com impacto climático/regenerativo alegado.</td>
+<td>Foodprint, One4One Trees, QR/tracker, Craft Cacao Standard e linha produzida na origem <a href="https://originalbeans.com/pages/your-impact" title="Original Beans — Your Impact">48</a><a href="https://originalbeans.com/pages/beans-collection" title="Original Beans — Beans Collection">50</a>.</td>
+</tr>
+<tr>
+<td>To’ak</td>
+<td>Equador</td>
+<td>Luxo, single-origin, tree-to-bar</td>
+<td><a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">11</a></td>
+<td>Chocolate equatoriano raro apresentado como experiência de fine chocolate.</td>
+<td>Ancient Nacional, terroir, envelhecimento, edição limitada, arte, certificado e degustação <a href="https://toakchocolate.com/pages/making-process" title="To'ak — Making Process">51</a><a href="https://toakchocolate.com/collections" title="To'ak — Collections">53</a>.</td>
+</tr>
+<tr>
+<td>Marou</td>
+<td>Vietnã</td>
+<td>Bean-to-bar, single-origin, terroir</td>
+<td><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a></td>
+<td>Chocolate de províncias vietnamitas com ingredientes locais e loja internacional.</td>
+<td>Compra “bag by bag”, processo de 48 horas, embalagem manual e sabores vietnamitas <a href="https://marouchocolate.com/pages/our-story" title="Marou — Our Story">55</a><a href="https://marouchocolate.com/products/tien-giang-70-single-origin" title="Marou — Tien Giang 70%">57</a>.</td>
+</tr>
+<tr>
+<td>Dandelion Chocolate</td>
+<td>Estados Unidos</td>
+<td>Bean-to-bar, single-origin, cafés e fábrica</td>
+<td><a href="https://www.dandelionchocolate.com/" title="Dandelion Chocolate — site oficial">13</a></td>
+<td>Chocolate de dois ingredientes, em pequenos lotes e por fazenda/cooperativa <a href="https://www.dandelionchocolate.com/" title="Dandelion Chocolate — site oficial">13</a>.</td>
+<td>Fábrica visitável, tours, aulas, café e sourcing direto apresentados juntos <a href="https://www.dandelionchocolate.com/" title="Dandelion Chocolate — site oficial">13</a>.</td>
+</tr>
+<tr>
+<td>Dick Taylor Craft Chocolate</td>
+<td>Estados Unidos</td>
+<td>Craft chocolate, pequenos lotes</td>
+<td><a href="https://dicktaylorchocolate.com/" title="Dick Taylor Craft Chocolate — site oficial">14</a></td>
+<td>Barras, confections e bebidas de chocolate artesanal <a href="https://dicktaylorchocolate.com/" title="Dick Taylor Craft Chocolate — site oficial">14</a>.</td>
+<td>Arquitetura “Shop, Learn, Visit”, fábrica, eventos e comércio direto <a href="https://dicktaylorchocolate.com/" title="Dick Taylor Craft Chocolate — site oficial">14</a>.</td>
+</tr>
+<tr>
+<td>Fruition Chocolate Works</td>
+<td>Estados Unidos</td>
+<td>Bean-to-bar, small batch</td>
+<td><a href="https://www.fruitionchocolateworks.com/" title="Fruition Chocolate Works — site oficial">15</a></td>
+<td>Chocolate de pequenos lotes produzido nas Catskill Mountains <a href="https://www.fruitionchocolateworks.com/" title="Fruition Chocolate Works — site oficial">15</a>.</td>
+<td>Mapas narrativos de origens, prêmios, café/loja e destino físico <a href="https://www.fruitionchocolateworks.com/" title="Fruition Chocolate Works — site oficial">15</a>.</td>
+</tr>
+<tr>
+<td>Raaka</td>
+<td>Estados Unidos</td>
+<td>Bean-to-bar, chocolate não torrado</td>
+<td><a href="https://www.raakachocolate.com/" title="Raaka — site oficial">16</a></td>
+<td>Chocolate amargo não torrado de cacau single-origin rastreável <a href="https://www.raakachocolate.com/" title="Raaka — site oficial">16</a>.</td>
+<td>Diferenciação por ausência de torra, processo didático e transparência de cadeia <a href="https://www.raakachocolate.com/" title="Raaka — site oficial">16</a>.</td>
+</tr>
+<tr>
+<td>Ritual Chocolate</td>
+<td>Estados Unidos</td>
+<td>Bean-to-bar, orgânico</td>
+<td><a href="https://www.ritualchocolate.com/" title="Ritual Chocolate — site oficial">17</a></td>
+<td>Chocolate artesanal com sourcing ético e experiência cotidiana <a href="https://www.ritualchocolate.com/" title="Ritual Chocolate — site oficial">17</a>.</td>
+<td>Embalagem ecológica alegada, clube de microlotes, café-fábrica e journal <a href="https://www.ritualchocolate.com/" title="Ritual Chocolate — site oficial">17</a>.</td>
+</tr>
+<tr>
+<td>Qantu Chocolate</td>
+<td>Canadá</td>
+<td>Bean-to-bar, single-origin e ateliê</td>
+<td><a href="https://qantuchocolate.com/" title="Qantu Chocolate — site oficial">18</a></td>
+<td>Barras, caixas, inclusões e degustações no ateliê <a href="https://qantuchocolate.com/" title="Qantu Chocolate — site oficial">18</a>.</td>
+<td>Curadoria de origens, maple/whisky/palo santo e visita ao atelier <a href="https://qantuchocolate.com/" title="Qantu Chocolate — site oficial">18</a>.</td>
+</tr>
+<tr>
+<td>Zotter</td>
+<td>Áustria</td>
+<td>Orgânico, fair trade e bean-to-bar</td>
+<td><a href="https://www.zotter.at/en/" title="Zotter — site oficial">19</a></td>
+<td>Chocolate integralmente produzido pela empresa, com variedade e experiência de fábrica <a href="https://www.zotter.at/en/" title="Zotter — site oficial">19</a>.</td>
+<td>Mais de 500 sabores alegados, personalização, Chocolate Theatre e Edible Zoo <a href="https://www.zotter.at/en/" title="Zotter — site oficial">19</a>.</td>
+</tr>
+<tr>
+<td>Amedei</td>
+<td>Itália</td>
+<td>Chocolate fino, origem e luxo</td>
+<td><a href="https://amedei.it/en" title="Amedei — site oficial">20</a></td>
+<td>Chocolate italiano feito com cacaus raros e receitas curtas <a href="https://amedei.it/en" title="Amedei — site oficial">20</a>.</td>
+<td>Cultivares, jornada do cacau, linguagem de terroir, tour e degustação <a href="https://amedei.it/en" title="Amedei — site oficial">20</a>.</td>
+</tr>
+<tr>
+<td>Domori</td>
+<td>Itália</td>
+<td>Chocolate fino, Criollo, origem</td>
+<td><a href="https://domori.com/en/" title="Domori — site oficial">21</a></td>
+<td>Chocolate focado em cacaus finos, especialmente Criollo <a href="https://domori.com/en/" title="Domori — site oficial">21</a>.</td>
+<td>Autoridade técnica, cultivar raro, seleção e processamento internos <a href="https://domori.com/en/" title="Domori — site oficial">21</a>.</td>
+</tr>
+<tr>
+<td>SOMA chocolatemaker</td>
+<td>Canadá</td>
+<td>Chocolateria artesanal e experiências</td>
+<td><a href="https://www.somachocolate.com/" title="SOMA chocolatemaker — site oficial">22</a></td>
+<td>Barras, trufas, gelato, café e degustações em Toronto <a href="https://www.somachocolate.com/" title="SOMA chocolatemaker — site oficial">22</a>.</td>
+<td>Cacao Bean Lab, múltiplos endereços, laboratório e turismo gastronômico <a href="https://www.somachocolate.com/" title="SOMA chocolatemaker — site oficial">22</a>.</td>
+</tr>
+<tr>
+<td>Pump Street Chocolate</td>
+<td>Reino Unido</td>
+<td>Bean-to-bar, single-farm, padaria</td>
+<td><a href="https://pumpstreetchocolate.com/" title="Pump Street Chocolate — site oficial">23</a></td>
+<td>Chocolate de pequenos lotes, barras clássicas e edições inspiradas em panificação <a href="https://pumpstreetchocolate.com/" title="Pump Street Chocolate — site oficial">23</a>.</td>
+<td>Fazenda no rótulo, pagamento direto alegado, fábrica, padaria, café e loja <a href="https://pumpstreetchocolate.com/" title="Pump Street Chocolate — site oficial">23</a>.</td>
+</tr>
+<tr>
+<td>Omnom</td>
+<td>Islândia</td>
+<td>Bean-to-bar nórdico</td>
+<td><a href="https://omnomchocolate.com/" title="Omnom — site oficial">24</a></td>
+<td>Chocolate fabricado em Reykjavík com cacau e leite islandês <a href="https://omnomchocolate.com/" title="Omnom — site oficial">24</a>.</td>
+<td>Identidade territorial, fabricação passo a passo, sabores como café, caramelo e alcaçuz <a href="https://omnomchocolate.com/" title="Omnom — site oficial">24</a>.</td>
+</tr>
+<tr>
+<td>Chocolat Madagascar</td>
+<td>Madagascar</td>
+<td>Tree-to-bar, origem e produção na origem</td>
+<td><a href="https://www.chocolatmadagascar.com/" title="Chocolat Madagascar — site oficial">25</a></td>
+<td>Chocolate produzido perto das plantações a partir de cacau de Madagascar <a href="https://www.chocolatmadagascar.com/" title="Chocolat Madagascar — site oficial">25</a>.</td>
+<td>Frescor, terroir, agrofloresta e agregação de valor no país de origem <a href="https://www.chocolatmadagascar.com/" title="Chocolat Madagascar — site oficial">25</a>.</td>
+</tr>
+<tr>
+<td>Beyond Good</td>
+<td>Estados Unidos / produção em Madagascar e Uganda</td>
+<td>Direct trade, origem e produção na origem</td>
+<td><a href="https://beyondgood.com/" title="Beyond Good — site oficial">26</a></td>
+<td>Chocolate e baunilha feitos na origem africana, sem intermediários segundo a marca <a href="https://beyondgood.com/" title="Beyond Good — site oficial">26</a>.</td>
+<td>Rastreabilidade declarada, fabricação local e área para conhecer agricultores <a href="https://beyondgood.com/" title="Beyond Good — site oficial">26</a>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-sites-analisados-em-profundidade">3. Sites analisados em profundidade</h2>
+<p>Foram lidos os relatórios profissionais individuais abaixo, todos salvos em <code>/home/ubuntu/benchmark/</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Marca</th>
+<th>Relatório</th>
+<th>Escopo resumido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dengo</td>
+<td><code>/home/ubuntu/benchmark/relatorio-1.md</code></td>
+<td>Home, institucional, produtores, fábrica, catálogo, produto, fidelidade, corporativo, entrega, SEO, mobile e sustentabilidade alegada.</td>
+</tr>
+<tr>
+<td>Nugali</td>
+<td><code>/home/ubuntu/benchmark/relatorio-2.md</code></td>
+<td>Home, história, fundadores, bean-to-bar, Serra do Conduru, sustentabilidade, Tour, produtos, sitemap e comércio agentic.</td>
+</tr>
+<tr>
+<td>Luisa Abram</td>
+<td><code>/home/ubuntu/benchmark/relatorio-3.md</code></td>
+<td>Home com vídeo, fundadora/família, rios, produtos, kits, políticas, blog, SEO e sinais técnicos de responsividade.</td>
+</tr>
+<tr>
+<td>AMMA</td>
+<td><code>/home/ubuntu/benchmark/relatorio-4.md</code></td>
+<td>Home, catálogo, cultivo, jornada, produtos, receitas, prescritores, logística, FAQ, SEO e e-commerce.</td>
+</tr>
+<tr>
+<td>Baianí</td>
+<td><code>/home/ubuntu/benchmark/relatorio-5.md</code></td>
+<td>Home, fundadores, fazenda, mapa, processo, catálogo, loja, vídeo, B2B, SEO e problemas editoriais.</td>
+</tr>
+<tr>
+<td>Mission Chocolate</td>
+<td><code>/home/ubuntu/benchmark/relatorio-6.md</code></td>
+<td>Home, Arcelia, catálogo, ingredientes brasileiros, processo, receitas, YouTube, B2B, SEO e mobile técnico.</td>
+</tr>
+<tr>
+<td>Mestiço</td>
+<td><code>/home/ubuntu/benchmark/relatorio-7.md</code></td>
+<td>Home, catálogo, produtos, políticas, árvore/barra alegada, vídeo, UX, SEO e fontes externas corroboradoras.</td>
+</tr>
+<tr>
+<td>Java</td>
+<td><code>/home/ubuntu/benchmark/relatorio-8.md</code></td>
+<td>Site institucional e loja, fundadores, origens, processo, alergênicos, food service, blog, SEO e mobile técnico.</td>
+</tr>
+<tr>
+<td>Chocolat du Jour</td>
+<td><code>/home/ubuntu/benchmark/relatorio-9.md</code></td>
+<td>Home, lojas, família, fazenda, processo, catálogo, presentes, logística, blog, SEO e limitações visuais.</td>
+</tr>
+<tr>
+<td>Original Beans</td>
+<td><code>/home/ubuntu/benchmark/relatorio-10.md</code></td>
+<td>Home, Foodprint, origens, processo, impacto, B2B, produtos, QR/tracker, vídeo, SEO e performance percebida.</td>
+</tr>
+<tr>
+<td>To’ak</td>
+<td><code>/home/ubuntu/benchmark/relatorio-11.md</code></td>
+<td>Home em vídeo, luxo, Ancient Nacional, equipe, processo, envelhecimento, produtos, preço, gifting, Journal e garantias.</td>
+</tr>
+<tr>
+<td>Marou</td>
+<td><code>/home/ubuntu/benchmark/relatorio-12.md</code></td>
+<td>Home, fundadores, províncias, processo, impacto, produtos, políticas, wholesale, SEO e sinais técnicos mobile.</td>
+</tr>
+</tbody>
+</table>
+<p>As outras 14 marcas da lista ampla foram usadas como referências de descoberta e comparação temática; <strong>NÃO CONFIRMADO — necessita validação.</strong> Uma auditoria visual, técnica e comercial com o mesmo nível de profundidade para cada uma.</p>
+<h3 id="31-fontes-por-marca-e-paginas-centrais-analisadas">3.1 Fontes por marca e páginas centrais analisadas</h3>
+<table>
+<thead>
+<tr>
+<th>Marca</th>
+<th>Páginas centrais e evidência de leitura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dengo</td>
+<td>Home, Somos Dengo, Fábrica de Dengo, produtores e corporativo <a href="https://www.dengo.com.br/somos-dengo" title="Dengo — Somos Dengo">1</a><a href="https://dengo.com/pt/pages/producers" title="Dengo — produtores">28</a>.</td>
+</tr>
+<tr>
+<td>Nugali</td>
+<td>Home, história, “Como é feito”, Tour, produtos e Chocopedia <a href="https://www.nugali.com.br/blogs/como-e-feito/como-e-feito-o-chocolate" title="Nugali — como é feito o chocolate">2</a><a href="https://www.nugali.com.br/pages/tour-nugali" title="Nugali — Tour Nugali">31</a>.</td>
+</tr>
+<tr>
+<td>Luisa Abram</td>
+<td>Home, Sobre nós, artigo de bean-to-bar, rios e produto Rio Purus <a href="https://luisaabram.com/blogs/news/o-que-e-chocolate-bean-to-bar" title="Luisa Abram — o que é chocolate bean-to-bar">3</a><a href="https://luisaabram.com/products/barra-de-chocolate-luisa-abram-rio-purus-70-cacau" title="Luisa Abram — Rio Purus 70%">33</a>.</td>
+</tr>
+<tr>
+<td>AMMA</td>
+<td>Home, catálogo, A Jornada AMMA, O Cultivo e o Fazer, produtos e editorial <a href="https://ammachocolate.com.br/pages/a-jornada-amma" title="AMMA — A Jornada AMMA">4</a><a href="https://ammachocolate.com.br/collections/todos-os-produtos" title="AMMA — todos os produtos">36</a>.</td>
+</tr>
+<tr>
+<td>Baianí</td>
+<td>Home, Tradição e Origem, Tree to Bar, Como Fazemos, catálogo e loja <a href="https://baiani.com.br/sobre" title="Baianí — tradição e origem">5</a><a href="https://baiani.com.br/comofazemos" title="Baianí — como fazemos">38</a>.</td>
+</tr>
+<tr>
+<td>Mission Chocolate</td>
+<td>Home brasileira, Sobre, catálogo, fichas de produto, brindes/atacado e Mission Chocolate Recipes <a href="https://www.missionchocolate.com.br/p/sobre" title="Mission Chocolate — sobre">6</a><a href="https://missionchocolaterecipes.com/" title="Mission Chocolate Recipes — receitas e processo">41</a>.</td>
+</tr>
+<tr>
+<td>Mestiço</td>
+<td>Home, catálogo/categorias, fichas de Catongo e Leite Crema, políticas e vídeo ligado pela home <a href="https://www.mesticochocolates.com.br/produtos/" title="Mestiço — catálogo de produtos">7</a>.</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>Home institucional, Nossa história, Produtos, FAQ, artigos de origem/processo e loja oficial <a href="https://www.javachocolates.com.br/nossa-historia/" title="Java — nossa história">8</a><a href="https://www.javachocolates.com.br/perguntas-frequentes/" title="Java — perguntas frequentes">43</a>.</td>
+</tr>
+<tr>
+<td>Chocolat du Jour</td>
+<td>Home, Chocolates, Presentes, Bean to Bar, Sobre, Fazenda, entrega, lojas e Choco Blog <a href="https://www.chocolatdujour.com.br/fazenda" title="Chocolat du Jour — nossa fazenda">9</a><a href="https://blog.chocolatdujour.com.br/chocolat-du-jour-uma-historia-recheada-de-amores-e-chocolates/" title="Chocolat du Jour — história da família">47</a>.</td>
+</tr>
+<tr>
+<td>Original Beans</td>
+<td>Home, About Us, Product/Beans Collection, Your Impact, Foodprint, ingredientes e políticas <a href="https://originalbeans.com/pages/chocolate-foodprint" title="Original Beans — Chocolate Foodprint">10</a><a href="https://originalbeans.com/pages/beans-collection" title="Original Beans — Beans Collection">49</a>.</td>
+</tr>
+<tr>
+<td>To’ak</td>
+<td>Home, Our Story, Our Cacao, Making Process, Collections, Journal, gifting e páginas de produto <a href="https://toakchocolate.com/pages/our-story" title="To'ak — Our Story">11</a><a href="https://toakchocolate.com/pages/our-cacao" title="To'ak — Our Cacao">52</a><a href="https://toakchocolate.com/collections" title="To'ak — Collections">54</a>.</td>
+</tr>
+<tr>
+<td>Marou</td>
+<td>Home europeia, Our Story, Our Philosophy, Our Chocolate, Our Impact, coleção e PDPs Tien Giang/Vietnam 100% <a href="https://marouchocolate.com/pages/our-chocolate" title="Marou — Our Chocolate">12</a><a href="https://marouchocolate.com/products/tien-giang-70-single-origin" title="Marou — Tien Giang 70%">56</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>Os relatórios individuais registram também páginas de política, SEO, mobile, preço, conversão, vídeo e conteúdo editorial quando acessíveis. A tabela resume as páginas centrais; não significa que cada marca tenha sido auditada em todas as rotas existentes.</p>
+<hr />
+<h2 id="4-padroes-de-posicionamento">4. Padrões de posicionamento</h2>
+<h3 id="41-a-categoria-vira-uma-promessa-concreta">4.1 A categoria vira uma promessa concreta</h3>
+<p><strong>Observação.</strong> Baianí coloca “Chocolate Bean to Bar” no topo e usa a sequência qualidade/sabor → origem → produtos → loja/café → prêmios <a href="https://baiani.com.br/sobre" title="Baianí — tradição e origem">5</a><a href="https://baiani.com.br/treetobar" title="Baianí — Tree to Bar">38</a>. Java combina origem, processo e segurança alimentar no hero <a href="https://www.javachocolates.com.br/nossa-historia/" title="Java — nossa história">8</a><a href="https://www.javachocolates.com.br/blog/como-o-cacau-vira-chocolate/" title="Java — como o cacau vira chocolate">43</a>. Marou usa a ideia de viagem pelo Vietnã e depois reforça “Vietnam Single Origin” <a href="https://marouchocolate.com/pages/our-chocolate" title="Marou — Our Chocolate">12</a>. To’ak começa por fine chocolate, Equador, raridade e arte <a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">11</a>.</p>
+<p><strong>Interpretação.</strong> O nome técnico “bean-to-bar” comunica com mais clareza quando vem acompanhado de uma consequência compreensível: sabor, origem, segurança, experiência ou raridade. Para Massapê, “da amêndoa à barra” já é uma formulação pública da marca <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">58</a>; o site deve explicar o que isso significa no produto e em quais etapas a empresa efetivamente atua, sem preencher lacunas com suposições <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">59</a>.</p>
+<h3 id="42-origem-como-sistema-de-navegacao">4.2 Origem como sistema de navegação</h3>
+<p><strong>Observação.</strong> Luisa Abram organiza barras por rios e perfis sensoriais <a href="https://luisaabram.com/blogs/news/diferentes-rios-diferentes-sabores" title="Luisa Abram — diferentes rios, diferentes sabores">3</a><a href="https://luisaabram.com/products/barra-de-chocolate-luisa-abram-rio-purus-70-cacau" title="Luisa Abram — Rio Purus 70%">34</a>. Original Beans liga origem, variedade, terroir, fauna e impacto <a href="https://originalbeans.com/pages/chocolate-foodprint" title="Original Beans — Chocolate Foodprint">10</a><a href="https://originalbeans.com/pages/beans-collection" title="Original Beans — Beans Collection">50</a>. Marou transforma províncias vietnamitas em coleção <a href="https://marouchocolate.com/pages/our-chocolate" title="Marou — Our Chocolate">12</a>. Baianí exibe mapa de estados, fazenda e microlotes <a href="https://baiani.com.br/sobre" title="Baianí — tradição e origem">5</a>.</p>
+<p><strong>Interpretação.</strong> “Origem” é mais útil quando se transforma em filtro, nome de SKU, comparação e roteiro de degustação. Um mapa sem ficha de lote é apenas atmosfera; uma ficha sem imagem é apenas dado. A oportunidade de Massapê é começar com um sistema de origem somente onde houver informação vigente e autorizada: estado/município, lote ou safra, fornecedor, perfil e data de atualização. <strong>NÃO CONFIRMADO — necessita validação.</strong> A origem atual de cada lote da Massapê não aparece documentada.</p>
+<h3 id="43-autoria-e-competencia">4.3 Autoria e competência</h3>
+<p><strong>Observação.</strong> Mission centraliza Arcelia Gallardo como chocolatier, maker e professora <a href="https://www.missionchocolate.com.br/p/sobre" title="Mission Chocolate — sobre">6</a>. Java faz da experiência alimentar da cofundadora Aline Palmiro a origem do projeto <a href="https://www.javachocolates.com.br/nossa-historia/" title="Java — nossa história">8</a>. Baianí constrói a ponte entre Tuta, Juliana e a fazenda <a href="https://baiani.com.br/sobre" title="Baianí — tradição e origem">5</a>. Chocolat du Jour usa Claudia, John e a segunda geração como história empresarial <a href="https://blog.chocolatdujour.com.br/chocolat-du-jour-uma-historia-recheada-de-amores-e-chocolates/" title="Chocolat du Jour — história da família">9</a>.</p>
+<p><strong>Interpretação.</strong> Em marcas artesanais, a pessoa não é ornamento: ela explica decisões de matéria-prima, método e sabor. O dossiê documenta Mário como confeiteiro, chocolateiro, barista e chocolate maker, além da trajetória de fisioterapia, confeitaria, ensino, eventos e criação da Massapê em 2021 conforme Senac <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Diário de Pernambuco — trajetória de Mário e participação no Que Seja Doce">59</a>. Esse material permite uma página de autoria robusta, mas não autoriza afirmar cargo societário, nome civil completo ou certificações que não foram confirmados <a href="http://www.pe.senac.br/confeitaria/index.html" title="Senac Pernambuco — perfil de Mário Wanderley e Massapê Chocolateria">58</a>.</p>
+<h3 id="44-diferenciacao-por-restricao-uso-e-ocasiao">4.4 Diferenciação por restrição, uso e ocasião</h3>
+<p><strong>Observação.</strong> Nugali, AMMA, Java e Mission usam filtros e linhas por veganismo, lactose, açúcar, glúten ou uso profissional <a href="https://ammachocolate.com.br/" title="AMMA Chocolate — site oficial">2</a><a href="https://www.javachocolates.com.br/" title="Java Chocolates — site institucional">6</a>. Dengo, Chocolat du Jour, To’ak e Qantu organizam também presente, kits, experiência e edição <a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">1</a><a href="https://qantuchocolate.com/" title="Qantu Chocolate — site oficial">11</a>.</p>
+<p><strong>Interpretação.</strong> A arquitetura não deve obrigar todo visitante a entender cacau antes de comprar. Ela pode oferecer portas de entrada por <strong>experimentar</strong>, <strong>presentear</strong>, <strong>aprender</strong>, <strong>usar em confeitaria</strong> ou <strong>comprar por origem</strong>. Para Massapê, essas categorias só devem ser publicadas após inventário vigente de produtos, pesos, preços, ingredientes e disponibilidade. <strong>NÃO CONFIRMADO — necessita validação.</strong></p>
+<hr />
+<h2 id="5-storytelling-estruturas-que-aparecem-no-mercado">5. Storytelling: estruturas que aparecem no mercado</h2>
+<h3 id="51-arcos-narrativos-recorrentes">5.1 Arcos narrativos recorrentes</h3>
+<ol>
+<li><strong>Pessoa → problema → decisão.</strong> Java parte de restrições alimentares e chega a uma fábrica de chocolate de origem <a href="https://www.javachocolates.com.br/nossa-historia/" title="Java — nossa história">8</a>. Mission parte da trajetória de Arcelia e chega a sabores brasileiros e ensino <a href="https://www.missionchocolate.com.br/p/sobre" title="Mission Chocolate — sobre">6</a><a href="https://missionchocolaterecipes.com/" title="Mission Chocolate Recipes — receitas e processo">41</a>.</li>
+<li><strong>Território → produtor → processo → barra.</strong> Dengo, Baianí, Luisa Abram e Marou conectam geografia, cadeia, técnica e produto <a href="https://luisaabram.com/" title="Luisa Abram Chocolates — site canônico observado">1</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">5</a>.</li>
+<li><strong>Floresta → impacto → escolha.</strong> AMMA e Original Beans integram floresta, cultivo, comunidade e produto; as afirmações de impacto são atribuídas às marcas <a href="https://originalbeans.com/" title="Original Beans — site oficial">4</a><a href="https://originalbeans.com/pages/chocolate-foodprint" title="Original Beans — Chocolate Foodprint">35</a><a href="https://originalbeans.com/pages/your-impact" title="Original Beans — Your Impact">49</a>.</li>
+<li><strong>Raridade → tempo → objeto.</strong> To’ak usa variedade, terroir, edição, envelhecimento, arte e certificado para construir o ritual do luxo <a href="https://toakchocolate.com/pages/our-story" title="To'ak — Our Story">11</a><a href="https://toakchocolate.com/collections" title="To'ak — Collections">52</a>.</li>
+<li><strong>Família → continuidade → controle.</strong> Chocolat du Jour, Nugali, Baianí e Mestiço usam família, fundadores ou gerações para explicar permanência e domínio do fazer <a href="https://baiani.com.br/" title="Baianí Chocolates — site oficial">2</a><a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">7</a>.</li>
+</ol>
+<h3 id="52-o-que-torna-uma-narrativa-util-para-o-produto">5.2 O que torna uma narrativa útil para o produto</h3>
+<p><strong>Observação.</strong> As páginas mais comerciais não separam completamente história e venda. Em Dengo, produtores, fábrica, presentes e e-commerce formam caminhos conectados <a href="https://www.dengo.com.br/somos-dengo" title="Dengo — Somos Dengo">1</a><a href="https://dengo.com/pt/pages/producers" title="Dengo — produtores">28</a>. Em Chocolat du Jour, Fazenda, processo, barra e entrega aparecem como provas do preço e do serviço <a href="https://www.chocolatdujour.com.br/fazenda" title="Chocolat du Jour — nossa fazenda">9</a>. Em Original Beans, a origem leva ao produto, ao Foodprint e ao canal profissional <a href="https://originalbeans.com/pages/chocolate-foodprint" title="Original Beans — Chocolate Foodprint">10</a><a href="https://originalbeans.com/pages/beans-collection" title="Original Beans — Beans Collection">50</a>.</p>
+<p><strong>Interpretação.</strong> Para Massapê, a história precisa responder sucessivamente: <strong>quem faz; de onde vem; como é feito; o que muda no sabor; como comprar; como receber; por que confiar</strong>. Um “Sobre” isolado, sem ligação com a barra, desperdiçaria o material de Mário e dos eventos documentados <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Diário de Pernambuco — trajetória de Mário e participação no Que Seja Doce">59</a><a href="https://soundcloud.com/folhape/050821-conexao-cafe-cafe-e-chocolate-com-o-chocolatier-mario-wanderley" title="Folha/SoundCloud — Conexão Café com Mário Wanderley">65</a>.</p>
+<h3 id="53-storytelling-nao-e-licenca-para-preencher-lacunas">5.3 Storytelling não é licença para preencher lacunas</h3>
+<p>O dossiê permite narrar Mário e a marca com atribuição documental, mas bloqueia superlativos e várias alegações: “primeiro”, “premiado”, “de qualidade superior”, “100% pernambucano” em sentido universal, “sem conservantes”, “sem aromatizantes”, “sustentável”, “tree-to-bar” e “feito integralmente no ateliê” <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">58</a>. A referência editorial de 2021 sobre Fazenda Cruz de Malta e seleção acima de 20 °Brix é histórica/secundária; não deve ser apresentada como ficha de todos os lotes atuais <a href="http://www.carlomockli.com/2021/08/cacau-fino-da-fazenda-cruz-de-malta.html" title="Carlo Möckli/Doce Ciência — cacau fino da Fazenda Cruz de Malta">61</a>.</p>
+<hr />
+<h2 id="6-comunicacao-bean-to-bar-e-processo">6. Comunicação bean-to-bar e processo</h2>
+<h3 id="61-o-que-as-marcas-fazem">6.1 O que as marcas fazem</h3>
+<p><strong>Observação.</strong> Nugali descreve compra, torra, moagem, conchagem, refino, temperagem, moldagem e embalagem; o Tour transforma processo em experiência <a href="https://www.nugali.com.br/blogs/como-e-feito/como-e-feito-o-chocolate" title="Nugali — como é feito o chocolate">2</a><a href="https://www.nugali.com.br/pages/tour-nugali" title="Nugali — Tour Nugali">31</a>. Luisa Abram apresenta escolha de origem, fermentação, secagem, torra, moagem, conchagem, temperagem e embalagem <a href="https://luisaabram.com/blogs/news/o-que-e-chocolate-bean-to-bar" title="Luisa Abram — o que é chocolate bean-to-bar">3</a>. Baianí associa seis etapas a decisões sensoriais e diferencia duas torras para uma mesma porcentagem <a href="https://baiani.com.br/treetobar" title="Baianí — Tree to Bar">5</a>. Marou memoriza o método com 48 horas e 22 dobras na embalagem <a href="https://marouchocolate.com/pages/our-story" title="Marou — Our Story">12</a>. Original Beans inclui processo e padrão técnico junto de origem e impacto <a href="https://originalbeans.com/pages/chocolate-foodprint" title="Original Beans — Chocolate Foodprint">10</a>.</p>
+<p><strong>Interpretação.</strong> A comunicação mais convincente não é a lista “torra, moagem, conchagem”; é o vínculo <strong>decisão → efeito</strong>: torra ajustada → aroma; fermentação → acidez; conchagem → textura; embalagem → conservação; lote → perfil. Massapê pode seguir esse modelo apenas com dados de processo fornecidos pela empresa.</p>
+<h3 id="62-terminologia-para-a-massape">6.2 Terminologia para a Massapê</h3>
+<p>O dossiê sustenta publicamente “bean-to-bar” e “da amêndoa à barra” <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">58</a>. Ele não sustenta “tree-to-bar”: não há fonte pública que documente posse de fazenda, plantio pela Massapê ou controle da cadeia desde a árvore <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">61</a>. Portanto:</p>
+<ul>
+<li><strong>Usar como fato atribuído:</strong> “A Massapê se apresenta como chocolate artesanal de Pernambuco, da amêndoa à barra” <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">58</a>.</li>
+<li><strong>Usar com contexto:</strong> etapas específicas somente depois de ficha técnica atual, distinguindo executadas pela Massapê e terceirizadas.</li>
+<li><strong>Não usar sem validação:</strong> “tree-to-bar”, “da fazenda própria”, “feito integralmente no ateliê” ou processo completo universal <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">61</a>.</li>
+</ul>
+<h3 id="63-conteudo-de-processo-recomendado">6.3 Conteúdo de processo recomendado</h3>
+<p>Uma página de processo pode ter cartões para <strong>origem/seleção, colheita, fermentação, secagem, torra, quebra, moagem, refino, conchagem, temperagem, moldagem e embalagem</strong>, mas cada cartão deve informar status: “confirmado para esta linha”, “aplicável a este lote”, “terceirizado” ou “NÃO CONFIRMADO — necessita validação.” Essa transparência é preferível a uma cadeia idealizada.</p>
+<hr />
+<h2 id="7-cacau-produtores-fundadores-e-territorio">7. Cacau, produtores, fundadores e território</h2>
+<h3 id="71-cacau">7.1 Cacau</h3>
+<p><strong>Observação.</strong> As marcas estudadas usam uma gradação de especificidade: país (Dengo/Brasil; Marou/Vietnã), região ou estado (Baianí, Java, Chocolat du Jour), fazenda/lote (Nugali, To’ak), rio/comunidade (Luisa Abram) e variedade/cultivar (Domori, Original Beans, To’ak) <a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">1</a><a href="https://baiani.com.br/" title="Baianí Chocolates — site oficial">3</a><a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">8</a><a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">10</a><a href="https://domori.com/en/" title="Domori — site oficial">12</a>.</p>
+<p><strong>Interpretação.</strong> Para Massapê, “Pernambuco” é um ativo comprovado como território de comunicação <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">58</a>. A Fazenda Cruz de Malta, Água Preta/PE, aparece em fontes secundárias de 2021, com divergência de área e volume entre relatos <a href="http://www.carlomockli.com/2021/08/cacau-fino-da-fazenda-cruz-de-malta.html" title="Carlo Möckli/Doce Ciência — cacau fino da Fazenda Cruz de Malta">61</a>. A arquitetura deve separar claramente <strong>território documentado</strong>, <strong>origem de lote histórico</strong> e <strong>origem atual a confirmar</strong>.</p>
+<h3 id="72-produtores">7.2 Produtores</h3>
+<p><strong>Observação.</strong> Dengo nomeia produtores e descreve suporte técnico e pagamento por qualidade <a href="https://dengo.com/pt/pages/producers" title="Dengo — produtores">1</a>. To’ak apresenta produtores dentro da equipe e relaciona origem, processo e preço <a href="https://toakchocolate.com/pages/our-story" title="To'ak — Our Story">11</a>. Original Beans usa Bean Teams, cooperativas, indicadores e rastreador de árvores segundo a marca <a href="https://originalbeans.com/pages/chocolate-foodprint" title="Original Beans — Chocolate Foodprint">10</a><a href="https://originalbeans.com/pages/your-impact" title="Original Beans — Your Impact">49</a>. Marou fala em compra direta e agricultores, mas o relatório registra que a ficha individual por barra ainda é limitada <a href="https://marouchocolate.com/pages/our-chocolate" title="Marou — Our Chocolate">12</a><a href="https://marouchocolate.com/products/tien-giang-70-single-origin" title="Marou — Tien Giang 70%">57</a>.</p>
+<p><strong>Interpretação.</strong> A Massapê não deve ilustrar “o produtor” com uma foto genérica sem identificação. Para cada pessoa, família, fazenda ou comunidade que apareça, pedir nome, autorização de imagem, localidade, papel e relação vigente. O dossiê também alerta que fotos de Fazenda Cruz de Malta, Senac, Folha, feiras e parceiros têm direitos não presumidos <a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">67</a>.</p>
+<h3 id="73-fundadores-e-pessoas">7.3 Fundadores e pessoas</h3>
+<p><strong>Observação.</strong> Nugali identifica Maitê Lang e Ivan Blumenschein; Mission identifica Arcelia; Java associa Aline Palmiro e André Chaves; Baianí apresenta Tuta e Juliana; To’ak apresenta Jerry Toth, Carl Schweizer, Dennise Valencia e também pessoas de produção <a href="https://missionchocolate.com/" title="Mission Chocolate — site informado">2</a><a href="https://baiani.com.br/" title="Baianí Chocolates — site oficial">8</a><a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">11</a>.</p>
+<p><strong>Interpretação.</strong> A Massapê pode fazer de Mário uma porta de entrada de autoria, mas deve preservar a precisão do dossiê: “profissional associado à marca” e “criador da Massapê em 2021 segundo o Senac” são formulações documentais; proprietário, fundador legal, nome civil completo e certificados precisam de confirmação <a href="http://www.pe.senac.br/confeitaria/index.html" title="Senac Pernambuco — perfil de Mário Wanderley e Massapê Chocolateria">59</a>.</p>
+<hr />
+<h2 id="8-produtos-preco-e-valor-percebido">8. Produtos, preço e valor percebido</h2>
+<h3 id="81-arquiteturas-de-sortimento-observadas">8.1 Arquiteturas de sortimento observadas</h3>
+<ul>
+<li><strong>Entrada/degustação:</strong> pequenos formatos, minis e barras de prova em Dengo, AMMA, Marou e To’ak <a href="https://ammachocolate.com.br/" title="AMMA Chocolate — site oficial">1</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">11</a>.</li>
+<li><strong>Origem/coleção:</strong> barras nomeadas por rio, estado, fazenda, província ou variedade em Luisa Abram, Baianí, Nugali, Marou e Domori <a href="https://luisaabram.com/" title="Luisa Abram Chocolates — site canônico observado">2</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">5</a><a href="https://domori.com/en/" title="Domori — site oficial">21</a>.</li>
+<li><strong>Presentes:</strong> kits, caixas, latas e personalização em Dengo, Chocolat du Jour, To’ak, Zotter, Qantu e Mission <a href="https://missionchocolate.com/" title="Mission Chocolate — site informado">1</a><a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">9</a><a href="https://www.zotter.at/en/" title="Zotter — site oficial">18</a>.</li>
+<li><strong>Ingredientes e food service:</strong> AMMA, Java, Original Beans, Nugali e SOMA ampliam o produto para confeitaria, profissionais e aplicações <a href="https://ammachocolate.com.br/" title="AMMA Chocolate — site oficial">2</a><a href="https://originalbeans.com/" title="Original Beans — site oficial">8</a><a href="https://www.somachocolate.com/" title="SOMA chocolatemaker — site oficial">22</a>.</li>
+<li><strong>Experiência:</strong> tours, degustações, cafés, fábricas, ateliês e restaurantes em Dengo, Nugali, Dandelion, Dick Taylor, Qantu, Zotter e SOMA <a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">1</a><a href="https://dicktaylorchocolate.com/" title="Dick Taylor Craft Chocolate — site oficial">13</a><a href="https://www.zotter.at/en/" title="Zotter — site oficial">18</a><a href="https://www.somachocolate.com/" title="SOMA chocolatemaker — site oficial">22</a>.</li>
+</ul>
+<h3 id="82-preco-como-arquitetura-de-acesso">8.2 Preço como arquitetura de acesso</h3>
+<p><strong>Observação.</strong> Os relatórios registram, entre outros, barra Dengo de 20 g por R$14,90 e formatos de presente; Nugali com tabletes em torno de R$28,99–R$33,99 e Tour de R$50; Luisa Abram com barras em torno de R$35–R$46; AMMA com 80 g em torno de R$37,99–R$40,99; Baianí com barras na faixa de R$30,50–R$34,50; Mission com barras de 60 g em torno de R$36; Mestiço com barras de 60 g em torno de R$30; Java com produtos de 65 g observados em torno de R$27,34–R$40,80; Chocolat du Jour com Pratigi 70% a R$46 e trufas personalizáveis a R$189 <a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">1</a><a href="https://ammachocolate.com.br/" title="AMMA Chocolate — site oficial">3</a><a href="https://missionchocolate.com/" title="Mission Chocolate — site informado">5</a><a href="https://www.javachocolates.com.br/" title="Java Chocolates — site institucional">7</a><a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">9</a>.</p>
+<p><strong>Observação.</strong> No luxo internacional, To’ak apresenta produtos de entrada e edições muito mais caras, incluindo uma edição Masters observada em US$500/50 g; a marca usa edição limitada, arte, madeira, certificado e utensílios para explicar o valor <a href="https://toakchocolate.com/collections" title="To'ak — Collections">11</a>.</p>
+<p><strong>Interpretação.</strong> O preço não deve ser apresentado isoladamente. Uma ficha Massapê deveria, após validação, mostrar <strong>peso, ingredientes, percentual, lote/origem, perfil sensorial, validade, conservação, alergênicos, entrega e motivo do preço</strong>. Hoje o dossiê confirma uma linha apresentada na FENEARTE 2026, mas não um catálogo técnico permanente <a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Massapê — Canjiquinha e Pé de Moleque no cardápio">63</a>.</p>
+<h3 id="83-valor-sem-superlativo">8.3 Valor sem superlativo</h3>
+<p>A Massapê pode construir valor por <strong>autoria de Mário, Pernambuco, processo explicado, sabores regionais, lote, experiência e serviço</strong>, sem declarar “primeiro”, “de qualidade superior” ou “mais premiado”. A frase promocional de parceiro sobre “primeiro chocolate artesanal de Pernambuco” é explicitamente tratada pelo dossiê como alegação a validar <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">58</a>.</p>
+<hr />
+<h2 id="9-fotografia-video-e-padroes-visuais">9. Fotografia, vídeo e padrões visuais</h2>
+<h3 id="91-fotografia">9.1 Fotografia</h3>
+<p><strong>Observação.</strong> Dengo trabalha mesa, embalagens, padrões botânicos e presente; Luisa Abram usa vídeo/atmosfera escura e natureza; Baianí combina embalagem geométrica, mapas, cacau e produto; Mission usa natureza-morta colorida com ingredientes; Java combina fruto, nibs, barra e ícones de inclusão; To’ak usa floresta e escala cinematográfica; Marou usa textura e quebra do chocolate <a href="https://luisaabram.com/" title="Luisa Abram Chocolates — site canônico observado">1</a><a href="https://missionchocolate.com/" title="Mission Chocolate — site informado">5</a><a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">8</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.</p>
+<p><strong>Interpretação.</strong> Há três funções fotográficas que não devem ser misturadas sem hierarquia:</p>
+<ol>
+<li><strong>Desejo:</strong> textura, brilho, quebra, derretimento e uso.</li>
+<li><strong>Prova:</strong> fruto, amêndoa, torra, equipamento, mãos e embalagem.</li>
+<li><strong>Território:</strong> paisagem, fazenda, rio, feira, produtor e cidade.</li>
+</ol>
+<p>Para a Massapê, o ensaio ideal precisa separar produto, Mário, processo, origem e experiência. O acervo público do Instagram é referência, não licença: o dossiê exige autorização, créditos, arquivos originais e identificação de retratados <a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">67</a>.</p>
+<h3 id="92-video">9.2 Vídeo</h3>
+<p><strong>Observação.</strong> Luisa Abram usa vídeo hero; To’ak usa vídeo de floresta/processo; Baianí mantém filme institucional; Mission mantém canal educativo; Marou associa relato dos fundadores a transcrição; Mestiço tem vídeo curto ligado à home; Dengo e Nugali usam experiência física como prova de processo <a href="https://luisaabram.com/" title="Luisa Abram Chocolates — site canônico observado">2</a><a href="https://missionchocolate.com/" title="Mission Chocolate — site informado">5</a><a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">7</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.</p>
+<p><strong>Interpretação.</strong> Para Massapê, o vídeo mais útil não é uma montagem genérica de chocolate. É uma peça curta em capítulos: <strong>Mário + cacau + uma etapa comprovada + uma barra + chamada de degustação/compra</strong>. Inserir legenda, transcrição e versão sem autoplay. O acervo atual inclui Instagram, SoundCloud/Folha e YouTube, mas conteúdo, direitos, duração e vigência variam; o dossiê pede validação antes de incorporar <a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">66</a>.</p>
+<hr />
+<h2 id="10-arquitetura-institucional-versus-e-commerce-e-mobile">10. Arquitetura, institucional versus e-commerce e mobile</h2>
+<h3 id="101-arquitetura-de-informacao">10.1 Arquitetura de informação</h3>
+<p><strong>Observação.</strong> Os sites mais robustos criam portas de entrada paralelas: Dengo separa presentes, chocolates, lojas e empresas; Nugali separa produtos, marca, Tour e Chocopedia; AMMA separa chocolates, confeitaria, curadoria, prescritores e receitas; Chocolat du Jour separa chocolates, presentes, lojas, fazenda e blog; Original Beans separa produto, origem, impacto e B2B; Marou separa Shop e Story <a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">1</a><a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">4</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">10</a>.</p>
+<p><strong>Interpretação.</strong> A Massapê pode ter um topo curto com dois caminhos explícitos: <strong>Comprar</strong> e <strong>Conhecer a Massapê</strong>. O WhatsApp continua como canal de atendimento/pedido enquanto não houver e-commerce documentado, mas deve exibir número, horário, prazo, catálogo e política somente após reconfirmação <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Massapê — linha de percentuais e sabores na FENEARTE 2026">58</a>.</p>
+<h3 id="102-institucional-versus-e-commerce">10.2 Institucional versus e-commerce</h3>
+<p><strong>Observação.</strong> Dengo, Java, Chocolat du Jour, Original Beans e Marou operam como duas camadas acopladas: uma constrói legitimidade e outra converte por catálogo, preço, entrega, carrinho ou contato comercial <a href="https://www.javachocolates.com.br/" title="Java Chocolates — site institucional">1</a><a href="https://originalbeans.com/" title="Original Beans — site oficial">9</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.</p>
+<p><strong>Interpretação.</strong> Para Massapê, uma primeira versão pode ser um site institucional com catálogo validado e CTA de WhatsApp. Não se deve inventar checkout, estoque, frete, endereço ou retirada. O dossiê afirma que esses itens estão <strong>NÃO CONFIRMADO — necessita validação</strong> <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Massapê — linha de percentuais e sabores na FENEARTE 2026">63</a>.</p>
+<h3 id="103-mobile">10.3 Mobile</h3>
+<p><strong>Observação.</strong> Os relatórios registraram sinais técnicos de responsividade em Luisa Abram, Mission, Java, Marou e Original Beans; também registraram riscos de carregamento, hero em carrossel, imagens vazias, alt genérico ou primeira dobra dependente de mídia em várias marcas <a href="https://missionchocolate.com/" title="Mission Chocolate — site informado">3</a><a href="https://originalbeans.com/" title="Original Beans — site oficial">8</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>. Isso é observação dos recortes consultados, não uma nota universal de usabilidade.</p>
+<p><strong>Interpretação.</strong> A versão Massapê deve ser desenhada primeiro para largura estreita: H1 textual, CTA visível, cards de produto com preço e disponibilidade, imagens com dimensões reservadas, vídeo opcional, WhatsApp fixo sem cobrir conteúdo, contraste e foco de teclado. <strong>NÃO CONFIRMADO — necessita validação.</strong> Uma auditoria visual/tátil completa do site atual da Massapê, pois não havia site oficial confirmado no dossiê <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Massapê — linha de percentuais e sabores na FENEARTE 2026">58</a>.</p>
+<hr />
+<h2 id="11-conteudo-editorial-e-seo">11. Conteúdo editorial e SEO</h2>
+<p><strong>Observação.</strong> Mission mantém receitas, blog de viagens, aulas e um artigo técnico de bean-to-bar <a href="https://missionchocolaterecipes.com/" title="Mission Chocolate Recipes — receitas e processo">6</a>. Java usa artigos de origem, processo, sustentabilidade, preço do cacau e segurança alimentar <a href="https://www.javachocolates.com.br/nossa-historia/" title="Java — nossa história">8</a><a href="https://www.javachocolates.com.br/perguntas-frequentes/" title="Java — perguntas frequentes">43</a>. Luisa Abram usa blog sobre rios, cacau selvagem, genética e processo <a href="https://luisaabram.com/blogs/news/diferentes-rios-diferentes-sabores" title="Luisa Abram — diferentes rios, diferentes sabores">3</a>. Original Beans usa Foodprint, origem, impacto, FAQ e vídeo <a href="https://originalbeans.com/pages/chocolate-foodprint" title="Original Beans — Chocolate Foodprint">10</a><a href="https://originalbeans.com/pages/your-impact" title="Original Beans — Your Impact">49</a>. Nugali usa Chocopedia e artigos de processo/origem <a href="https://www.nugali.com.br/blogs/como-e-feito/como-e-feito-o-chocolate" title="Nugali — como é feito o chocolate">2</a>.</p>
+<p><strong>Interpretação.</strong> O editorial funciona em três níveis:</p>
+<ul>
+<li><strong>Descoberta:</strong> “o que é bean-to-bar”, “como provar”, “diferença entre percentual e origem”.</li>
+<li><strong>Prova:</strong> origem, lote, produtor, fermentação, torra e conservação.</li>
+<li><strong>Relacionamento:</strong> receitas, harmonizações, agenda, bastidores e entrevistas.</li>
+</ul>
+<p>Para Massapê, começar com páginas evergreen e verificáveis:</p>
+<ol>
+<li>O que é “da amêndoa à barra” na Massapê.</li>
+<li>Quem é Mário Wanderley e como sua trajetória levou ao chocolate.</li>
+<li>Pernambuco e o cacau: o que está confirmado e o que é específico de cada lote.</li>
+<li>Guia de degustação por percentual.</li>
+<li>Canjiquinha e Pé de Moleque: ingredientes e história, somente com ficha aprovada.</li>
+<li>Bastidores autorizados de feiras e workshops.</li>
+<li>Perguntas sobre conservação, entrega, alergênicos e validade.</li>
+</ol>
+<p>Cada página deve ter title, meta description, H1 textual, URL legível, links internos, alt descritivo e fonte/atualização quando houver dado sensível. Não reproduzir textos de terceiros nem assumir que um post de Instagram tem licença para ser republicado <a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">67</a>.</p>
+<hr />
+<h2 id="12-sustentabilidade-alegacoes-atribuidas-e-cautelas">12. Sustentabilidade: alegações atribuídas e cautelas</h2>
+<h3 id="121-o-que-o-benchmark-mostra">12.1 O que o benchmark mostra</h3>
+<p><strong>Observação.</strong> Dengo atribui a si relação direta, suporte e remuneração por qualidade; Nugali atribui a si energia solar, Lixo Zero, agrofloresta e embalagens biodegradáveis; AMMA atribui a si orgânico/biodinâmico, cabruca, comunidades e selos; Original Beans publica Foodprint, One4One e compromissos de desmatamento/trabalho infantil; Marou publica impacto e ressalva não ser certificada Fairtrade/organic; To’ak publica conservação, regeneração e preço a agricultores <a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">1</a><a href="https://originalbeans.com/" title="Original Beans — site oficial">4</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">11</a>.</p>
+<p><strong>Interpretação.</strong> A diferença está na camada de prova: linguagem de propósito, número datado, metodologia, documento, rastreador ou certificação aplicável. Mesmo quando o site publica números, o relatório os mantém como alegações da própria marca, não auditoria independente <a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">10</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.</p>
+<h3 id="122-massape">12.2 Massapê</h3>
+<p>O dossiê não documenta indicadores públicos atuais de sustentabilidade, certificações, remuneração ou rastreabilidade de produtor. Portanto, o novo site deve evitar transformar “pernambucano”, “artesanal” ou “bean-to-bar” em promessa ambiental automática. <strong>NÃO CONFIRMADO — necessita validação.</strong> Qualquer claim de “sustentável”, “regenerativo”, “comércio justo”, “sem conservantes”, “sem aromatizantes” ou equivalente <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">61</a>.</p>
+<h3 id="123-solucao-de-prova-gradual">12.3 Solução de prova gradual</h3>
+<p>Criar uma área de “origem e método” com três estados editoriais:</p>
+<ul>
+<li><strong>Confirmado:</strong> dado apoiado pela empresa ou fonte institucional atual.</li>
+<li><strong>Atribuído/histórico:</strong> fonte secundária ou publicação de marca com data.</li>
+<li><strong>Aguardando validação:</strong> não publicar como afirmação comercial.</li>
+</ul>
+<p>Esse sistema pode ser interno no CMS e, quando apropriado, aparecer de forma transparente ao público.</p>
+<hr />
+<h2 id="13-luxo-preco-e-valor">13. Luxo, preço e valor</h2>
+<p>O luxo observado não é uma estética única. To’ak usa raridade, tempo, arte, madeira, certificado e escassez <a href="https://toakchocolate.com/pages/our-story" title="To'ak — Our Story">11</a><a href="https://toakchocolate.com/collections" title="To'ak — Collections">52</a>. Amedei e Domori usam cultivar, origem e linguagem técnica <a href="https://domori.com/en/" title="Domori — site oficial">20</a>. Chocolat du Jour e Dengo combinam presente, frescor, embalagem, serviço e história <a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">1</a>. Marou, Baianí e Mission usam design autoral e ingredientes locais para criar uma experiência premium sem depender de preço extremo <a href="https://missionchocolate.com/" title="Mission Chocolate — site informado">5</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.</p>
+<p><strong>Padrão útil para Massapê:</strong> luxo pernambucano não precisa imitar embalagem europeia. Pode significar <strong>clareza de lote, bom papel, fotografia honesta, acabamento, ritual de degustação, autoria de Mário e sabores reconhecíveis do território</strong>. O valor deve ser explicado por produto e ocasião, sem linguagem de superioridade não comprovada.</p>
+<hr />
+<h2 id="14-conversao-e-confianca">14. Conversão e confiança</h2>
+<h3 id="elementos-recorrentes-observados">Elementos recorrentes observados</h3>
+<ul>
+<li>CTA de compra, adição ao carrinho ou WhatsApp próximo do produto <a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">1</a><a href="https://www.javachocolates.com.br/" title="Java Chocolates — site institucional">3</a><a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">9</a>.</li>
+<li>Filtros por intensidade, origem, dieta, formato ou ocasião <a href="https://ammachocolate.com.br/" title="AMMA Chocolate — site oficial">2</a><a href="https://www.javachocolates.com.br/" title="Java Chocolates — site institucional">6</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.</li>
+<li>Avaliações, medalhas e selos como prova social; devem permanecer vinculados a produto/ano quando possível <a href="https://baiani.com.br/" title="Baianí Chocolates — site oficial">2</a><a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">6</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.</li>
+<li>Cálculo de frete, proteção térmica, prazo e política de troca em páginas acessíveis <a href="https://luisaabram.com/" title="Luisa Abram Chocolates — site canônico observado">1</a><a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">8</a><a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">11</a>.</li>
+<li>Kits e packs para reduzir risco de primeira compra <a href="https://originalbeans.com/" title="Original Beans — site oficial">3</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">11</a>.</li>
+<li>Conteúdo de processo e origem para justificar preço antes ou dentro da página de produto <a href="https://luisaabram.com/" title="Luisa Abram Chocolates — site canônico observado">2</a><a href="https://originalbeans.com/" title="Original Beans — site oficial">5</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.</li>
+</ul>
+<h3 id="implicacao-para-a-massape">Implicação para a Massapê</h3>
+<p>A conversão atual documentada é WhatsApp/Instagram, com histórico de pedidos por direct, kits e eventos <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Massapê — linha de percentuais e sabores na FENEARTE 2026">58</a><a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Massapê — Canjiquinha e Pé de Moleque no cardápio">64</a>. O site pode oferecer:</p>
+<ol>
+<li>CTA <strong>Pedir pelo WhatsApp</strong> com mensagem pré-preenchida por produto.</li>
+<li>Catálogo somente de SKUs atuais, com peso, preço, ingredientes, alergênicos, validade, conservação e estoque confirmados.</li>
+<li>Página “Como comprar” com prazo, frete, retirada e pagamento confirmados.</li>
+<li>CTA secundário <strong>Conhecer a origem e o processo</strong>.</li>
+<li>Lista de interesse para lançamentos e feiras, sem prometer agenda futura.</li>
+</ol>
+<p><strong>NÃO CONFIRMADO — necessita validação.</strong> Número vigente de WhatsApp, domínio oficial, catálogo, meios de pagamento, frete, estoque, prazo e pontos de venda <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Massapê — linha de percentuais e sabores na FENEARTE 2026">58</a>.</p>
+<hr />
+<h2 id="15-matriz-comparativa-recursos-observados-nos-12-sites-analisados-em-profundidade">15. Matriz comparativa — recursos observados nos 12 sites analisados em profundidade</h2>
+<p><strong>Legenda:</strong> ✓ = recurso observado no recorte analisado; — = não observado no recorte analisado. A matriz não atribui notas e não equivale a auditoria total do site.</p>
+<table>
+<thead>
+<tr>
+<th>Marca [fonte]</th>
+<th style="text-align: right;">Origem explícita</th>
+<th style="text-align: right;">Produtor/comunidade</th>
+<th style="text-align: right;">Processo explicado</th>
+<th style="text-align: right;">Vídeo/áudio</th>
+<th style="text-align: right;">Experiência física</th>
+<th style="text-align: right;">B2B/profissional</th>
+<th style="text-align: right;">Gifting/personalização</th>
+<th style="text-align: right;">Impacto/trace alegado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dengo <a href="https://www.dengo.com.br/" title="Dengo Chocolates — site oficial">1</a></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+</tr>
+<tr>
+<td>Nugali <a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">2</a></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+</tr>
+<tr>
+<td>Luisa Abram <a href="https://luisaabram.com/" title="Luisa Abram Chocolates — site canônico observado">3</a></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+</tr>
+<tr>
+<td>AMMA <a href="https://ammachocolate.com.br/" title="AMMA Chocolate — site oficial">4</a></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+</tr>
+<tr>
+<td>Baianí <a href="https://baiani.com.br/" title="Baianí Chocolates — site oficial">5</a></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+</tr>
+<tr>
+<td>Mission Chocolate <a href="https://missionchocolate.com/" title="Mission Chocolate — site informado">6</a></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+</tr>
+<tr>
+<td>Mestiço <a href="https://www.mesticochocolates.com.br/" title="Mestiço Chocolates — site oficial">7</a></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+</tr>
+<tr>
+<td>Java <a href="https://www.javachocolates.com.br/" title="Java Chocolates — site institucional">8</a></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+</tr>
+<tr>
+<td>Chocolat du Jour <a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">9</a></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+</tr>
+<tr>
+<td>Original Beans <a href="https://originalbeans.com/" title="Original Beans — site oficial">10</a></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+</tr>
+<tr>
+<td>To’ak <a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">11</a></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+</tr>
+<tr>
+<td>Marou <a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="16-padroes-transversais-e-decisoes-recomendadas">16. Padrões transversais e decisões recomendadas</h2>
+<table>
+<thead>
+<tr>
+<th>Padrão observado</th>
+<th>O que significa para produto/conteúdo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hero visual com promessa pouco textual</td>
+<td>Usar imagem atmosférica, mas manter H1, subheadline e CTA em HTML.</td>
+</tr>
+<tr>
+<td>Processo como prova de valor</td>
+<td>Mostrar etapa, decisão sensorial e limite de evidência; não listar etapas não confirmadas.</td>
+</tr>
+<tr>
+<td>Origem como coleção</td>
+<td>Nomear lote/território somente quando atual; permitir comparação de perfil.</td>
+</tr>
+<tr>
+<td>Fundador como personagem</td>
+<td>Dar voz a Mário, mas separar associação profissional de titularidade jurídica.</td>
+</tr>
+<tr>
+<td>Produtor como pessoa</td>
+<td>Identificar e autorizar cada retrato; não usar banco de imagem genérico.</td>
+</tr>
+<tr>
+<td>Sustentabilidade como alegação</td>
+<td>Datar, atribuir e informar metodologia ou ausência dela.</td>
+</tr>
+<tr>
+<td>Catálogo por ocasião</td>
+<td>Oferecer experimentar, presentear, aprender e comprar por intensidade.</td>
+</tr>
+<tr>
+<td>Institucional + comércio acoplados</td>
+<td>Ligar cada prova diretamente ao produto e ao CTA.</td>
+</tr>
+<tr>
+<td>Conteúdo técnico evergreen</td>
+<td>Criar páginas perenes para SEO e reduzir dependência de rede social.</td>
+</tr>
+<tr>
+<td>Mobile como primeiro contexto</td>
+<td>Reduzir carrosséis, reservar espaço de imagem, testar toque, contraste e velocidade.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="17-oportunidades-para-a-massape-comparadas-com-fatos-do-dossie">17. Oportunidades para a Massapê, comparadas com fatos do dossiê</h2>
+<h3 id="o1-tornar-a-promessa-publica-em-h1-e-prova">O1 — Tornar a promessa pública em H1 e prova</h3>
+<p><strong>Fato Massapê:</strong> a bio usa “Chocolate artesanal de Pernambuco, da amêndoa à barra” e “Criado e produzido por @mwchocolate” <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">58</a>.<br />
+<strong>Benchmark:</strong> Baianí, Java e Marou tornam categoria, origem e CTA visíveis logo no início <a href="https://www.javachocolates.com.br/" title="Java Chocolates — site institucional">5</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.<br />
+<strong>Oportunidade:</strong> H1 textual com a formulação documental, subheadline explicando a experiência e dois CTAs: <strong>Ver barras</strong> e <strong>Conhecer Mário e o processo</strong>.</p>
+<h3 id="o2-criar-uma-pagina-de-autoria-de-mario">O2 — Criar uma página de autoria de Mário</h3>
+<p><strong>Fato Massapê:</strong> fontes públicas descrevem trajetória em fisioterapia, confeitaria, chocolate, barismo, eventos, ensino e a criação da Massapê em 2021 segundo o Senac <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Diário de Pernambuco — trajetória de Mário e participação no Que Seja Doce">59</a>.<br />
+<strong>Benchmark:</strong> Mission, Java, Baianí e Chocolat du Jour usam fundadores como explicação de método e produto <a href="https://missionchocolate.com/" title="Mission Chocolate — site informado">5</a><a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">8</a>.<br />
+<strong>Oportunidade:</strong> linha do tempo curta, retrato autorizado, frases com fonte e separação entre fato, relato e validação pendente. Não afirmar proprietário/fundador legal sem documento <a href="http://www.pe.senac.br/confeitaria/index.html" title="Senac Pernambuco — perfil de Mário Wanderley e Massapê Chocolateria">59</a>.</p>
+<h3 id="o3-organizar-o-catalogo-atual-por-experiencia-sensorial">O3 — Organizar o catálogo atual por experiência sensorial</h3>
+<p><strong>Fato Massapê:</strong> a FENEARTE 2026 apresentou 100%, 85%, 70%, 60%, Pé de Moleque 55%, 38% vegano, 32% e branco; Canjiquinha e Pé de Moleque foram comunicados como fixos no período <a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Massapê — Canjiquinha e Pé de Moleque no cardápio">63</a>.<br />
+<strong>Benchmark:</strong> Luisa Abram e Original Beans transformam origem/perfil em coleção; Dengo, AMMA e Mission organizam intenção e ocasião <a href="https://ammachocolate.com.br/" title="AMMA Chocolate — site oficial">3</a><a href="https://originalbeans.com/" title="Original Beans — site oficial">6</a>.<br />
+<strong>Oportunidade:</strong> filtros <strong>intensos</strong>, <strong>mais suaves</strong>, <strong>sabores pernambucanos</strong>, <strong>kits</strong> e <strong>presente</strong> — somente depois da confirmação de nomes, formulações, pesos, preço e estoque.</p>
+<h3 id="o4-construir-ficha-de-produto-apta-a-confianca">O4 — Construir ficha de produto apta à confiança</h3>
+<p><strong>Fato Massapê:</strong> pesos, preços, ingredientes, alergênicos, validade e disponibilidade fora dos eventos não estão confirmados no dossiê <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Massapê — linha de percentuais e sabores na FENEARTE 2026">58</a>.<br />
+<strong>Benchmark:</strong> produtos de Java, Dengo, Baianí e Chocolat du Jour expõem ingredientes, peso, atributos, preço e logística <a href="https://baiani.com.br/" title="Baianí Chocolates — site oficial">1</a><a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">8</a>.<br />
+<strong>Oportunidade:</strong> usar um template obrigatório de PDP; bloquear publicação se algum campo regulatório/comercial estiver vazio.</p>
+<h3 id="o5-separar-origem-historica-de-origem-atual">O5 — Separar origem histórica de origem atual</h3>
+<p><strong>Fato Massapê:</strong> Cruz de Malta aparece em fontes de 2021; há divergência entre 10/20 hectares e 20/26 toneladas por ano <a href="http://www.carlomockli.com/2021/08/cacau-fino-da-fazenda-cruz-de-malta.html" title="Carlo Möckli/Doce Ciência — cacau fino da Fazenda Cruz de Malta">61</a>.<br />
+<strong>Benchmark:</strong> To’ak, Marou e Luisa Abram nomeiam origem e explicam a relação com lote/território <a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">3</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.<br />
+<strong>Oportunidade:</strong> criar “Origem deste lote” com data, fornecedor, localização, notas e status. Não publicar hectares, volume, Brix ou exclusividade sem reconfirmação.</p>
+<h3 id="o6-explicar-processo-sem-inventar-pop">O6 — Explicar processo sem inventar POP</h3>
+<p><strong>Fato Massapê:</strong> colheita, fermentação, secagem, torra, moagem, refino, conchagem, temperagem, moldagem e embalagem têm graus de evidência diferentes; várias etapas são <strong>NÃO CONFIRMADO</strong> como procedimento comercial atual <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">61</a>.<br />
+<strong>Benchmark:</strong> Nugali, Baianí, Marou e Original Beans mostram o processo como sequência de decisões <a href="https://baiani.com.br/" title="Baianí Chocolates — site oficial">2</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">10</a>.<br />
+<strong>Oportunidade:</strong> publicar apenas etapas aprovadas por lote e indicar terceirização quando existir.</p>
+<h3 id="o7-transformar-eventos-em-experiencia-continua-sem-prometer-agenda">O7 — Transformar eventos em experiência contínua, sem prometer agenda</h3>
+<p><strong>Fato Massapê:</strong> há palestras, workshops, degustações, feiras, quiosque e colaborações documentados em datas específicas <a href="https://soundcloud.com/folhape/050821-conexao-cafe-cafe-e-chocolate-com-o-chocolatier-mario-wanderley" title="Folha/SoundCloud — Conexão Café com Mário Wanderley">65</a>.<br />
+<strong>Benchmark:</strong> Nugali, Dengo, SOMA, Qantu e Zotter dão à visita/experiência uma página própria <a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">1</a><a href="https://www.zotter.at/en/" title="Zotter — site oficial">18</a><a href="https://www.somachocolate.com/" title="SOMA chocolatemaker — site oficial">22</a>.<br />
+<strong>Oportunidade:</strong> página “Experiências” com arquivo e agenda atual; eventos históricos devem ser marcados como arquivo. Curso regular, visita ao ateliê e consultoria estão <strong>NÃO CONFIRMADOS</strong> <a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Massapê — Canjiquinha e Pé de Moleque no cardápio">64</a>.</p>
+<h3 id="o8-criar-conteudo-de-autoridade-de-mario">O8 — Criar conteúdo de autoridade de Mário</h3>
+<p><strong>Fato Massapê:</strong> Mário aparece em rádio, workshops e oficinas; há canais e vídeos cujo conteúdo/direitos precisam de validação <a href="https://soundcloud.com/folhape/050821-conexao-cafe-cafe-e-chocolate-com-o-chocolatier-mario-wanderley" title="Folha/SoundCloud — Conexão Café com Mário Wanderley">65</a><a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">67</a>.<br />
+<strong>Benchmark:</strong> Mission, Java, Nugali e Luisa Abram usam educação para reduzir a barreira técnica <a href="https://luisaabram.com/" title="Luisa Abram Chocolates — site canônico observado">2</a><a href="https://www.javachocolates.com.br/" title="Java Chocolates — site institucional">6</a>.<br />
+<strong>Oportunidade:</strong> “Caderno do chocolateiro”: textos curtos, vídeos próprios, glossário, harmonização e perguntas; com transcrição e fonte.</p>
+<h3 id="o9-fazer-governanca-de-imagem-antes-do-design-final">O9 — Fazer governança de imagem antes do design final</h3>
+<p><strong>Fato Massapê:</strong> o dossiê não encontrou licença aberta; acervo de Instagram, Senac, Folha, feiras, parceiros e fotógrafos exige autorização <a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">67</a>.<br />
+<strong>Benchmark:</strong> a força visual de Baianí, Mission, Marou e To’ak depende de imagens próprias coerentes <a href="https://missionchocolate.com/" title="Mission Chocolate — site informado">5</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">11</a>.<br />
+<strong>Oportunidade:</strong> produzir banco original e contrato de cessão antes de montar hero, banners, cards e anúncios.</p>
+<h3 id="o10-seo-com-dominio-e-catalogo-reais">O10 — SEO com domínio e catálogo reais</h3>
+<p><strong>Fato Massapê:</strong> domínio oficial, nome jurídico, catálogo completo e operação comercial atual não estão confirmados <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Massapê — linha de percentuais e sabores na FENEARTE 2026">58</a>.<br />
+<strong>Oportunidade:</strong> não indexar páginas de produto fictícias. Primeiro validar domínio, canonical, sitemap, schema Product/Organization, dados de contato e política; depois publicar conteúdo perene.</p>
+<hr />
+<h2 id="18-praticas-a-evitar">18. Práticas a evitar</h2>
+<ol>
+<li>Usar “primeiro”, “de qualidade superior”, “mais premiado” ou “100% pernambucano” universalmente sem documentação comparativa e aprovação <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">61</a>.</li>
+<li>Transformar um relato de 2021 da Fazenda Cruz de Malta em origem de toda a linha atual <a href="http://www.carlomockli.com/2021/08/cacau-fino-da-fazenda-cruz-de-malta.html" title="Carlo Möckli/Doce Ciência — cacau fino da Fazenda Cruz de Malta">61</a>.</li>
+<li>Chamar a Massapê de tree-to-bar, fazenda própria ou produção integral sem comprovação <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">61</a>.</li>
+<li>Publicar ingredientes, alergênicos, validade, peso, preço ou disponibilidade a partir de comentários, fotos ou posts antigos <a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Massapê — Canjiquinha e Pé de Moleque no cardápio">63</a>.</li>
+<li>Usar notas sensoriais de terceiros como promessa técnica da marca <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">61</a>.</li>
+<li>Tratar destaque “momentos TV” ou “Globo Comunidade” como prova de programa, data ou prêmio sem validação <a href="https://soundcloud.com/folhape/050821-conexao-cafe-cafe-e-chocolate-com-o-chocolatier-mario-wanderley" title="Folha/SoundCloud — Conexão Café com Mário Wanderley">58</a>.</li>
+<li>Incorporar ou baixar fotos, Reels, trilhas e vídeos de parceiros sem cessão, crédito e autorização <a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">67</a>.</li>
+<li>Esconder a proposta em um carrossel sem H1, CTA e texto acessível — risco observado em várias marcas analisadas <a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">1</a><a href="https://baiani.com.br/" title="Baianí Chocolates — site oficial">4</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.</li>
+<li>Criar uma loja com estoque, prazo, frete, pagamento ou retirada fictícios <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Massapê — linha de percentuais e sabores na FENEARTE 2026">63</a>.</li>
+<li>Fazer sustentabilidade aparecer como selo decorativo sem escopo, data, método ou fonte.</li>
+<li>Misturar produto histórico, produto sazonal e catálogo vigente em uma mesma grade sem rótulo.</li>
+<li>Confundir produtor, fornecedor, parceiro de evento, instituição de ensino e colaborador comercial.</li>
+</ol>
+<hr />
+<h2 id="19-solucoes-diferentes-para-a-massape">19. Soluções diferentes para a Massapê</h2>
+<h3 id="191-passaporte-da-barra">19.1 Passaporte da barra</h3>
+<p>Cada produto atual teria um cartão digital com: nome, percentual, peso, ingredientes, lote, origem confirmada, processo confirmado, perfil sensorial, data de atualização, conservação e CTA de pedido. Campos ausentes ficam fora da publicação, não são preenchidos por inferência.</p>
+<h3 id="192-duas-portas-de-entrada">19.2 Duas portas de entrada</h3>
+<p>Home com dois caminhos persistentes:</p>
+<ul>
+<li><strong>Quero provar:</strong> catálogo, intensidade, sabores, kits e WhatsApp.</li>
+<li><strong>Quero conhecer:</strong> Mário, origem, processo, eventos e editorial.</li>
+</ul>
+<p>A solução usa a força comercial do WhatsApp sem transformar a rede social em único arquivo de conhecimento.</p>
+<h3 id="193-mapa-editorial-de-pernambuco-nao-mapa-ornamental">19.3 Mapa editorial de Pernambuco, não mapa ornamental</h3>
+<p>Usar mapa somente com localidades confirmadas por produto/lote. Cada marcador abre origem, data, pessoa/família autorizada e nota sensorial. Se o dado não estiver confirmado, não exibir marcador.</p>
+<h3 id="194-degustacao-guiada-por-percentual-e-memoria">19.4 Degustação guiada por percentual e memória</h3>
+<p>A linha 100/85/70/60/55/38/32/branco pode virar um percurso; porém nomes, atributos e composição devem ser validados com a empresa <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Massapê — linha de percentuais e sabores na FENEARTE 2026">63</a>. Para cada barra: intensidade, acidez, textura, sugestão de harmonização e espaço para “experimente sem pressa”.</p>
+<h3 id="195-caderno-de-mario-em-formato-multimidia">19.5 Caderno de Mário em formato multimídia</h3>
+<p>Textos, vídeos curtos e áudios próprios sobre torra, café, chocolate, aulas e bastidores. O dossiê documenta experiências públicas; não autoriza republicar os arquivos de terceiros <a href="https://soundcloud.com/folhape/050821-conexao-cafe-cafe-e-chocolate-com-o-chocolatier-mario-wanderley" title="Folha/SoundCloud — Conexão Café com Mário Wanderley">65</a><a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">67</a>.</p>
+<h3 id="196-arquivo-vivo-de-eventos">19.6 Arquivo vivo de eventos</h3>
+<p>Separar <strong>agenda atual</strong>, <strong>próximos eventos confirmados</strong> e <strong>arquivo</strong>. Isso aproveita FENEARTE, Senac, RioMar e parceiros sem sugerir que uma ação histórica continua vigente <a href="https://faculdadesenacpe.edu.br/faculdade-senac-pe-realiza-segunda-edicao-do-gastro-meeting" title="Faculdade Senac PE — oficina bean-to-bar com Mário e Massapê">63</a>.</p>
+<h3 id="197-transparencia-de-escopo">19.7 Transparência de escopo</h3>
+<p>Em vez de esconder incertezas, usar “origem deste lote”, “informação histórica” e “aguardando atualização”. É uma solução editorial de confiança e evita claims involuntários.</p>
+<hr />
+<h2 id="20-referencias-visuais-para-observar-selecao-tematica">20. Referências visuais para observar — seleção temática</h2>
+<p>A lista é uma seleção temática, não uma classificação:</p>
+<ol>
+<li><strong>Dengo</strong> — sistema de presentes, produto, botânica, loja e experiência <a href="https://www.dengo.com.br/" title="Dengo Chocolates — site oficial">1</a>.</li>
+<li><strong>Nugali</strong> — produto premium, Chocopedia e Tour integrados <a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">2</a>.</li>
+<li><strong>Luisa Abram</strong> — atmosfera amazônica, vídeo e origem por rios <a href="https://luisaabram.com/" title="Luisa Abram Chocolates — site canônico observado">3</a>.</li>
+<li><strong>AMMA</strong> — paleta floresta/chocolate, filtros e intenção de uso <a href="https://ammachocolate.com.br/" title="AMMA Chocolate — site oficial">4</a>.</li>
+<li><strong>Baianí</strong> — embalagem geométrica, mapa e ingredientes brasileiros <a href="https://baiani.com.br/" title="Baianí Chocolates — site oficial">5</a>.</li>
+<li><strong>Mission Chocolate</strong> — natureza-morta colorida e ingredientes como evidência <a href="https://missionchocolate.com/" title="Mission Chocolate — site informado">6</a>.</li>
+<li><strong>Java</strong> — campo, fruto, nibs, barra e marcadores de inclusão <a href="https://www.javachocolates.com.br/" title="Java Chocolates — site institucional">8</a>.</li>
+<li><strong>Chocolat du Jour</strong> — presente, serviço, tipografia clássica e frescor <a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">9</a>.</li>
+<li><strong>Original Beans</strong> — natureza, origem e impacto em uma mesma gramática <a href="https://originalbeans.com/" title="Original Beans — site oficial">10</a>.</li>
+<li><strong>To’ak</strong> — floresta cinematográfica, arte, escassez e ritual <a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">11</a>.</li>
+<li><strong>Marou</strong> — textura de chocolate, origem nacional e embalagem manual <a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.</li>
+<li><strong>Dandelion</strong> — maker, fábrica, simplicidade de receita e visita <a href="https://www.dandelionchocolate.com/" title="Dandelion Chocolate — site oficial">13</a>.</li>
+<li><strong>Zotter</strong> — variedade, personalização e experiência fabril <a href="https://www.zotter.at/en/" title="Zotter — site oficial">19</a>.</li>
+<li><strong>Pump Street</strong> — integração entre chocolate, padaria e localidade <a href="https://pumpstreetchocolate.com/" title="Pump Street Chocolate — site oficial">23</a>.</li>
+<li><strong>Omnom</strong> — identidade territorial contemporânea e sabores nórdicos <a href="https://omnomchocolate.com/" title="Omnom — site oficial">24</a>.</li>
+</ol>
+<p>Não copiar layout, identidade, ilustração, fotografia, texto ou embalagem dessas marcas. Usar apenas como referência de problema resolvido, hierarquia, ritmo visual e relação entre conteúdo e função.</p>
+<hr />
+<h2 id="21-referencias-de-storytelling-selecao-tematica">21. Referências de storytelling — seleção temática</h2>
+<ol>
+<li><strong>Luisa Abram:</strong> floresta → famílias → rios → processo → barra <a href="https://luisaabram.com/blogs/news/diferentes-rios-diferentes-sabores" title="Luisa Abram — diferentes rios, diferentes sabores">3</a><a href="https://luisaabram.com/products/barra-de-chocolate-luisa-abram-rio-purus-70-cacau" title="Luisa Abram — Rio Purus 70%">34</a>.</li>
+<li><strong>Nugali:</strong> fundadores → pioneirismo alegado → Serra do Conduru → fábrica → Tour <a href="https://www.nugali.com.br/blogs/como-e-feito/como-e-feito-o-chocolate" title="Nugali — como é feito o chocolate">2</a><a href="https://www.nugali.com.br/pages/tour-nugali" title="Nugali — Tour Nugali">31</a>.</li>
+<li><strong>Baianí:</strong> família/fazenda → crise da Vassoura de Bruxa → processo → terroir → produto <a href="https://baiani.com.br/sobre" title="Baianí — tradição e origem">5</a><a href="https://baiani.com.br/treetobar" title="Baianí — Tree to Bar">38</a>.</li>
+<li><strong>Mission:</strong> trajetória de Arcelia → comunidades → ingredientes brasileiros → coleção → ensino</li>
+</ol>
+<h3 id="211-referencias-de-storytelling-continuacao">21.1 Referências de storytelling — continuação</h3>
+<ol>
+<li><strong>Java:</strong> restrição alimentar → procura por cacau fino → processo → segurança → uso cotidiano <a href="https://www.javachocolates.com.br/nossa-historia/" title="Java — nossa história">8</a><a href="https://www.javachocolates.com.br/blog/como-o-cacau-vira-chocolate/" title="Java — como o cacau vira chocolate">43</a>.</li>
+<li><strong>Mission Chocolate:</strong> biografia da chocolatier → viagens/comunidades → ingredientes brasileiros → barras → aulas <a href="https://www.missionchocolate.com.br/p/sobre" title="Mission Chocolate — sobre">6</a><a href="https://missionchocolaterecipes.com/" title="Mission Chocolate Recipes — receitas e processo">41</a>.</li>
+<li><strong>Dengo:</strong> afeto → produtores → Cabruca → processo → presente/experiência <a href="https://www.dengo.com.br/somos-dengo" title="Dengo — Somos Dengo">1</a><a href="https://dengo.com/pt/pages/producers" title="Dengo — produtores">28</a>.</li>
+<li><strong>Original Beans:</strong> cacau raro → produtor/território → sabor → impacto mensurado alegado → compra <a href="https://originalbeans.com/pages/chocolate-foodprint" title="Original Beans — Chocolate Foodprint">10</a><a href="https://originalbeans.com/pages/your-impact" title="Original Beans — Your Impact">49</a>.</li>
+<li><strong>To’ak:</strong> floresta → variedade antiga → terroir → envelhecimento → arte/ritual <a href="https://toakchocolate.com/pages/our-story" title="To'ak — Our Story">11</a><a href="https://toakchocolate.com/collections" title="To'ak — Collections">52</a>.</li>
+<li><strong>Marou:</strong> encontro dos fundadores → busca de cacau → províncias → 48 horas → embalagem manual <a href="https://marouchocolate.com/pages/our-chocolate" title="Marou — Our Chocolate">12</a><a href="https://marouchocolate.com/pages/our-story" title="Marou — Our Story">56</a>.</li>
+</ol>
+<hr />
+<h2 id="22-referencias-bean-to-bar-selecao-tematica">22. Referências bean-to-bar — seleção temática</h2>
+<ol>
+<li><strong>Nugali:</strong> processo extenso, Tour e Chocopedia; útil para explicar etapas sem abandonar o comércio <a href="https://www.nugali.com.br/blogs/como-e-feito/como-e-feito-o-chocolate" title="Nugali — como é feito o chocolate">2</a><a href="https://www.nugali.com.br/pages/tour-nugali" title="Nugali — Tour Nugali">31</a>.</li>
+<li><strong>Luisa Abram:</strong> origem por rios, fermentação na origem e processo próprio; útil para ligar território a SKU <a href="https://luisaabram.com/blogs/news/o-que-e-chocolate-bean-to-bar" title="Luisa Abram — o que é chocolate bean-to-bar">3</a><a href="https://luisaabram.com/blogs/news/diferentes-rios-diferentes-sabores" title="Luisa Abram — diferentes rios, diferentes sabores">33</a>.</li>
+<li><strong>Baianí:</strong> seis etapas e duas torras para a mesma porcentagem; útil para explicar efeito sensorial de uma decisão técnica <a href="https://baiani.com.br/treetobar" title="Baianí — Tree to Bar">5</a>.</li>
+<li><strong>Java:</strong> processo e origem em artigos, com vínculo entre fabricação, rastreabilidade e restrições alimentares <a href="https://www.javachocolates.com.br/nossa-historia/" title="Java — nossa história">8</a><a href="https://www.javachocolates.com.br/blog/como-o-cacau-vira-chocolate/" title="Java — como o cacau vira chocolate">43</a>.</li>
+<li><strong>Marou:</strong> sequência compacta, 48 horas, teste do saco e 22 dobras; útil para criar unidades memoráveis de método <a href="https://marouchocolate.com/pages/our-chocolate" title="Marou — Our Chocolate">12</a><a href="https://marouchocolate.com/pages/our-story" title="Marou — Our Story">56</a>.</li>
+<li><strong>Original Beans:</strong> processo associado a Craft Cacao Standard, impacto e canal profissional <a href="https://originalbeans.com/pages/chocolate-foodprint" title="Original Beans — Chocolate Foodprint">10</a><a href="https://originalbeans.com/pages/your-impact" title="Original Beans — Your Impact">49</a>.</li>
+<li><strong>Mission Chocolate:</strong> aula longa sobre fazer chocolate, receitas e conteúdo técnico assinado pela maker <a href="https://missionchocolaterecipes.com/" title="Mission Chocolate Recipes — receitas e processo">6</a>.</li>
+<li><strong>To’ak:</strong> separa terroir, pós-colheita, fábrica e aging; útil para distinguir o que é executado internamente e o que envolve parceiro <a href="https://toakchocolate.com/pages/making-process" title="To'ak — Making Process">11</a><a href="https://toakchocolate.com/pages/our-cacao" title="To'ak — Our Cacao">53</a>.</li>
+<li><strong>Dengo:</strong> processo numerado e experiência presencial em fábrica; útil para transformar etapas em visita <a href="https://www.dengo.com.br/somos-dengo" title="Dengo — Somos Dengo">1</a><a href="https://www.dengo.com.br/fabrica-de-dengo" title="Dengo — Fábrica de Dengo">28</a>.</li>
+<li><strong>Chocolat du Jour:</strong> fazenda e processo ligados a frescor, pequenos lotes e presente <a href="https://www.chocolatdujour.com.br/fazenda" title="Chocolat du Jour — nossa fazenda">9</a><a href="https://blog.chocolatdujour.com.br/chocolat-du-jour-uma-historia-recheada-de-amores-e-chocolates/" title="Chocolat du Jour — história da família">47</a>.</li>
+</ol>
+<p>A Massapê pode usar a estrutura, não as afirmações: as etapas efetivamente executadas, parâmetros, equipamentos e terceirizações permanecem <strong>NÃO CONFIRMADO — necessita validação</strong> <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">61</a>.</p>
+<hr />
+<h2 id="23-proposta-de-arquitetura-da-massape">23. Proposta de arquitetura da Massapê</h2>
+<p>A proposta abaixo é uma arquitetura de conteúdo e função. Ela não pressupõe que os itens comerciais já existam; cada bloco de catálogo deve ser alimentado com dados aprovados pela empresa.</p>
+<table>
+<thead>
+<tr>
+<th>Página/rota</th>
+<th>Objetivo</th>
+<th>Conteúdo mínimo</th>
+<th>Imagem/mídia recomendada</th>
+<th>Função/CTA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code> Home</td>
+<td>Explicar a Massapê em poucos segundos e encaminhar por intenção.</td>
+<td>H1 baseado na bio documental; Pernambuco; amêndoa à barra; autoria associada a Mário; aviso de atualização de catálogo.</td>
+<td>Foto própria de barra + amêndoa/fruto + Mário autorizado; vídeo curto opcional sem depender dele.</td>
+<td><strong>Ver barras</strong>; <strong>Conhecer Mário e o processo</strong>; WhatsApp validado.</td>
+</tr>
+<tr>
+<td><code>/chocolates</code> Catálogo</td>
+<td>Permitir descoberta sem inventar disponibilidade.</td>
+<td>Apenas SKUs atuais; percentual, sabor, peso, preço, estoque/status, ingredientes e filtros confirmados.</td>
+<td>Packshot consistente, verso do rótulo e detalhe de quebra.</td>
+<td><strong>Ver produto</strong>; <strong>Pedir pelo WhatsApp</strong>.</td>
+</tr>
+<tr>
+<td><code>/chocolates/[slug]</code> Produto</td>
+<td>Justificar valor e reduzir risco de compra.</td>
+<td>Nome oficial, percentual, peso, ingredientes, alergênicos, lote/origem, perfil, conservação, validade, preço e entrega.</td>
+<td>Frente/verso, barra partida, contexto sensorial e origem do lote se autorizada.</td>
+<td>Pedido pré-preenchido; compartilhar; lista de interesse.</td>
+</tr>
+<tr>
+<td><code>/mario-wanderley</code> Mário</td>
+<td>Dar autoria e contexto sem exceder o dossiê.</td>
+<td>Trajetória documental, linha do tempo, fontes, papéis e distinção entre relato e fato.</td>
+<td>Retrato autorizado, mãos trabalhando, aula/workshop autorizado.</td>
+<td><strong>Conhecer o método</strong>; <strong>Convidar para experiência</strong> somente se serviço confirmado.</td>
+</tr>
+<tr>
+<td><code>/massape</code> Sobre a marca</td>
+<td>Explicar criação, propósito e voz institucional.</td>
+<td>Massapê Chocolateria, criação em 2021 segundo Senac, posicionamento documental, limites de claims.</td>
+<td>Logo aprovado, ateliê/espaço atual e equipe identificada.</td>
+<td>Ver origem; ver catálogo.</td>
+</tr>
+<tr>
+<td><code>/origem</code> Origem do cacau</td>
+<td>Mostrar território sem transformar histórico em promessa atual.</td>
+<td>Pernambuco; origem por lote; Cruz de Malta somente com data e atribuição; fornecedor/família autorizados; status de confirmação.</td>
+<td>Mapa simples, paisagem e fruto com legenda e crédito.</td>
+<td><strong>Ver barras desta origem</strong>.</td>
+</tr>
+<tr>
+<td><code>/processo</code> Da amêndoa à barra</td>
+<td>Explicar o método comprovado.</td>
+<td>Etapas aprovadas, executadas pela Massapê versus terceirizadas, glossário e efeito sensorial.</td>
+<td>Sequência de fotos/vídeo próprio, legenda, transcrição e data.</td>
+<td><strong>Ver produtos</strong>; baixar ficha, se houver.</td>
+</tr>
+<tr>
+<td><code>/sabores</code> Repertório pernambucano</td>
+<td>Dar contexto para Canjiquinha, Pé de Moleque e outros sabores.</td>
+<td>História e ingredientes aprovados; sinalização sazonal/contínuo; alergênicos e disponibilidade.</td>
+<td>Ingredientes reais, preparo e barra; evitar folclorização visual.</td>
+<td>Comprar/pedir; harmonização.</td>
+</tr>
+<tr>
+<td><code>/experiencias</code> Degustações e eventos</td>
+<td>Organizar agenda e arquivo.</td>
+<td>Próximos eventos confirmados, parceiros vigentes, arquivo histórico separado e formulário de interesse.</td>
+<td>Fotos próprias com autorizações; embeds apenas autorizados.</td>
+<td><strong>Ver agenda</strong>; <strong>Demonstrar interesse</strong>.</td>
+</tr>
+<tr>
+<td><code>/conteudos</code> Caderno do chocolateiro</td>
+<td>Capturar SEO e educar.</td>
+<td>Guias de bean-to-bar, percentual, degustação, café/chocolate, conservação e bastidores.</td>
+<td>Vídeos próprios, áudio transcrito, diagramas originais.</td>
+<td>Relacionar artigo a SKU.</td>
+</tr>
+<tr>
+<td><code>/onde-comprar</code> Pontos e pedidos</td>
+<td>Reduzir fricção operacional.</td>
+<td>WhatsApp, horário, prazo, frete, retirada e pontos atuais — somente confirmados.</td>
+<td>Mapa apenas de pontos vigentes; ícones de serviço.</td>
+<td>Pedir; localizar; falar com atendimento.</td>
+</tr>
+<tr>
+<td><code>/para-empresas</code> Corporativo</td>
+<td>Atender presentes e eventos, se oferecidos.</td>
+<td>MOQ, personalização, prazo, faturamento e contato. <strong>NÃO CONFIRMADO — necessita validação.</strong></td>
+<td>Kits reais e aplicação autorizada.</td>
+<td>Solicitar orçamento.</td>
+</tr>
+<tr>
+<td><code>/faq</code> FAQ</td>
+<td>Responder confiança, conservação, entrega e alergênicos.</td>
+<td>Respostas aprovadas por operação e rotulagem; data de revisão.</td>
+<td>Sem imagem necessária; ícones acessíveis.</td>
+<td>WhatsApp; política completa.</td>
+</tr>
+<tr>
+<td><code>/politicas</code> Políticas</td>
+<td>Dar segurança jurídica e comercial.</td>
+<td>Trocas, devoluções, privacidade, uso de imagem, cookies e termos.</td>
+<td>Não aplicável.</td>
+<td>Linkar no checkout/WhatsApp.</td>
+</tr>
+<tr>
+<td><code>/referencias</code> ou rodapé</td>
+<td>Transparência editorial interna/externa.</td>
+<td>Fontes documentais relevantes, data e atribuição.</td>
+<td>Não aplicável.</td>
+<td>Ver fontes.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nota de implementação.</strong> Se a Massapê não tiver e-commerce próprio, o catálogo pode ser um catálogo editorial com pedido por WhatsApp. Não publicar rota de carrinho, parcelamento ou cálculo de frete antes da validação <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Massapê — linha de percentuais e sabores na FENEARTE 2026">63</a>.</p>
+<hr />
+<h2 id="24-checklist-para-designer">24. Checklist para designer</h2>
+<h3 id="sistema-e-identidade">Sistema e identidade</h3>
+<ul>
+<li>[ ] Receber logo vetorial, versões, área de proteção, cores, tipografia e regras de aplicação <a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">67</a>.</li>
+<li>[ ] Confirmar qual embalagem está vigente; não usar a embalagem histórica como identidade atual sem aprovação <a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">58</a>.</li>
+<li>[ ] Definir uma gramática visual própria sem copiar Dengo, Baianí, Mission, Marou, To’ak ou qualquer referência <a href="https://baiani.com.br/" title="Baianí Chocolates — site oficial">1</a><a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">6</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.</li>
+<li>[ ] Criar tokens de cor, tipografia, grid, espaçamento, raios, botões e estados.</li>
+</ul>
+<h3 id="fotografia-e-video">Fotografia e vídeo</h3>
+<ul>
+<li>[ ] Fotografar barras em packshot, detalhe de quebra, verso do rótulo, escala e uso.</li>
+<li>[ ] Produzir imagens próprias de Mário, equipe, processo e ingredientes, com identificação e autorização.</li>
+<li>[ ] Solicitar créditos e cessão escrita para site, redes, mídia paga, corte, edição, hospedagem e território <a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">67</a>.</li>
+<li>[ ] Não baixar ou recortar Reels, fotos de imprensa, trilhas ou vídeos de terceiros sem licença <a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">67</a>.</li>
+<li>[ ] Reservar dimensões para imagens lazy-loaded e testar 3G; vários benchmarks registraram espaços vazios quando a mídia atrasou <a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">1</a><a href="https://originalbeans.com/" title="Original Beans — site oficial">9</a>.</li>
+<li>[ ] Fornecer legenda, transcrição e controle de reprodução para vídeos.</li>
+</ul>
+<h3 id="ux-e-acessibilidade">UX e acessibilidade</h3>
+<ul>
+<li>[ ] H1 textual e CTA na primeira dobra; não colocar a mensagem principal apenas dentro da arte.</li>
+<li>[ ] Contraste de texto, foco de teclado, tamanho de toque e leitura em zoom.</li>
+<li>[ ] Alt text funcional e específico: produto, percentual, ingrediente e contexto; marcar decoração como decorativa.</li>
+<li>[ ] WhatsApp fixo sem cobrir botões, preço, consentimento ou conteúdo.</li>
+<li>[ ] Testar 320, 375, 390, 768 e 1440 px; verificar menu, modal, carrossel e ficha de produto.</li>
+<li>[ ] Evitar autoplay com som; oferecer poster e fallback para vídeo.</li>
+</ul>
+<h3 id="conteudo-visual-verificavel">Conteúdo visual verificável</h3>
+<ul>
+<li>[ ] Exibir origem e processo apenas quando a ficha tiver status aprovado.</li>
+<li>[ ] Marcar conteúdo histórico, sazonal e arquivo.</li>
+<li>[ ] Usar mapa somente com localidade confirmada; não decorar com geografia genérica.</li>
+<li>[ ] Não sugerir sustentabilidade por paleta verde ou imagens de floresta sem claim e prova.</li>
+</ul>
+<hr />
+<h2 id="25-checklist-para-copywriter">25. Checklist para copywriter</h2>
+<h3 id="voz-e-precisao">Voz e precisão</h3>
+<ul>
+<li>[ ] Usar “Massapê Chocolateria | Bean-to-bar” e a proposta documental sem alterar sentido <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">58</a>.</li>
+<li>[ ] Referir Mário como profissional associado/criador conforme fonte; confirmar título preferido, nome completo, cargo e pronomes <a href="http://www.pe.senac.br/confeitaria/index.html" title="Senac Pernambuco — perfil de Mário Wanderley e Massapê Chocolateria">59</a>.</li>
+<li>[ ] Diferenciar “observação”, “interpretação”, “alegação da marca”, “fonte secundária” e “NÃO CONFIRMADO — necessita validação”.</li>
+<li>[ ] Não publicar “primeiro”, “de qualidade superior”, “premiado”, “100% pernambucano” universal, “tree-to-bar” ou “sustentável” sem documentação <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">61</a>.</li>
+<li>[ ] Não transformar nota sensorial de terceiro em promessa da marca <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">61</a>.</li>
+</ul>
+<h3 id="produto">Produto</h3>
+<ul>
+<li>[ ] Exigir nome, percentual, peso, ingredientes, alergênicos, validade, conservação, preço, lote, origem e disponibilidade antes de publicar.</li>
+<li>[ ] Separar produto atual, histórico, sazonal e em validação <a href="https://www.instagram.com/reel/DbtMv1UM8tN/" title="Massapê — Canjiquinha e Pé de Moleque no cardápio">63</a>.</li>
+<li>[ ] Relacionar cada decisão do processo a um efeito sensorial apenas com dados aprovados.</li>
+<li>[ ] Explicar por que o produto custa o que custa sem recorrer a comparação de superioridade.</li>
+<li>[ ] Não dizer “sem conservantes”, “sem aromatizantes” ou “natural” sem ficha e validação regulatória <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="Carlo Möckli/Doce Ciência — Massapê bean-to-bar 100% pernambucano">61</a>.</li>
+</ul>
+<h3 id="seo-e-editorial">SEO e editorial</h3>
+<ul>
+<li>[ ] Uma intenção de busca por página; H1 único, title, meta description e URL legíveis.</li>
+<li>[ ] Criar links internos entre artigo, origem, processo e produto.</li>
+<li>[ ] Inserir data de atualização para preço, estoque, origem e agenda.</li>
+<li>[ ] Usar schema Organization, Product, Offer e Article somente com dados reais.</li>
+<li>[ ] Publicar fontes próximas à afirmação e manter References com <code>[n]: URL "Título"</code>.</li>
+<li>[ ] Evitar copiar textos de Carlo Möckli, Senac, Folha, parceiros ou marcas benchmark; parafrasear e atribuir <a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">58</a>.</li>
+</ul>
+<h3 id="conversao-e-servico">Conversão e serviço</h3>
+<ul>
+<li>[ ] Confirmar número de WhatsApp, horário, resposta, prazo, pagamento, frete, retirada e pontos antes de escrever CTA <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Massapê — linha de percentuais e sabores na FENEARTE 2026">58</a>.</li>
+<li>[ ] Criar mensagens de WhatsApp pré-preenchidas sem prometer estoque não confirmado.</li>
+<li>[ ] Explicar acondicionamento, calor, troca e devolução somente com política da empresa.</li>
+<li>[ ] Não usar comentários de Instagram como depoimento sem permissão.</li>
+</ul>
+<hr />
+<h2 id="26-conclusao">26. Conclusão</h2>
+<p>O benchmark mostra que marcas de chocolate de origem constroem valor quando <strong>território, pessoas, método, produto e serviço aparecem como um sistema</strong>. O mercado não exige uma única estética nem uma única escala de luxo: há marcas que vendem afeto e presente, marcas que vendem educação e fábrica, marcas que vendem biodiversidade e rastreabilidade, e marcas que vendem raridade, tempo e ritual <a href="https://www.nugali.com.br/" title="Nugali Chocolates — site oficial">1</a><a href="https://www.chocolatdujour.com.br/" title="Chocolat du Jour — site oficial">3</a><a href="https://toakchocolate.com/" title="To'ak Chocolate — site oficial">10</a><a href="https://www.marouchocolate.com/" title="Marou Chocolate — operação oficial analisada">12</a>.</p>
+<p>Para a Massapê, o ponto de partida documental já é específico: a marca se apresenta como chocolate artesanal de Pernambuco, da amêndoa à barra, criado e produzido por Mário Wanderley <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, pedidos e destaques">58</a>. O dossiê também oferece uma trajetória pública de Mário em fisioterapia, confeitaria, chocolate, barismo, ensino e eventos, além da criação da Massapê em 2021 informada pelo Senac <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Diário de Pernambuco — trajetória de Mário e participação no Que Seja Doce">59</a>. Esse conjunto pode sustentar uma plataforma de marca própria, sem copiar a gramática visual ou a promessa de qualquer concorrente.</p>
+<p>A construção deve ser disciplinada. Cruz de Malta, Brix, áreas, volumes, linha de produtos, ingredientes, estoque, pontos de venda, agenda, prêmios, processo fabril, sustentabilidade, direitos de imagem e domínio comercial têm graus de confirmação diferentes <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Massapê — linha de percentuais e sabores na FENEARTE 2026">61</a><a href="https://www.instagram.com/massapechocolates/" title="Massapê — acervo público de referência visual; direitos não presumidos">67</a>. A precisão não é um obstáculo criativo; ela pode virar parte da confiança da marca. Um site que informa o que é atual, histórico ou ainda depende de validação terá uma base mais sólida para crescer.</p>
+<p>A recomendação final é começar por um <strong>catálogo editorial verificável</strong>, uma <strong>página de autoria de Mário</strong>, uma <strong>explicação honesta de processo</strong>, um <strong>sistema de origem por lote quando possível</strong>, um <strong>caderno de conteúdo próprio</strong> e um <strong>fluxo de pedido por WhatsApp claramente operacional</strong>. Depois, a Massapê pode ampliar para experiências, corporativo, e-commerce, mapa e rastreabilidade conforme os dados e autorizações forem confirmados. Essa arquitetura preserva o que já é publicamente defensável e abre espaço para que a empresa prove, com seus próprios materiais, o que hoje permanece <strong>NÃO CONFIRMADO — necessita validação</strong>.</p>
+<hr />
+<h2 id="27-referencias">27. Referências</h2>
+<h3 id="sites-e-relatorios-de-marcas">Sites e relatórios de marcas</h3>
+<h3 id="paginas-de-apoio-dos-sites-analisados">Páginas de apoio dos sites analisados</h3>
+<h3 id="dossie-massape-e-fontes-documentais">Dossiê Massapê e fontes documentais</h3>
+<hr />
+<h2 id="nota-metodologica-curta">Nota metodológica curta</h2>
+<p>A síntese foi feita por leitura dos 12 relatórios detalhados em <code>/home/ubuntu/benchmark/relatorio-1.md</code> a <code>/home/ubuntu/benchmark/relatorio-12.md</code>, da lista ampla fornecida e do dossiê <code>/home/ubuntu/reports/dossie-massape-mario-wanderley.md</code>. As observações de marcas são paráfrases dos relatórios e páginas oficiais indicadas; não houve auditoria independente de claims, certificações, direitos autorais, estoque, preços ou práticas ambientais. A matriz usa somente <strong>✓</strong> e <strong>—</strong>, sem notas; as seleções são agrupamentos temáticos para referência de design e conteúdo, não uma classificação de marcas.</p></article></div></main>
+<footer><div class="wrap"><p>Documentação de apoio estratégico. Verifique informações comerciais, direitos e claims antes da publicação oficial.</p><p><a href="index.html">Voltar ao painel principal</a></p></div></footer></body></html>
