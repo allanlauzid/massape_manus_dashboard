@@ -1,87 +1,73 @@
 <!doctype html>
 <html lang="pt-BR">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Dossiê documental — Massapê e Mário Wanderley — Massapê</title><style>
-  :root{
-    --ink:#1f1b18; --muted:#5c514a; --paper:#fffdf8; --cream:#f5ead9;
-    --cocoa:#4c261b; --cocoa-2:#6d3928; --gold:#d59b37; --green:#285c4b;
-    --blue:#154c69; --line:#d9c9b5; --danger:#8c2f39; --shadow:0 5px 18px rgba(54,33,20,.12);
-    --base:19px;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:var(--base);line-height:1.65}
-  a{color:#075b85;text-decoration-thickness:2px;text-underline-offset:3px}
-  a:focus,button:focus{outline:4px solid #f2b632;outline-offset:3px}
-  .skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:10px;z-index:10}.skip:focus{left:8px}
-  header{background:linear-gradient(135deg,var(--cocoa),#2b1813);color:#fff;padding:38px 20px 34px;border-bottom:8px solid var(--gold)}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-  .eyebrow{font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#f4c968;font-size:.9em}
-  h1{font-size:clamp(2.25rem,5vw,4.2rem);line-height:1.05;margin:12px 0 18px;max-width:950px}
-  h2{font-size:clamp(1.75rem,3vw,2.55rem);line-height:1.15;color:var(--cocoa);margin:0 0 18px}
-  h3{font-size:1.45rem;line-height:1.2;color:var(--cocoa-2);margin:28px 0 10px}
-  h4{font-size:1.12rem;margin:18px 0 5px;color:var(--green)}
-  .lead{font-size:1.18em;max-width:900px}
-  .meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-  .pill{display:inline-block;border:2px solid rgba(255,255,255,.55);border-radius:999px;padding:5px 13px;font-weight:700}
-  .tools{background:#2e1a14;color:#fff;padding:12px 0;position:sticky;top:0;z-index:5;border-bottom:1px solid #68462f}
-  .tools .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-  .tools a{color:#fff}
-  button{border:2px solid #fff;background:var(--gold);color:#21150e;border-radius:8px;padding:8px 12px;font-weight:700;font-size:1rem;cursor:pointer}
-  nav{background:var(--cream);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;gap:9px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
-  nav a{font-weight:700;padding:7px 10px;border-radius:6px;color:var(--cocoa)}
-  nav a:hover{background:#fff}
-  main{padding:32px 0 60px}
-  section{scroll-margin-top:75px;margin:0 0 44px}
-  .intro{background:#fff8e9;border-left:8px solid var(--gold);padding:22px 24px;border-radius:8px;box-shadow:var(--shadow);margin-bottom:25px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px;box-shadow:var(--shadow)}
-  .card p:last-child{margin-bottom:0}
-  .card strong{color:var(--cocoa)}
-  .fact{border-left:7px solid var(--green);background:#edf7f1;padding:15px 18px;border-radius:7px;margin:15px 0}
-  .analysis{border-left:7px solid var(--blue);background:#eef6fb;padding:15px 18px;border-radius:7px;margin:15px 0}
-  .pending{border-left:7px solid var(--danger);background:#fff0f1;padding:15px 18px;border-radius:7px;margin:15px 0}
-  .label{font-size:.84em;font-weight:800;letter-spacing:.03em;text-transform:uppercase;display:block;margin-bottom:3px}
-  .flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin:20px 0}
-  .flow .step{flex:1 1 145px;background:var(--cocoa);color:#fff;padding:16px;border-radius:9px;text-align:center;font-weight:700;display:flex;align-items:center;justify-content:center;min-height:78px}
-  .arrow{align-self:center;font-size:2rem;color:var(--gold);font-weight:900}
-  table{width:100%;border-collapse:collapse;background:#fff;font-size:1em;margin:15px 0;min-width:680px}
-  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow)}
-  th,td{border:1px solid var(--line);padding:13px;text-align:left;vertical-align:top}
-  th{background:var(--cocoa);color:#fff}
-  tr:nth-child(even){background:#fff8ef}
-  ul,ol{padding-left:1.35em}
-  li{margin:7px 0}
-  .big-number{font-size:2.4rem;color:var(--cocoa);font-weight:800;display:block;line-height:1}
-  .quote{font-size:1.25em;font-weight:700;color:var(--cocoa);border-left:5px solid var(--gold);padding:12px 18px;margin:20px 0;background:#fff8e9}
-  details{background:#fff;border:1px solid var(--line);border-radius:8px;margin:10px 0;box-shadow:var(--shadow)}
-  summary{cursor:pointer;font-weight:800;font-size:1.08em;padding:16px}
-  details > div{padding:0 18px 16px}
-  .legend{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.legend span{padding:6px 10px;border-radius:6px;font-weight:700}.l-fact{background:#edf7f1;color:#164936}.l-analysis{background:#eef6fb;color:#154c69}.l-pending{background:#fff0f1;color:#8c2f39}
-  .source-list li{margin-bottom:8px}
-  footer{background:var(--cocoa);color:#fff;padding:30px 0 45px} footer a{color:#f9d27b}
-  .small{font-size:.92em;color:var(--muted)}
-  @media (max-width:700px){body{font-size:18px}.wrap{padding-left:18px;padding-right:18px}.tools{position:static}.arrow{display:none}.flow .step{flex-basis:100%}table{font-size:.98em}}
-  @media print{.tools,nav{display:none}body{font-size:14pt}header{color:#000;background:#fff;border:1px solid #000}.card,.intro{box-shadow:none}}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dossiê documental — Massapê e Mário Wanderley — Massapê</title>
+<meta name="description" content="Identidade, biografia, produtos, processo, eventos, imprensa, imagens, direitos e lacunas da Massapê e de Mário Wanderley.">
+<meta name="theme-color" content="#2b1813">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232b1813'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23f0bf5a'%3EM%3C/text%3E%3C/svg%3E">
+<script>try{var s=localStorage.getItem('massape-scale');if(s)document.documentElement.style.setProperty('--scale',s)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
 
-  .doc-header{background:linear-gradient(135deg,var(--cocoa),#2b1813);color:#fff;padding:28px 0;border-bottom:8px solid var(--gold)}
-  .doc-header h1{font-size:clamp(2rem,4vw,3.4rem);margin-bottom:8px}
-  .doc-main{padding:32px 0 65px}
-  .doc-content{background:#fff;border:1px solid var(--line);border-radius:10px;padding:clamp(22px,4vw,52px);box-shadow:var(--shadow)}
-  .doc-content h1{color:var(--cocoa);font-size:clamp(2rem,4vw,3.2rem);line-height:1.12}
-  .doc-content h2{border-bottom:3px solid var(--gold);padding-bottom:8px;margin-top:38px}
-  .doc-content h3{margin-top:28px}
-  .doc-content img{max-width:100%;height:auto}
-  .doc-content blockquote{border-left:7px solid var(--gold);background:#fff8e9;padding:14px 20px;margin:20px 0;color:var(--cocoa);font-weight:700}
-  .doc-content code{background:#f2eadf;padding:2px 5px;border-radius:4px}
-  .doc-content pre{overflow:auto;background:#2b211c;color:#fff;padding:16px;border-radius:7px}
-  .doc-content table{min-width:680px}
-  .back{display:inline-block;margin-top:10px;color:#fff;font-weight:700}
-</style></head>
-<body><a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
-<header class="doc-header"><div class="wrap"><div class="eyebrow">Documentação estratégica da Massapê</div><h1>Dossiê documental — Massapê e Mário Wanderley</h1><a class="back" href="index.html">← Voltar ao painel principal</a></div></header>
-<nav aria-label="Navegação principal"><div class="wrap"><a href="index.html">Painel principal</a><a href="#conteudo">Ir para o conteúdo</a></div></nav>
-<main id="conteudo" class="doc-main"><div class="wrap"><article class="doc-content"><h1 id="dossie-documental-final-massape-chocolateria-massape-chocolates-e-mario-wanderley">Dossiê documental final — Massapê Chocolateria / Massapê Chocolates e Mário Wanderley</h1>
+<header class="hero doc">
+  <div class="wrap">
+    <p class="hero-kicker"><a class="back" href="index.html">← Painel estratégico</a> · Documentação estratégica da Massapê</p>
+    <h1>Dossiê documental — Massapê e Mário Wanderley</h1>
+    <p class="lead">Identidade, biografia, produtos, processo, eventos, imprensa, imagens, direitos e lacunas da Massapê e de Mário Wanderley.</p>
+    <nav class="hero-docs" aria-label="Documentos completos">
+      <span>Documentos completos:</span>
+      <a href="dossie-massape-mario-wanderley.html" aria-current="page">Dossiê documental</a> <a href="benchmark-sites-chocolate-massape-mario-wanderley.html">Benchmark de sites</a> <a href="analise-critica-massape-posicionamento-online.html">Análise crítica</a>
+    </nav>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <a class="bar-brand" href="index.html" aria-label="Voltar ao painel estratégico">← Painel</a>
+    <details class="toc">
+      <summary><span>Sumário</span><span class="toc-current"></span></summary>
+      <nav class="toc-panel" data-spy aria-label="Sumário do documento"><ol>
+<li><a href="#1-resumo-executivo">1. Resumo executivo</a></li>
+<li><a href="#2-nota-sobre-limitacoes-de-acesso-a-instagram-e-threads">2. Nota sobre limitações de acesso a Instagram e Threads</a></li>
+<li><a href="#3-identidade-da-marca">3. Identidade da marca</a></li>
+<li><a href="#4-quem-e-mario-wanderley">4. Quem é Mário Wanderley</a></li>
+<li><a href="#5-historia-documental-da-marca-e-da-trajetoria">5. História documental da marca e da trajetória</a></li>
+<li><a href="#6-linha-do-tempo">6. Linha do tempo</a></li>
+<li><a href="#7-produtos-atuais-no-recorte-e-historicos">7. Produtos — atuais no recorte e históricos</a></li>
+<li><a href="#8-processo-e-origem-do-cacau">8. Processo e origem do cacau</a></li>
+<li><a href="#9-servicos-encomendas-e-experiencias">9. Serviços, encomendas e experiências</a></li>
+<li><a href="#10-eventos-e-participacoes">10. Eventos e participações</a></li>
+<li><a href="#11-imprensa-entrevistas-e-videos">11. Imprensa, entrevistas e vídeos</a></li>
+<li><a href="#12-parcerias-e-relacoes-documentadas">12. Parcerias e relações documentadas</a></li>
+<li><a href="#13-redes-sociais-e-presenca-digital">13. Redes sociais e presença digital</a></li>
+<li><a href="#14-frases-verificaveis-e-frases-que-nao-devem-ser-publicadas-sem-validacao">14. Frases verificáveis e frases que não devem ser publicadas sem validação</a></li>
+<li><a href="#15-catalogo-visual-documental">15. Catálogo visual documental</a></li>
+<li><a href="#16-direitos-autorais-imagem-marcas-e-incorporacao">16. Direitos autorais, imagem, marcas e incorporação</a></li>
+<li><a href="#17-classificacao-editorial-confirmado-secundario-validacao-e-nao-confirmado">17. Classificação editorial: confirmado, secundário, validação e não confirmado</a></li>
+<li><a href="#18-banco-de-conteudo-para-cada-pagina-do-site">18. Banco de conteúdo para cada página do site</a></li>
+<li><a href="#19-narrativa-institucional-somente-documental">19. Narrativa institucional somente documental</a></li>
+<li><a href="#20-lista-objetiva-do-que-solicitar-a-empresa">20. Lista objetiva do que solicitar à empresa</a></li>
+<li><a href="#21-referencias">21. Referências</a></li>
+      </ol></nav>
+    </details>
+    <div class="textsize" role="group" aria-label="Tamanho do texto">
+      <button type="button" data-size="down" aria-label="Diminuir texto">A−</button>
+      <button type="button" data-size="reset" aria-label="Tamanho normal do texto">A</button>
+      <button type="button" data-size="up" aria-label="Aumentar texto">A+</button>
+    </div>
+    <p id="textsize-status" class="visually-hidden" aria-live="polite"></p>
+  </div>
+</div>
+
+<main id="conteudo"><div class="wrap"><article class="doc-content"><p class="doc-fulltitle">Dossiê documental final — Massapê Chocolateria / Massapê Chocolates e Mário Wanderley</p>
 <p><strong>Data-base das fontes:</strong> consultas e publicações verificadas nos relatórios de setembro de 2026.<br />
 <strong>Natureza:</strong> dossiê editorial documental para subsidiar o novo site, conteúdo institucional e solicitação de materiais à empresa.<br />
 <strong>Critério editorial:</strong> toda afirmação factual é acompanhada de fonte próxima. As categorias usadas são <strong>confirmado</strong>, <strong>secundário</strong>, <strong>necessita validação</strong> e <strong>não confirmado</strong>. Ausência de evidência não é tratada como prova de inexistência.</p>
@@ -107,7 +93,7 @@
 <p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> A lista completa de contas oficiais, administradores e histórico de todos os canais sociais.</p>
 <h2 id="3-identidade-da-marca">3. Identidade da marca</h2>
 <h3 id="31-nome-contas-e-posicionamento-observavel">3.1 Nome, contas e posicionamento observável</h3>
-<table>
+<div class="table-wrap" role="region" aria-label="Tabela" tabindex="0"><table>
 <thead>
 <tr>
 <th>Elemento</th>
@@ -152,7 +138,7 @@
 <td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="32-territorios-de-comunicacao">3.2 Territórios de comunicação</h3>
 <p><strong>Artesanal.</strong> O termo aparece na bio e em comunicações associadas à marca. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">1</a><br />
 <strong>Bean-to-bar / da amêndoa à barra.</strong> É o eixo técnico mais consistente da comunicação pública, sem que isso prove que a empresa execute internamente cada etapa em todos os lotes. <a href="http://www.pe.senac.br/confeitaria/index.html" title="Feira de Confeitaria — perfil institucional de Mário Wanderley e Massapê Chocolateria">1</a><br />
@@ -189,7 +175,7 @@
 <p>A partir de 2022, há registros de entrevista na Rádio Folha, kits sazonais, participação em eventos, workshops, quiosque RioMar, Gastrô Meetings, FENEARTE, Mercado Capitão, colaboração com Roasteria e catálogo de percentuais apresentado em 2026. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">12</a><a href="https://www.instagram.com/p/CpF9RStOu59/" title="Workshop com Mário Wanderley e Massapê na Faculdade Senac — Cristianne Barros">17</a><a href="https://www.sympla.com.br/evento/degustacao-de-chas-e-chocolates-especiais/2579402" title="Degustação de Chás e Chocolates Especiais — Kaffe/O Chá da Casa">29</a></p>
 <p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Dia/mês de fundação, local do primeiro ateliê, transição formal da marca pessoal para Massapê, razão social, CNPJ, titularidade de marca e narrativa histórica aprovada.</p>
 <h2 id="6-linha-do-tempo">6. Linha do tempo</h2>
-<table>
+<div class="table-wrap" role="region" aria-label="Tabela" tabindex="0"><table>
 <thead>
 <tr>
 <th>Ano/fase</th>
@@ -309,10 +295,10 @@
 <td>Confirmado na data da consulta; dados podem mudar. <a href="https://www.instagram.com/mwchocolate/" title="Perfil de Mário Wanderley — Instagram, privado na consulta">1</a></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="7-produtos-atuais-no-recorte-e-historicos">7. Produtos — atuais no recorte e históricos</h2>
 <h3 id="71-linha-apresentada-pela-marca-na-fenearte-2026">7.1 Linha apresentada pela marca na FENEARTE 2026</h3>
-<table>
+<div class="table-wrap" role="region" aria-label="Tabela" tabindex="0"><table>
 <thead>
 <tr>
 <th>Produto/linha</th>
@@ -367,9 +353,9 @@
 <td>Continuidade pós-feira: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h3 id="72-itens-e-linhas-historicas">7.2 Itens e linhas históricas</h3>
-<table>
+<div class="table-wrap" role="region" aria-label="Tabela" tabindex="0"><table>
 <thead>
 <tr>
 <th>Item</th>
@@ -409,7 +395,7 @@
 <td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>Não transformar em catálogo permanente:</strong> a existência de uma foto ou comentário não prova estoque, preço, receita, validade ou continuidade. A comunicação pública sustenta categorias de barras/tabletes por percentual, edições regionais, caixas de degustação, kits sazonais e presença em feiras. <a href="https://www.instagram.com/reel/C4yDBY6O2AJ/" title="Caixa especial de Páscoa com cinco sensoriais — Massapê">15</a></p>
 <p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Existência atual de bombons, trufas, ovos, fondue, nibs, pistache, cafés, presentes, kits corporativos, consultoria ou qualquer produto não listado acima.</p>
 <h2 id="8-processo-e-origem-do-cacau">8. Processo e origem do cacau</h2>
@@ -419,7 +405,7 @@
 <p>Há divergência: Möckli menciona 20 hectares e 26 toneladas/ano; o texto do Senac reproduz 10 hectares de cacaueiros e 20 toneladas/ano. <a href="http://www.pe.senac.br/alunos-da-pos-graduacao-em-confeitaria-visitam-fazenda-de-cacau-em-escada-pe/" title="Alunos da pós-graduação em Confeitaria visitam fazenda de cacau em Escada — Senac Pernambuco">6</a></p>
 <p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Fazenda ou produtor que fornece cada lote atual, variedade/genética, exclusividade, contrato, volume, rastreabilidade, localização corrigida, hectares e produção anual.</p>
 <h3 id="82-etapas-documentadas-sem-extrapolacao">8.2 Etapas documentadas sem extrapolação</h3>
-<table>
+<div class="table-wrap" role="region" aria-label="Tabela" tabindex="0"><table>
 <thead>
 <tr>
 <th>Etapa</th>
@@ -499,7 +485,7 @@
 <td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Não usar <strong>tree-to-bar</strong>: não foi localizada fonte que documente posse de fazenda, plantio pela Massapê ou controle da cadeia desde a árvore. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">1</a></p>
 <h2 id="9-servicos-encomendas-e-experiencias">9. Serviços, encomendas e experiências</h2>
 <h3 id="pedidos-e-pontos-de-venda">Pedidos e pontos de venda</h3>
@@ -513,7 +499,7 @@
 </ul>
 <p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Endereço atual, horários, estoque, prazo, frete, retirada, pedido mínimo, meios de pagamento, pontos de venda vigentes, domínio oficial e política comercial.</p>
 <h3 id="experiencias-documentadas">Experiências documentadas</h3>
-<table>
+<div class="table-wrap" role="region" aria-label="Tabela" tabindex="0"><table>
 <thead>
 <tr>
 <th>Experiência</th>
@@ -558,7 +544,7 @@
 <td>Presença e ativação nas datas documentadas; vigência futura depende de agenda da empresa.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Curso próprio regular, consultoria, treinamento corporativo, visitas ao ateliê, degustações recorrentes, eventos privados ou calendário de experiências atuais.</p>
 <h2 id="10-eventos-e-participacoes">10. Eventos e participações</h2>
 <ol>
@@ -587,7 +573,7 @@
 <li><em>Doce Ciência</em>, 06/08/2021: degustação e avaliação de terceiro; material editorial histórico, não certificação. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência">5</a></li>
 </ul>
 <h3 id="inventario-audiovisual">Inventário audiovisual</h3>
-<table>
+<div class="table-wrap" role="region" aria-label="Tabela" tabindex="0"><table>
 <thead>
 <tr>
 <th>Item</th>
@@ -646,10 +632,10 @@
 <td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Entrevista atribuída ao NE1/Globo, data completa, link oficial, repórter, arquivo e autorização de reprodução.</p>
 <h2 id="12-parcerias-e-relacoes-documentadas">12. Parcerias e relações documentadas</h2>
-<table>
+<div class="table-wrap" role="region" aria-label="Tabela" tabindex="0"><table>
 <thead>
 <tr>
 <th>Parceiro/instituição</th>
@@ -704,9 +690,9 @@
 <td>Ação/evento; loja permanente: <strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="13-redes-sociais-e-presenca-digital">13. Redes sociais e presença digital</h2>
-<table>
+<div class="table-wrap" role="region" aria-label="Tabela" tabindex="0"><table>
 <thead>
 <tr>
 <th>Canal</th>
@@ -751,7 +737,7 @@
 <td><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Lista oficial de handles.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="14-frases-verificaveis-e-frases-que-nao-devem-ser-publicadas-sem-validacao">14. Frases verificáveis e frases que não devem ser publicadas sem validação</h2>
 <h3 id="frases-verificaveis-com-atribuicao-documental">Frases verificáveis com atribuição documental</h3>
 <ul>
@@ -767,7 +753,7 @@
 <p><strong>NÃO CONFIRMADO — necessita validação com a empresa.</strong> Slogan oficial único, frase registrada, “primeiro”, “premiado”, “melhor”, “100% pernambucano” em sentido universal, “sem conservantes”, “sem aromatizantes”, “natural”, “sustentável”, “tree-to-bar”, “da fazenda própria”, “feito integralmente no ateliê” ou equivalente.</p>
 <h2 id="15-catalogo-visual-documental">15. Catálogo visual documental</h2>
 <p><strong>Nota de direitos:</strong> os itens abaixo são referências de páginas públicas. Nenhuma imagem foi baixada, licenciada ou incorporada por esta pesquisa. A URL da página não é autorização de uso; URLs CDN do Instagram podem expirar. O uso proposto é apenas editorial e depende de autorização escrita e créditos.</p>
-<table>
+<div class="table-wrap" role="region" aria-label="Tabela" tabindex="0"><table>
 <thead>
 <tr>
 <th>ID</th>
@@ -919,7 +905,7 @@
 <td>Titular não liberou licença; não copiar.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2 id="16-direitos-autorais-imagem-marcas-e-incorporacao">16. Direitos autorais, imagem, marcas e incorporação</h2>
 <ol>
 <li><strong>Imagem pública não é domínio público.</strong> Fotos, vídeos, logo, rótulos, ilustrações, textos, entrevistas e capturas continuam sujeitos a direitos autorais, direitos de imagem, marcas e termos das plataformas. <a href="https://www.instagram.com/massapechocolates/" title="Acervo público de referência visual da Massapê — direitos não presumidos">34</a></li>
@@ -1060,4 +1046,12 @@
 <p>Olá, Mário/Massapê. Estamos finalizando o dossiê e o novo site. Podem enviar o catálogo vigente com fichas, preços, pesos, ingredientes, alergênicos, validade e disponibilidade; a narrativa aprovada da marca e de Mário; origem e processo do cacau; identidade visual em vetor; arquivos originais de fotos e vídeos; créditos; identificação dos retratados; e autorizações escritas para uso no site, redes, publicidade paga e edição? Também precisamos confirmar canais oficiais, parceiros vigentes, agenda de experiências, claims permitidos e quais materiais podem ser incorporados por link ou player.</p>
 </blockquote>
 <h2 id="21-referencias">21. Referências</h2></article></div></main>
-<footer><div class="wrap"><p>Documentação de apoio estratégico. Verifique informações comerciais, direitos e claims antes da publicação oficial.</p><p><a href="index.html">Voltar ao painel principal</a></p></div></footer></body></html>
+
+<footer>
+  <div class="wrap">
+    <p class="footer-note">Documentação de apoio estratégico. Verifique informações comerciais, direitos e claims antes da publicação oficial.</p>
+    <p><a class="arrow-link" href="index.html">Voltar ao painel estratégico</a></p>
+  </div>
+</footer>
+</body>
+</html>

@@ -18,4 +18,4 @@ Este pacote contém um site estático pronto para publicação no GitHub Pages.
 4. Escolha **Deploy from a branch**, branch `main` e pasta `/root`.
 5. Salve e aguarde o endereço público.
 
-O arquivo `index.html` já é a página inicial. Não altere os nomes dos arquivos HTML, pois os links internos dependem deles.
+O arquivo `index.html` já é a página inicial. Estilos e comportamento compartilhados ficam em `assets/site.css` e `assets/site.js`, usados pelas quatro páginas. Não altere os nomes dos arquivos HTML, pois os links internos dependem deles.
