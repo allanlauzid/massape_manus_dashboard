@@ -7,6 +7,7 @@ Este pacote contém um site estático pronto para publicação no GitHub Pages.
 - `index.html` — painel estratégico acessível e didático.
 - `dossie-massape-mario-wanderley.html` — dossiê documental convertido para HTML.
 - `benchmark-sites-chocolate-massape-mario-wanderley.html` — benchmark convertido para HTML.
+- `analise-critica-massape-posicionamento-online.html` — análise crítica da marca e do posicionamento online.
 - Os dois arquivos `.md` originais também estão incluídos como fonte editável.
 
 ## Publicar no GitHub Pages

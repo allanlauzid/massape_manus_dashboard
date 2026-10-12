@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Análise crítica da Massapê — posicionamento online</title><style>
+  :root{
+    --ink:#1f1b18; --muted:#5c514a; --paper:#fffdf8; --cream:#f5ead9;
+    --cocoa:#4c261b; --cocoa-2:#6d3928; --gold:#d59b37; --green:#285c4b;
+    --blue:#154c69; --line:#d9c9b5; --danger:#8c2f39; --shadow:0 5px 18px rgba(54,33,20,.12);
+    --base:19px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:var(--base);line-height:1.65}
+  a{color:#075b85;text-decoration-thickness:2px;text-underline-offset:3px}
+  a:focus,button:focus{outline:4px solid #f2b632;outline-offset:3px}
+  .skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:10px;z-index:10}.skip:focus{left:8px}
+  header{background:linear-gradient(135deg,var(--cocoa),#2b1813);color:#fff;padding:38px 20px 34px;border-bottom:8px solid var(--gold)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#f4c968;font-size:.9em}
+  h1{font-size:clamp(2.25rem,5vw,4.2rem);line-height:1.05;margin:12px 0 18px;max-width:950px}
+  h2{font-size:clamp(1.75rem,3vw,2.55rem);line-height:1.15;color:var(--cocoa);margin:0 0 18px}
+  h3{font-size:1.45rem;line-height:1.2;color:var(--cocoa-2);margin:28px 0 10px}
+  h4{font-size:1.12rem;margin:18px 0 5px;color:var(--green)}
+  .lead{font-size:1.18em;max-width:900px}
+  .meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .pill{display:inline-block;border:2px solid rgba(255,255,255,.55);border-radius:999px;padding:5px 13px;font-weight:700}
+  .tools{background:#2e1a14;color:#fff;padding:12px 0;position:sticky;top:0;z-index:5;border-bottom:1px solid #68462f}
+  .tools .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .tools a{color:#fff}
+  button{border:2px solid #fff;background:var(--gold);color:#21150e;border-radius:8px;padding:8px 12px;font-weight:700;font-size:1rem;cursor:pointer}
+  nav{background:var(--cream);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;gap:9px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+  nav a{font-weight:700;padding:7px 10px;border-radius:6px;color:var(--cocoa)}
+  nav a:hover{background:#fff}
+  main{padding:32px 0 60px}
+  section{scroll-margin-top:75px;margin:0 0 44px}
+  .intro{background:#fff8e9;border-left:8px solid var(--gold);padding:22px 24px;border-radius:8px;box-shadow:var(--shadow);margin-bottom:25px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px;box-shadow:var(--shadow)}
+  .card p:last-child{margin-bottom:0}
+  .card strong{color:var(--cocoa)}
+  .fact{border-left:7px solid var(--green);background:#edf7f1;padding:15px 18px;border-radius:7px;margin:15px 0}
+  .analysis{border-left:7px solid var(--blue);background:#eef6fb;padding:15px 18px;border-radius:7px;margin:15px 0}
+  .pending{border-left:7px solid var(--danger);background:#fff0f1;padding:15px 18px;border-radius:7px;margin:15px 0}
+  .label{font-size:.84em;font-weight:800;letter-spacing:.03em;text-transform:uppercase;display:block;margin-bottom:3px}
+  .flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin:20px 0}
+  .flow .step{flex:1 1 145px;background:var(--cocoa);color:#fff;padding:16px;border-radius:9px;text-align:center;font-weight:700;display:flex;align-items:center;justify-content:center;min-height:78px}
+  .arrow{align-self:center;font-size:2rem;color:var(--gold);font-weight:900}
+  table{width:100%;border-collapse:collapse;background:#fff;font-size:1em;margin:15px 0;min-width:680px}
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow)}
+  th,td{border:1px solid var(--line);padding:13px;text-align:left;vertical-align:top}
+  th{background:var(--cocoa);color:#fff}
+  tr:nth-child(even){background:#fff8ef}
+  ul,ol{padding-left:1.35em}
+  li{margin:7px 0}
+  .big-number{font-size:2.4rem;color:var(--cocoa);font-weight:800;display:block;line-height:1}
+  .quote{font-size:1.25em;font-weight:700;color:var(--cocoa);border-left:5px solid var(--gold);padding:12px 18px;margin:20px 0;background:#fff8e9}
+  details{background:#fff;border:1px solid var(--line);border-radius:8px;margin:10px 0;box-shadow:var(--shadow)}
+  summary{cursor:pointer;font-weight:800;font-size:1.08em;padding:16px}
+  details > div{padding:0 18px 16px}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}.legend span{padding:6px 10px;border-radius:6px;font-weight:700}.l-fact{background:#edf7f1;color:#164936}.l-analysis{background:#eef6fb;color:#154c69}.l-pending{background:#fff0f1;color:#8c2f39}
+  .source-list li{margin-bottom:8px}
+  footer{background:var(--cocoa);color:#fff;padding:30px 0 45px} footer a{color:#f9d27b}
+  .small{font-size:.92em;color:var(--muted)}
+  @media (max-width:700px){body{font-size:18px}.wrap{padding-left:18px;padding-right:18px}.tools{position:static}.arrow{display:none}.flow .step{flex-basis:100%}table{font-size:.98em}}
+  @media print{.tools,nav{display:none}body{font-size:14pt}header{color:#000;background:#fff;border:1px solid #000}.card,.intro{box-shadow:none}}
+
+  .doc-header{background:linear-gradient(135deg,var(--cocoa),#2b1813);color:#fff;padding:28px 0;border-bottom:8px solid var(--gold)}
+  .doc-header h1{font-size:clamp(2rem,4vw,3.4rem);margin-bottom:8px}
+  .doc-main{padding:32px 0 65px}
+  .doc-content{background:#fff;border:1px solid var(--line);border-radius:10px;padding:clamp(22px,4vw,52px);box-shadow:var(--shadow)}
+  .doc-content h1{color:var(--cocoa);font-size:clamp(2rem,4vw,3.2rem);line-height:1.12}
+  .doc-content h2{border-bottom:3px solid var(--gold);padding-bottom:8px;margin-top:38px}
+  .doc-content h3{margin-top:28px}
+  .doc-content blockquote{border-left:7px solid var(--gold);background:#fff8e9;padding:14px 20px;margin:20px 0;color:var(--cocoa);font-weight:700}
+  .doc-content code{background:#f2eadf;padding:2px 5px;border-radius:4px}
+  .doc-content pre{overflow:auto;background:#2b211c;color:#fff;padding:16px;border-radius:7px}
+  .doc-content table{min-width:680px}
+  .back{display:inline-block;margin-top:10px;color:#fff;font-weight:700}
+</style></head>
+<body><a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
+<header class="doc-header"><div class="wrap"><div class="eyebrow">Diagnóstico estratégico da Massapê</div><h1>Análise crítica da marca e do posicionamento online</h1><a class="back" href="index.html">← Voltar ao painel principal</a></div></header>
+<nav aria-label="Navegação principal"><div class="wrap"><a href="index.html">Painel principal</a><a href="#conteudo">Ir para o conteúdo</a></div></nav>
+<main id="conteudo" class="doc-main"><div class="wrap"><article class="doc-content"><h1 id="analise-critica-da-massape-chocolates-e-de-seu-posicionamento-online">Análise crítica da Massapê Chocolates e de seu posicionamento online</h1>
+<p><strong>Data da análise:</strong> outubro de 2026<br />
+<strong>Base documental:</strong> dossiê da Massapê e de Mário Wanderley, benchmark de sites de chocolate artesanal/bean-to-bar e atualização pública do Instagram oficial.<br />
+<strong>Natureza:</strong> diagnóstico estratégico de marca, comunicação, presença digital, conteúdo, autoridade, conversão e riscos.</p>
+<blockquote>
+<p>Esta análise separa <strong>fato observado</strong>, <strong>interpretação estratégica</strong> e <strong>recomendação</strong>. Recomendações não são afirmações sobre a operação atual da empresa. Dados de seguidores, produtos, preços, estoque e publicações são dinâmicos.</p>
+</blockquote>
+<hr />
+<h2 id="1-diagnostico-executivo">1. Diagnóstico executivo</h2>
+<p>A Massapê tem um posicionamento potencialmente forte, mas ainda não o transforma em uma plataforma digital própria e suficientemente completa.</p>
+<p>O núcleo mais defensável da marca é:</p>
+<blockquote>
+<p><strong>Chocolate artesanal de Pernambuco, da amêndoa à barra, associado à autoria e à trajetória de Mário Wanderley, com possibilidade de explorar sabores, experiências e repertórios gastronômicos regionais.</strong></p>
+</blockquote>
+<p>Esse território é relevante porque combina quatro elementos que normalmente aparecem separados no mercado:</p>
+<ol>
+<li><strong>território</strong> — Pernambuco;</li>
+<li><strong>pessoa</strong> — Mário Wanderley;</li>
+<li><strong>técnica</strong> — bean-to-bar/da amêndoa à barra;</li>
+<li><strong>cultura de sabor</strong> — produtos e ingredientes que podem dialogar com a memória gastronômica regional.</li>
+</ol>
+<p>O problema principal não é a falta de história. É a <strong>falta de organização, prova, clareza comercial e propriedade digital</strong> dessa história.</p>
+<p>Hoje, a marca parece ser compreendida principalmente por meio de:</p>
+<ul>
+<li>Instagram;</li>
+<li>publicações e Reels;</li>
+<li>destaques;</li>
+<li>WhatsApp;</li>
+<li>páginas de parceiros;</li>
+<li>matérias e registros de eventos;</li>
+<li>referências históricas de terceiros.</li>
+</ul>
+<p>O Instagram oficial apresenta a marca como <strong>“Massapê Chocolateria | Bean-to-bar”</strong>, com a frase “Chocolate artesanal de Pernambuco, da amêndoa à barra. Criado e produzido por @mwchocolate” e chamada para pedidos por WhatsApp. Na atualização de outubro de 2026, o perfil mostrava aproximadamente 7 mil seguidores, destaques sobre FENEARTE, declarações, TV, pedidos, feiras, parceiros, ciência e chocolate e Festival Vegano. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, destaques e publicações públicas">1</a></p>
+<p>Isso cria descoberta e proximidade, mas ainda não oferece, sozinho, a profundidade que um site institucional precisa entregar: história aprovada, catálogo vigente, fichas técnicas, origem por produto, processo explicado, serviços, imprensa organizada, provas de autoridade e caminhos de compra para diferentes públicos.</p>
+<h3 id="diagnostico-em-uma-frase">Diagnóstico em uma frase</h3>
+<blockquote>
+<p><strong>A Massapê tem uma história que pode gerar autoridade, mas sua presença online ainda comunica mais atividade do que posicionamento estruturado.</strong></p>
+</blockquote>
+<hr />
+<h2 id="2-o-que-a-marca-comunica-atualmente">2. O que a marca comunica atualmente</h2>
+<h3 id="21-mensagem-explicita">2.1 Mensagem explícita</h3>
+<p>A mensagem mais consistente encontrada é:</p>
+<blockquote>
+<p><strong>“Chocolate artesanal de Pernambuco, da amêndoa à barra.”</strong> <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, destaques e publicações públicas">1</a></p>
+</blockquote>
+<p>Ela é uma boa base porque responde rapidamente a três perguntas:</p>
+<ul>
+<li>o que é: chocolate;</li>
+<li>como é produzido: da amêndoa à barra;</li>
+<li>de onde se posiciona: Pernambuco.</li>
+</ul>
+<p>A associação com Mário acrescenta autoria:</p>
+<blockquote>
+<p><strong>“Criado e produzido por @mwchocolate.”</strong> <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, destaques e publicações públicas">1</a></p>
+</blockquote>
+<p>A combinação é funcional, mas ainda é uma formulação descritiva. Ela informa o que a marca faz, porém não explica totalmente:</p>
+<ul>
+<li>por que a Massapê é diferente;</li>
+<li>por que o consumidor deve pagar mais, caso o preço seja premium;</li>
+<li>qual é a personalidade da marca;</li>
+<li>que experiência o produto oferece;</li>
+<li>qual é a história por trás do nome;</li>
+<li>qual é a visão de Mário sobre chocolate.</li>
+</ul>
+<h3 id="22-mensagens-secundarias">2.2 Mensagens secundárias</h3>
+<p>Nas fontes públicas, aparecem também os seguintes territórios:</p>
+<ul>
+<li>chocolate artesanal;</li>
+<li>bean-to-bar;</li>
+<li>Pernambuco;</li>
+<li>sabores e percentuais variados;</li>
+<li>eventos e feiras;</li>
+<li>educação e degustação;</li>
+<li>televisão e imprensa;</li>
+<li>parceiros;</li>
+<li>experiência sensorial;</li>
+<li>proximidade regional.</li>
+</ul>
+<p>A marca também usa linguagem informal e próxima, com expressões de comunidade, convite direto à degustação, referências a feiras, cafés e momentos de consumo. Isso ajuda a reduzir a distância entre marca artesanal e público.</p>
+<h3 id="23-o-que-ainda-nao-esta-claro">2.3 O que ainda não está claro</h3>
+<p>Não foi encontrada uma definição pública e aprovada de:</p>
+<ul>
+<li>missão;</li>
+<li>visão;</li>
+<li>valores;</li>
+<li>público prioritário;</li>
+<li>proposta de valor completa;</li>
+<li>manifesto;</li>
+<li>slogan permanente;</li>
+<li>personalidade verbal;</li>
+<li>promessa sensorial principal;</li>
+<li>diferença entre a Massapê e outras marcas bean-to-bar brasileiras.</li>
+</ul>
+<p><strong>Conclusão crítica:</strong> a marca já possui linguagem e sinais de identidade, mas ainda não possui uma arquitetura verbal consolidada.</p>
+<hr />
+<h2 id="3-analise-do-posicionamento-no-mercado">3. Análise do posicionamento no mercado</h2>
+<h2 id="31-posicao-atual-percebida">3.1 Posição atual percebida</h2>
+<p>A Massapê está em uma interseção entre cinco categorias:</p>
+<table>
+<thead>
+<tr>
+<th>Território</th>
+<th>Como aparece</th>
+<th>Nível de força atual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chocolate artesanal</td>
+<td>Bio, produtos e linguagem pública</td>
+<td>Forte como descrição, ainda genérico como diferenciação</td>
+</tr>
+<tr>
+<td>Bean-to-bar</td>
+<td>Nome do perfil e frase “da amêndoa à barra”</td>
+<td>Forte como categoria, precisa de explicação e prova</td>
+</tr>
+<tr>
+<td>Pernambuco</td>
+<td>Bio, embalagem e comunicação regional</td>
+<td>Promissor e distintivo</td>
+</tr>
+<tr>
+<td>Mário Wanderley</td>
+<td>Associação direta na bio e fontes externas</td>
+<td>Muito promissor, mas pouco organizado no canal próprio</td>
+</tr>
+<tr>
+<td>Experiência gastronômica</td>
+<td>Eventos, aulas, degustações e repertório de Mário</td>
+<td>Promissor, ainda não apresentado como oferta estruturada</td>
+</tr>
+</tbody>
+</table>
+<p>A marca não parece competir apenas por luxo. Também não parece querer ser somente uma loja de presentes. Sua oportunidade é ocupar um espaço de <strong>autoria gastronômica regional com domínio técnico</strong>.</p>
+<h2 id="32-o-problema-da-categoria-artesanal">3.2 O problema da categoria “artesanal”</h2>
+<p>“Artesanal” é importante, mas é uma palavra muito usada. Sozinha, não diferencia.</p>
+<p>No benchmark, as marcas mais convincentes explicam o que torna o artesanal real:</p>
+<ul>
+<li>pequenos lotes;</li>
+<li>nome do produtor;</li>
+<li>origem do cacau;</li>
+<li>etapas executadas;</li>
+<li>perfil sensorial;</li>
+<li>fabricação própria;</li>
+<li>variedade ou safra;</li>
+<li>embalagem manual;</li>
+<li>visita, aula ou experiência;</li>
+<li>relação direta com a cadeia.</li>
+</ul>
+<p>Para a Massapê, o termo precisa ser convertido em evidência. Em vez de apenas afirmar “artesanal”, o site pode mostrar:</p>
+<ul>
+<li>o que Mário faz;</li>
+<li>quais ferramentas usa;</li>
+<li>quais etapas controla;</li>
+<li>que produtos são feitos em cada momento;</li>
+<li>que diferença técnica o processo produz no sabor.</li>
+</ul>
+<h2 id="33-o-problema-do-superlativo">3.3 O problema do superlativo</h2>
+<p>A alegação de que a Massapê seria o “primeiro chocolate artesanal de Pernambuco feito do cacau à barra” aparece em publicação de parceiro, mas não foi comprovada de maneira independente. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência, 2021">2</a></p>
+<p>Esse tipo de claim pode chamar atenção, mas apresenta três riscos:</p>
+<ol>
+<li><strong>risco factual:</strong> a marca pode não conseguir comprovar a prioridade histórica;</li>
+<li><strong>risco jurídico/comercial:</strong> “primeiro” exige comparação abrangente;</li>
+<li><strong>risco estratégico:</strong> o superlativo pode substituir uma diferenciação mais duradoura.</li>
+</ol>
+<p>A recomendação é não depender da palavra “primeiro”. A marca pode ser mais forte explicando <strong>o que faz, como faz, quem faz e por que isso importa</strong>.</p>
+<hr />
+<h2 id="4-a-maior-forca-da-marca-mario-wanderley">4. A maior força da marca: Mário Wanderley</h2>
+<p>A trajetória de Mário é o ativo narrativo mais subutilizado da presença online.</p>
+<p>Uma matéria do <em>Diário de Pernambuco</em> registra que Mário atuou por cerca de 20 anos como fisioterapeuta em UTIs antes de se dedicar às sobremesas. A matéria também relaciona sua entrada na cozinha ao buffet de festas e casamentos da mãe, menciona cursos de técnicas de chocolate e bombons, sua marca pessoal e sua participação no reality <em>Que Seja Doce</em>, do GNT. <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Chef pernambucano vai participar de reality show de confeitaria — Diário de Pernambuco, 2018">3</a></p>
+<p>Outras fontes documentam Mário em confeitaria, chocolate, barismo, cursos, degustações, oficinas, Senac e eventos. O Senac informa a criação da Massapê Chocolateria em 2021. <a href="http://www.pe.senac.br/confeitaria/index.html" title="Perfil institucional de Mário Wanderley e Massapê Chocolateria — Senac Pernambuco">4</a></p>
+<h3 id="por-que-isso-e-valioso">Por que isso é valioso</h3>
+<p>Muitas marcas de chocolate apresentam apenas:</p>
+<ul>
+<li>produto;</li>
+<li>cacau;</li>
+<li>embalagem;</li>
+<li>origem.</li>
+</ul>
+<p>A Massapê pode apresentar uma pessoa com:</p>
+<ul>
+<li>mudança de carreira;</li>
+<li>experiência em precisão e cuidado;</li>
+<li>trajetória na confeitaria;</li>
+<li>repertório de televisão;</li>
+<li>prática de ensino;</li>
+<li>relação com Pernambuco;</li>
+<li>visão própria sobre o sabor.</li>
+</ul>
+<p>Isso permite que a marca tenha uma dimensão humana e autoral.</p>
+<h3 id="problema-atual">Problema atual</h3>
+<p>Mário aparece associado à marca, mas a história dele está espalhada em matérias, redes e fontes de terceiros. Não existe ainda uma página própria que organize a trajetória de forma definitiva e aprovada.</p>
+<h3 id="diagnostico">Diagnóstico</h3>
+<blockquote>
+<p><strong>A Massapê comunica que Mário existe, mas ainda não comunica plenamente por que a trajetória dele torna a marca diferente.</strong></p>
+</blockquote>
+<h3 id="oportunidade">Oportunidade</h3>
+<p>Construir uma página “Mário Wanderley” com:</p>
+<ul>
+<li>biografia curta;</li>
+<li>linha do tempo;</li>
+<li>fotografia trabalhando;</li>
+<li>formação e experiências confirmadas;</li>
+<li>entrevistas;</li>
+<li>aulas e eventos;</li>
+<li>visão sobre chocolate;</li>
+<li>relação com a Massapê;</li>
+<li>citações verificadas;</li>
+<li>vídeos autorizados.</li>
+</ul>
+<hr />
+<h2 id="5-territorio-pernambuco-ainda-pode-ser-mais-profundo">5. Território: Pernambuco ainda pode ser mais profundo</h2>
+<p>A marca usa Pernambuco como um elemento de identificação, mas há espaço para transformar o território em narrativa.</p>
+<h3 id="o-que-ja-existe">O que já existe</h3>
+<ul>
+<li>Pernambuco aparece na bio;</li>
+<li>há comunicação sobre chocolate pernambucano;</li>
+<li>a embalagem histórica usa “100% pernambucano”; <a href="https://www.instagram.com/massapechocolates/" title="Acervo público de comunicação e embalagem da Massapê — direitos não presumidos">5</a></li>
+<li>fontes secundárias associam produtos de 2021 à Fazenda Cruz de Malta, em Água Preta, Mata Sul; <a href="https://www.instagram.com/massapechocolates/" title="Acervo público de comunicação e embalagem da Massapê — direitos não presumidos">2</a></li>
+<li>produtos e eventos dialogam com sabores e experiências regionais;</li>
+<li>a marca aparece em feiras e eventos locais.</li>
+</ul>
+<h3 id="o-que-ainda-falta">O que ainda falta</h3>
+<p>Para que Pernambuco deixe de ser apenas um adjetivo, seria necessário definir:</p>
+<ul>
+<li>qual Pernambuco a marca quer mostrar;</li>
+<li>qual é a relação atual com o cacau;</li>
+<li>quais produtores devem ser apresentados;</li>
+<li>quais ingredientes são realmente regionais;</li>
+<li>que paisagens e comunidades fazem parte da cadeia;</li>
+<li>como a cultura gastronômica local entra nos produtos;</li>
+<li>quais claims valem para toda a marca e quais valem somente para lotes.</li>
+</ul>
+<h3 id="diagnostico-critico">Diagnóstico crítico</h3>
+<blockquote>
+<p><strong>O território é provavelmente o maior elemento de diferenciação disponível, mas ainda não foi transformado em sistema de conteúdo, produto e experiência.</strong></p>
+</blockquote>
+<p>O benchmark mostra que marcas fortes transformam território em:</p>
+<ul>
+<li>nome de coleção;</li>
+<li>filtro de produto;</li>
+<li>mapa;</li>
+<li>história de produtor;</li>
+<li>perfil sensorial;</li>
+<li>ingrediente;</li>
+<li>vídeo;</li>
+<li>roteiro de visita;</li>
+<li>conteúdo educativo.</li>
+</ul>
+<p>A Massapê pode fazer algo equivalente, em escala própria, sem copiar outra marca.</p>
+<hr />
+<h2 id="6-bean-to-bar-forte-como-promessa-incompleto-como-prova">6. Bean-to-bar: forte como promessa, incompleto como prova</h2>
+<p>“Bean-to-bar” é o principal termo técnico da marca. Ele aparece no nome do perfil e na expressão “da amêndoa à barra”. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, destaques e publicações públicas">1</a></p>
+<p>Um artigo de Carlo Möckli de 2021 descreve Mário como produtor de chocolate bean-to-bar com cacau pernambucano e apresenta produtos de 45%, 70% e 100%. O texto também faz uma avaliação sensorial detalhada, mencionando brilho, snap, notas de caramelo, café, castanhas, especiarias e frutas. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência, 2021">2</a></p>
+<p>Essas informações podem construir autoridade, mas precisam ser tratadas em camadas:</p>
+<ul>
+<li><strong>comunicação oficial atual da marca:</strong> o que a Massapê afirma hoje;</li>
+<li><strong>registro histórico:</strong> o que foi documentado em 2021;</li>
+<li><strong>avaliação de terceiro:</strong> o que Carlo Möckli observou na degustação;</li>
+<li><strong>processo comercial atual:</strong> o que a empresa realmente executa em cada lote.</li>
+</ul>
+<h3 id="o-risco-da-palavra-sem-explicacao">O risco da palavra sem explicação</h3>
+<p>Para consumidores não especializados, bean-to-bar pode significar apenas “chocolate melhor”. Isso não basta.</p>
+<p>O site deve responder:</p>
+<ul>
+<li>O que é bean-to-bar?</li>
+<li>O que muda no sabor?</li>
+<li>Quais etapas a Massapê controla?</li>
+<li>De onde vêm as amêndoas?</li>
+<li>O processo é igual para todos os produtos?</li>
+<li>O que o consumidor pode perceber na degustação?</li>
+</ul>
+<h3 id="diagnostico_1">Diagnóstico</h3>
+<blockquote>
+<p><strong>A Massapê já possui o termo certo, mas precisa transformar o termo em compreensão, evidência e desejo.</strong></p>
+</blockquote>
+<hr />
+<h2 id="7-produtos-potencial-sensorial-baixa-clareza-comercial">7. Produtos: potencial sensorial, baixa clareza comercial</h2>
+<p>A pesquisa encontrou uma linha pública com percentuais de 100%, 85%, 70%, 60%, Pé de Moleque 55%, 38% vegano, 32% e Chocolate Branco na FENEARTE 2026. Também há publicações sobre Canjiquinha e Pé de Moleque como itens fixados no cardápio. <a href="https://www.instagram.com/massapechocolates/reel/Dap0TBgOXuj/" title="Linha de percentuais e sabores na FENEARTE 2026 — Massapê">6</a></p>
+<p>Há registros históricos de 45%, 70% e 100% em 2021. <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência, 2021">2</a></p>
+<h3 id="forcas">Forças</h3>
+<ul>
+<li>variedade de intensidade;</li>
+<li>possibilidade de atender diferentes paladares;</li>
+<li>sabores regionais com potencial de memória;</li>
+<li>espaço para degustação comparativa;</li>
+<li>possibilidade de coleções sazonais;</li>
+<li>conexão entre percentual, ingrediente e experiência.</li>
+</ul>
+<h3 id="fragilidades">Fragilidades</h3>
+<p>Não foi confirmada publicamente uma ficha técnica completa com:</p>
+<ul>
+<li>peso;</li>
+<li>preço atual;</li>
+<li>ingredientes;</li>
+<li>alergênicos;</li>
+<li>validade;</li>
+<li>conservação;</li>
+<li>estoque;</li>
+<li>disponibilidade por canal;</li>
+<li>história de cada produto;</li>
+<li>perfil sensorial aprovado;</li>
+<li>origem do lote.</li>
+</ul>
+<h3 id="diagnostico-critico_1">Diagnóstico crítico</h3>
+<blockquote>
+<p><strong>A Massapê parece ter mais repertório de produto do que sua presença digital consegue mostrar.</strong></p>
+</blockquote>
+<p>Isso reduz:</p>
+<ul>
+<li>clareza de compra;</li>
+<li>capacidade de comparação;</li>
+<li>percepção de valor;</li>
+<li>conversão fora do Instagram;</li>
+<li>descoberta em mecanismos de busca;</li>
+<li>eficiência do atendimento por WhatsApp.</li>
+</ul>
+<h3 id="oportunidade-de-arquitetura">Oportunidade de arquitetura</h3>
+<p>Cada produto poderia apresentar:</p>
+<ol>
+<li>nome;</li>
+<li>foto;</li>
+<li>percentual ou tipo;</li>
+<li>ingredientes;</li>
+<li>alergênicos;</li>
+<li>peso;</li>
+<li>preço ou chamada para encomenda;</li>
+<li>disponibilidade;</li>
+<li>perfil de sabor;</li>
+<li>inspiração;</li>
+<li>harmonização;</li>
+<li>origem e lote, quando aplicável;</li>
+<li>botão de compra ou contato.</li>
+</ol>
+<hr />
+<h2 id="8-a-presenca-online-atual-analise-por-canal">8. A presença online atual: análise por canal</h2>
+<h2 id="81-instagram-oficial">8.1 Instagram oficial</h2>
+<h3 id="forcas_1">Forças</h3>
+<ul>
+<li>canal público e facilmente descoberto;</li>
+<li>bio objetiva;</li>
+<li>associação direta com Mário;</li>
+<li>ligação para WhatsApp;</li>
+<li>destaques organizados por assuntos importantes;</li>
+<li>publicação de feiras, eventos, produtos, bastidores e parcerias;</li>
+<li>presença recente observável em 2026. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, destaques e publicações públicas">1</a></li>
+</ul>
+<h3 id="fragilidades_1">Fragilidades</h3>
+<ul>
+<li>dependência de uma plataforma de terceiros;</li>
+<li>conteúdo sujeito a login, algoritmo e mudanças de interface;</li>
+<li>dificuldade de organizar uma história longa;</li>
+<li>produtos ficam misturados com eventos e anúncios;</li>
+<li>pouca indexação estrutural para buscas específicas;</li>
+<li>não substitui catálogo, ficha técnica ou institucional;</li>
+<li>direitos de uso das imagens continuam não confirmados;</li>
+<li>não existe uma base própria de relacionamento com o público.</li>
+</ul>
+<h3 id="avaliacao">Avaliação</h3>
+<p>O Instagram funciona bem como <strong>canal de movimento e prova social</strong>, mas não como sede completa da marca.</p>
+<h2 id="82-whatsapp">8.2 WhatsApp</h2>
+<p>O WhatsApp é um canal de conversão direto e coerente com uma operação artesanal. Ele reduz a distância entre pedido e atendimento.</p>
+<p>Mas, se o WhatsApp for o principal caminho comercial, o site deve antecipar as perguntas que normalmente chegam ao atendimento:</p>
+<ul>
+<li>preço;</li>
+<li>peso;</li>
+<li>prazo;</li>
+<li>disponibilidade;</li>
+<li>entrega;</li>
+<li>formas de pagamento;</li>
+<li>ingredientes;</li>
+<li>alergênicos;</li>
+<li>encomendas;</li>
+<li>presentes corporativos.</li>
+</ul>
+<p><strong>Risco:</strong> o WhatsApp virar catálogo, atendimento, pós-venda e suporte técnico ao mesmo tempo.</p>
+<h2 id="83-mario-e-canais-pessoais">8.3 Mário e canais pessoais</h2>
+<p>O perfil pessoal de Mário no Instagram estava privado na consulta anterior. Isso limita a confirmação do conteúdo e reduz a capacidade de usar o perfil pessoal como fonte pública estável.</p>
+<p>A marca precisa assumir no próprio site o papel de organizar a narrativa do fundador, sem depender de um perfil pessoal aberto.</p>
+<h2 id="84-imprensa-e-terceiros">8.4 Imprensa e terceiros</h2>
+<p>A Massapê tem uma vantagem: sua história aparece em fontes externas, como Diário de Pernambuco, Senac, Folha, eventos, blogs especializados e publicações de parceiros. <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Chef pernambucano vai participar de reality show de confeitaria — Diário de Pernambuco, 2018">2</a><a href="http://www.pe.senac.br/confeitaria/index.html" title="Perfil institucional de Mário Wanderley e Massapê Chocolateria — Senac Pernambuco">4</a></p>
+<p>O problema é que essas fontes estão dispersas. A marca poderia criar uma página de imprensa com:</p>
+<ul>
+<li>título;</li>
+<li>veículo;</li>
+<li>data;</li>
+<li>link;</li>
+<li>resumo;</li>
+<li>imagem autorizada;</li>
+<li>assunto;</li>
+<li>contato de imprensa.</li>
+</ul>
+<h2 id="85-site-proprio">8.5 Site próprio</h2>
+<p>A principal lacuna estratégica é a falta de uma sede digital institucional consolidada, com navegação e conteúdo controlados pela marca.</p>
+<p>O site próprio deve reduzir a dependência de Instagram e WhatsApp sem necessariamente substituí-los.</p>
+<hr />
+<h2 id="9-conteudo-presenca-ativa-mas-nao-necessariamente-sistema-editorial">9. Conteúdo: presença ativa, mas não necessariamente sistema editorial</h2>
+<p>A Massapê publica conteúdos de produto, evento, feira, parceria, bastidor e chamada comercial. Isso cria sensação de atividade.</p>
+<p>Porém, atividade não é o mesmo que sistema editorial.</p>
+<h3 id="um-sistema-editorial-responde">Um sistema editorial responde</h3>
+<ul>
+<li>que assunto a marca publica;</li>
+<li>para qual público;</li>
+<li>com que frequência;</li>
+<li>em qual canal;</li>
+<li>com qual objetivo;</li>
+<li>para qual etapa da jornada;</li>
+<li>com qual prova;</li>
+<li>com qual chamada para ação.</li>
+</ul>
+<h3 id="pilares-editoriais-possiveis">Pilares editoriais possíveis</h3>
+<table>
+<thead>
+<tr>
+<th>Pilar</th>
+<th>Função</th>
+<th>Exemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mário</td>
+<td>Autoria e autoridade</td>
+<td>trajetória, técnica, entrevistas, aulas</td>
+</tr>
+<tr>
+<td>Cacau</td>
+<td>Origem e transparência</td>
+<td>produtor, região, amêndoa, safra, lote</td>
+</tr>
+<tr>
+<td>Processo</td>
+<td>Educação</td>
+<td>torra, moagem, conchagem, temperagem</td>
+</tr>
+<tr>
+<td>Produto</td>
+<td>Desejo e venda</td>
+<td>fichas, sabores, kits, harmonizações</td>
+</tr>
+<tr>
+<td>Pernambuco</td>
+<td>Identidade</td>
+<td>ingredientes, memória, gastronomia, eventos</td>
+</tr>
+<tr>
+<td>Experiência</td>
+<td>Relacionamento</td>
+<td>degustações, workshops, feiras, corporativo</td>
+</tr>
+<tr>
+<td>Imprensa</td>
+<td>Prova social</td>
+<td>matérias, vídeos, entrevistas, parceiros</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagnostico_2">Diagnóstico</h3>
+<blockquote>
+<p><strong>A marca tem material para publicar, mas precisa transformar publicações isoladas em um sistema que acumula valor ao longo do tempo.</strong></p>
+</blockquote>
+<hr />
+<h2 id="10-autoridade-existe-mas-esta-subaproveitada">10. Autoridade: existe, mas está subaproveitada</h2>
+<p>A autoridade online da Massapê não precisa ser inventada. Ela precisa ser organizada.</p>
+<h3 id="evidencias-encontradas">Evidências encontradas</h3>
+<ul>
+<li>participação de Mário no <em>Que Seja Doce</em>; <a href="https://www.diariodepernambuco.com.br/noticia/viver/2018/04/chef-pernambucano-vai-participar-de-reality-show-de-confeitaria.html" title="Chef pernambucano vai participar de reality show de confeitaria — Diário de Pernambuco, 2018">3</a></li>
+<li>registros no Senac; <a href="http://www.pe.senac.br/confeitaria/index.html" title="Perfil institucional de Mário Wanderley e Massapê Chocolateria — Senac Pernambuco">4</a></li>
+<li>oficinas, palestras e degustações;</li>
+<li>entrevistas e rádio;</li>
+<li>feiras e eventos;</li>
+<li>parceiros e pontos de venda;</li>
+<li>avaliação técnica de produtos por Carlo Möckli; <a href="http://www.carlomockli.com/2021/08/massape-bean-to-bar-100-pernambucano.html" title="MASSAPÊ: Bean to Bar 100% Pernambucano! — Carlo Möckli/Doce Ciência, 2021">2</a></li>
+<li>presença em conteúdos sobre bean-to-bar;</li>
+<li>atividade recente no Instagram. <a href="https://www.instagram.com/massapechocolates/" title="Perfil oficial Massapê Chocolateria | Bean-to-bar — bio, destaques e publicações públicas">1</a></li>
+</ul>
+<h3 id="problema">Problema</h3>
+<p>O visitante precisa fazer uma pesquisa externa para juntar esses sinais. Uma marca madura facilita essa montagem.</p>
+<h3 id="solucao-estrategica">Solução estratégica</h3>
+<p>Criar uma área “Por que Massapê?” ou “Massapê em movimento”, reunindo:</p>
+<ul>
+<li>credenciais de Mário;</li>
+<li>eventos;</li>
+<li>imprensa;</li>
+<li>aulas;</li>
+<li>participações;</li>
+<li>parceiros;</li>
+<li>depoimentos autorizados;</li>
+<li>vídeos;</li>
+<li>produtos reconhecidos;</li>
+<li>fatos históricos.</li>
+</ul>
+<p>A área deve evitar exagero. Uma lista de aparições sem contexto não constrói autoridade por si só. Cada item deve explicar por que é relevante.</p>
+<hr />
+<h2 id="11-imagem-e-identidade-visual">11. Imagem e identidade visual</h2>
+<p>A embalagem observada em fonte de 2021 apresenta o nome MASSAPÊ, elementos de folhas e frutos de cacau, arcos concêntricos e a indicação de 70%. A matéria também reproduz a expressão “chocolate feito à mão | 100% pernambucano”. <a href="https://www.instagram.com/massapechocolates/" title="Acervo público de comunicação e embalagem da Massapê — direitos não presumidos">5</a></p>
+<p>A linguagem visual percebida combina:</p>
+<ul>
+<li>contraste;</li>
+<li>cores regionais;</li>
+<li>grafismo;</li>
+<li>cacau;</li>
+<li>geometria;</li>
+<li>embalagem como objeto de identidade.</li>
+</ul>
+<h3 id="forca">Força</h3>
+<p>Existe potencial para uma identidade reconhecível, menos genérica do que o padrão “marrom + foto de chocolate + tipografia elegante”.</p>
+<h3 id="fragilidade">Fragilidade</h3>
+<p>Não foram localizados manual de marca, códigos de cor, tipografias oficiais, versões de logo, regras de fotografia ou confirmação de quais embalagens estão vigentes.</p>
+<h3 id="risco">Risco</h3>
+<p>A marca pode ter elementos visuais interessantes, mas comunicá-los de maneira inconsistente entre:</p>
+<ul>
+<li>embalagem;</li>
+<li>Instagram;</li>
+<li>eventos;</li>
+<li>materiais de parceiros;</li>
+<li>site;</li>
+<li>WhatsApp;</li>
+<li>peças corporativas.</li>
+</ul>
+<h3 id="diagnostico_3">Diagnóstico</h3>
+<blockquote>
+<p><strong>Há sinais de identidade visual, mas ainda não há evidência de um sistema visual documentado e aplicado de forma consistente.</strong></p>
+</blockquote>
+<hr />
+<h2 id="12-experiencia-do-usuario-e-conversao">12. Experiência do usuário e conversão</h2>
+<p>O benchmark mostra que marcas mais completas conduzem o visitante por uma sequência:</p>
+<blockquote>
+<p>visita → conhece a marca → entende o produto → entende o valor → deseja → compra ou contacta.</p>
+</blockquote>
+<p>Na presença atual da Massapê, o caminho parece mais curto:</p>
+<blockquote>
+<p>encontra uma publicação → vê um produto/evento → chama no WhatsApp.</p>
+</blockquote>
+<p>Esse caminho pode funcionar para clientes já interessados, mas é limitado para:</p>
+<ul>
+<li>quem ainda não conhece bean-to-bar;</li>
+<li>quem precisa justificar o preço;</li>
+<li>quem quer presentear;</li>
+<li>empresas;</li>
+<li>restaurantes;</li>
+<li>imprensa;</li>
+<li>instituições de ensino;</li>
+<li>consumidores que pesquisam antes de comprar.</li>
+</ul>
+<h3 id="ctas-que-poderiam-existir">CTAs que poderiam existir</h3>
+<ul>
+<li>Conheça a Massapê;</li>
+<li>Conheça Mário;</li>
+<li>Entenda o processo;</li>
+<li>Veja os produtos;</li>
+<li>Peça pelo WhatsApp;</li>
+<li>Encontre onde comprar;</li>
+<li>Solicite uma encomenda;</li>
+<li>Conheça as experiências;</li>
+<li>Fale sobre presentes corporativos;</li>
+<li>Leia a história;</li>
+<li>Veja a agenda.</li>
+</ul>
+<h3 id="diagnostico_4">Diagnóstico</h3>
+<blockquote>
+<p><strong>A conversão atual parece eficiente para relacionamento direto, mas ainda pouco estruturada para descoberta, comparação e decisão informada.</strong></p>
+</blockquote>
+<hr />
+<h2 id="13-seo-e-descoberta-fora-das-redes">13. SEO e descoberta fora das redes</h2>
+<p>A presença no Instagram ajuda quem já conhece o nome Massapê. Ela é menos eficiente para pessoas que pesquisam necessidades genéricas.</p>
+<p>Possíveis buscas:</p>
+<ul>
+<li>chocolate artesanal pernambucano;</li>
+<li>chocolate bean-to-bar em Pernambuco;</li>
+<li>chocolate artesanal Recife;</li>
+<li>chocolate de cacau pernambucano;</li>
+<li>chocolate com pé de moleque;</li>
+<li>chocolate com ingredientes regionais;</li>
+<li>Mário Wanderley chocolate;</li>
+<li>degustação de chocolate em Pernambuco;</li>
+<li>workshop de chocolate em Recife;</li>
+<li>presente corporativo de chocolate em Pernambuco.</li>
+</ul>
+<h3 id="oportunidade_1">Oportunidade</h3>
+<p>Um site com páginas próprias e conteúdo editorial pode capturar buscas de descoberta, não apenas buscas de marca.</p>
+<h3 id="conteudos-prioritarios">Conteúdos prioritários</h3>
+<ol>
+<li>O que é chocolate bean-to-bar?</li>
+<li>Como a Massapê trabalha da amêndoa à barra?</li>
+<li>Quem é Mário Wanderley?</li>
+<li>O que diferencia 45%, 70%, 85% e 100%?</li>
+<li>Como degustar chocolate?</li>
+<li>Como combinar chocolate e café?</li>
+<li>Como funcionam os sabores regionais?</li>
+<li>O que significa chocolate de origem?</li>
+<li>Como pedir chocolate Massapê?</li>
+<li>Experiências, aulas e eventos de chocolate em Pernambuco.</li>
+</ol>
+<hr />
+<h2 id="14-analise-critica-do-modelo-de-negocio-percebido-online">14. Análise crítica do modelo de negócio percebido online</h2>
+<p>A presença pública sugere um negócio com várias frentes possíveis, mas elas não estão claramente separadas para o visitante.</p>
+<h3 id="frentes-identificadas">Frentes identificadas</h3>
+<table>
+<thead>
+<tr>
+<th>Área de negócio</th>
+<th>Evidência ou possibilidade</th>
+<th>Problema atual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Venda direta</td>
+<td>WhatsApp e produtos publicados</td>
+<td>Falta catálogo técnico centralizado</td>
+</tr>
+<tr>
+<td>Presentes</td>
+<td>Kits, sazonais e caixas</td>
+<td>Falta página própria por ocasião</td>
+</tr>
+<tr>
+<td>Eventos</td>
+<td>Feiras e participações</td>
+<td>Falta agenda e portfólio de eventos</td>
+</tr>
+<tr>
+<td>Educação</td>
+<td>Aulas, oficinas e Senac</td>
+<td>Falta oferta estruturada de cursos/worksops</td>
+</tr>
+<tr>
+<td>Corporativo</td>
+<td>Possibilidade de encomendas e presentes</td>
+<td>Falta caminho comercial claro</td>
+</tr>
+<tr>
+<td>Parcerias</td>
+<td>Cafés, eventos, pontos de venda</td>
+<td>Falta lista atual e proposta para parceiros</td>
+</tr>
+<tr>
+<td>Conteúdo</td>
+<td>Instagram, imprensa e entrevistas</td>
+<td>Falta organização editorial própria</td>
+</tr>
+<tr>
+<td>Autoridade</td>
+<td>Mário e aparições públicas</td>
+<td>Falta página de provas e credenciais</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagnostico_5">Diagnóstico</h3>
+<p>A Massapê pode ser mais do que uma marca de barras, mas o online ainda não deixa claro quais dessas frentes estão realmente abertas para negócio.</p>
+<p>O site precisa distinguir:</p>
+<ul>
+<li><strong>o que é produto;</strong></li>
+<li><strong>o que é serviço;</strong></li>
+<li><strong>o que é experiência;</strong></li>
+<li><strong>o que é parceria;</strong></li>
+<li><strong>o que é conteúdo;</strong></li>
+<li><strong>o que é histórico.</strong></li>
+</ul>
+<hr />
+<h2 id="15-swot-critica">15. SWOT crítica</h2>
+<h3 id="forcas_2">Forças</h3>
+<ul>
+<li>posicionamento pernambucano claro;</li>
+<li>uso consistente de bean-to-bar/da amêndoa à barra;</li>
+<li>associação direta com Mário;</li>
+<li>trajetória humana e diferenciada do profissional;</li>
+<li>produtos com potencial sensorial e regional;</li>
+<li>presença social ativa;</li>
+<li>participação em eventos, feiras, aulas e imprensa;</li>
+<li>possibilidade de combinar chocolate, educação e experiência;</li>
+<li>linguagem próxima e regional.</li>
+</ul>
+<h3 id="fraquezas">Fraquezas</h3>
+<ul>
+<li>dependência de Instagram e WhatsApp;</li>
+<li>ausência de sede digital institucional consolidada;</li>
+<li>catálogo público incompleto;</li>
+<li>processo ainda pouco explicado com prova própria;</li>
+<li>origem atual do cacau não completamente documentada;</li>
+<li>biografia de Mário dispersa;</li>
+<li>autoridade externa não organizada;</li>
+<li>identidade visual não documentada em manual público;</li>
+<li>direitos das imagens não confirmados;</li>
+<li>falta de segmentação clara entre consumidor, empresa e parceiro;</li>
+<li>baixa clareza sobre serviços atuais.</li>
+</ul>
+<h3 id="oportunidades">Oportunidades</h3>
+<ul>
+<li>construir uma marca autoral em torno de Mário;</li>
+<li>transformar Pernambuco em sistema de conteúdo e produto;</li>
+<li>usar sabores regionais como linguagem de coleção;</li>
+<li>criar uma experiência bean-to-bar didática;</li>
+<li>organizar produtos, presentes e corporativo;</li>
+<li>criar páginas de experiências, imprensa e parceiros;</li>
+<li>desenvolver SEO sobre chocolate artesanal e pernambucano;</li>
+<li>produzir acervo fotográfico próprio;</li>
+<li>transformar eventos e aulas em prova de autoridade;</li>
+<li>criar uma jornada digital menos dependente do atendimento manual.</li>
+</ul>
+<h3 id="ameacas-e-riscos">Ameaças e riscos</h3>
+<ul>
+<li>parecer apenas mais uma marca artesanal;</li>
+<li>prometer mais rastreabilidade do que consegue comprovar;</li>
+<li>usar “primeiro” sem documentação;</li>
+<li>ter produtos e preços desatualizados no site;</li>
+<li>depender de posts que desaparecem no feed;</li>
+<li>usar imagens sem autorização;</li>
+<li>comunicar sustentabilidade de maneira genérica;</li>
+<li>crescer a variedade sem explicar a curadoria;</li>
+<li>perder a personalidade em uma estética premium genérica;</li>
+<li>confundir história de Mário com titularidade jurídica da empresa.</li>
+</ul>
+<hr />
+<h2 id="16-nivel-de-maturidade-da-presenca-online">16. Nível de maturidade da presença online</h2>
+<p>Uma avaliação qualitativa, sem nota, pode ser feita em quatro dimensões:</p>
+<table>
+<thead>
+<tr>
+<th>Dimensão</th>
+<th>Diagnóstico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descoberta</td>
+<td>Boa no Instagram e em referências externas</td>
+</tr>
+<tr>
+<td>Relacionamento</td>
+<td>Forte na linguagem direta e no WhatsApp</td>
+</tr>
+<tr>
+<td>Autoridade</td>
+<td>Existe, mas está dispersa</td>
+</tr>
+<tr>
+<td>Conversão estruturada</td>
+<td>Ainda depende muito do contato manual</td>
+</tr>
+<tr>
+<td>Conteúdo institucional</td>
+<td>Insuficiente para a profundidade da história</td>
+</tr>
+<tr>
+<td>SEO não relacionado à marca</td>
+<td>Baixo potencial atual sem site/editorial</td>
+</tr>
+<tr>
+<td>Clareza de produto</td>
+<td>Promissora, mas incompleta</td>
+</tr>
+<tr>
+<td>Diferenciação</td>
+<td>Alta possibilidade, ainda não totalmente expressa</td>
+</tr>
+<tr>
+<td>Governança de informação</td>
+<td>Precisa de validação e documentação</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sintese">Síntese</h3>
+<blockquote>
+<p><strong>A Massapê está mais avançada em presença e atividade do que em infraestrutura de marca.</strong></p>
+</blockquote>
+<p>Ela já tem sinais suficientes para chamar atenção, mas ainda precisa transformar esses sinais em um sistema coerente.</p>
+<hr />
+<h2 id="17-posicionamento-recomendado-formulacao-estrategica">17. Posicionamento recomendado — formulação estratégica</h2>
+<p>A formulação abaixo não deve ser tratada como slogan final, mas como hipótese de posicionamento:</p>
+<blockquote>
+<p><strong>A Massapê é uma marca autoral de chocolate artesanal pernambucano, criada e produzida por Mário Wanderley, que transforma cacau, técnica e repertórios de sabor em experiências da amêndoa à barra.</strong></p>
+</blockquote>
+<p>Essa formulação é mais completa que “chocolate artesanal” porque reúne:</p>
+<ul>
+<li>categoria;</li>
+<li>território;</li>
+<li>autoria;</li>
+<li>processo;</li>
+<li>experiência.</li>
+</ul>
+<h3 id="promessa-funcional">Promessa funcional</h3>
+<p>Oferecer chocolates artesanais com informação clara sobre produto, processo e disponibilidade.</p>
+<h3 id="promessa-emocional">Promessa emocional</h3>
+<p>Permitir que o consumidor experimente Pernambuco por meio de sabor, memória e técnica.</p>
+<h3 id="prova-necessaria">Prova necessária</h3>
+<ul>
+<li>processo confirmado;</li>
+<li>origem identificada;</li>
+<li>produtos e ingredientes claros;</li>
+<li>trajetória de Mário;</li>
+<li>eventos e imprensa;</li>
+<li>imagens próprias;</li>
+<li>depoimentos e parceiros autorizados.</li>
+</ul>
+<hr />
+<h2 id="18-prioridades-de-acao">18. Prioridades de ação</h2>
+<h2 id="prioridade-1-organizar-a-verdade-da-marca">Prioridade 1 — organizar a verdade da marca</h2>
+<p>Antes de criar textos sofisticados, validar:</p>
+<ul>
+<li>história oficial;</li>
+<li>nome jurídico;</li>
+<li>catálogo;</li>
+<li>processo;</li>
+<li>cacau e produtores;</li>
+<li>serviços;</li>
+<li>preços;</li>
+<li>canais;</li>
+<li>direitos de imagem;</li>
+<li>claims autorizados.</li>
+</ul>
+<h2 id="prioridade-2-criar-a-sede-digital">Prioridade 2 — criar a sede digital</h2>
+<p>O site deve ser a fonte central para:</p>
+<ul>
+<li>marca;</li>
+<li>Mário;</li>
+<li>cacau;</li>
+<li>processo;</li>
+<li>produtos;</li>
+<li>experiências;</li>
+<li>imprensa;</li>
+<li>corporativo;</li>
+<li>contato.</li>
+</ul>
+<h2 id="prioridade-3-transformar-produto-em-sistema">Prioridade 3 — transformar produto em sistema</h2>
+<p>Criar fichas de produto, categorias, coleções e caminhos de compra.</p>
+<h2 id="prioridade-4-transformar-mario-em-ativo-de-marca">Prioridade 4 — transformar Mário em ativo de marca</h2>
+<p>Criar uma narrativa aprovada, visualmente forte e documental.</p>
+<h2 id="prioridade-5-transformar-pernambuco-em-conteudo">Prioridade 5 — transformar Pernambuco em conteúdo</h2>
+<p>Criar uma lógica de território que conecte origem, ingredientes, sabores, produtores e experiências.</p>
+<h2 id="prioridade-6-organizar-conversao-por-publico">Prioridade 6 — organizar conversão por público</h2>
+<p>Criar caminhos distintos para consumidor, presente, empresa, restaurante, imprensa e instituição de ensino.</p>
+<h2 id="prioridade-7-construir-prova-continua">Prioridade 7 — construir prova contínua</h2>
+<p>Publicar conteúdo que acumule autoridade, não apenas anúncios isolados.</p>
+<hr />
+<h2 id="19-conclusao-critica">19. Conclusão crítica</h2>
+<p>A Massapê não parece ter um problema de falta de atributos. Ela tem um problema de <strong>concentração estratégica</strong>.</p>
+<p>Os elementos estão presentes, mas dispersos:</p>
+<ul>
+<li>a marca está no Instagram;</li>
+<li>a história de Mário está em entrevistas e fontes externas;</li>
+<li>os produtos aparecem em publicações e eventos;</li>
+<li>o processo aparece em referências secundárias e atividades pedagógicas;</li>
+<li>a autoridade aparece em Senac, TV, rádio, feiras e parceiros;</li>
+<li>a identidade regional aparece em frases, embalagens e sabores.</li>
+</ul>
+<p>O próximo estágio não é simplesmente publicar mais. É <strong>organizar o que já existe em uma narrativa própria, verificável e comercialmente útil</strong>.</p>
+<p>A grande oportunidade é ocupar o espaço de uma marca que não fala apenas sobre chocolate artesanal, mas sobre:</p>
+<blockquote>
+<p><strong>uma trajetória humana, um território, uma técnica e uma experiência de sabor.</strong></p>
+</blockquote>
+<p>A Massapê pode ser percebida como uma marca de chocolate pernambucana com autoria e conhecimento — não apenas como mais uma chocolateria artesanal.</p>
+<p>Para isso, precisa fazer três movimentos:</p>
+<ol>
+<li><strong>provar:</strong> documentar processo, produto, origem e autoridade;</li>
+<li><strong>organizar:</strong> criar site, catálogo, páginas e caminhos por público;</li>
+<li><strong>expressar:</strong> transformar Mário, Pernambuco e os sabores em identidade verbal, visual e sensorial.</li>
+</ol>
+<hr />
+<h2 id="referencias">Referências</h2></article></div></main>
+<footer><div class="wrap"><p>Documento de apoio estratégico. Verifique informações comerciais, direitos e claims antes da publicação oficial.</p><p><a href="index.html">Voltar ao painel principal</a></p></div></footer></body></html>
